@@ -7,32 +7,34 @@ export default function Header({ onOpenBooking, onOpenLookup }) {
 
   return (
     <header className="hosp-header-wrap">
-      {/* Topbar */}
+      {/* Slim Modern Topbar */}
       <div className="hosp-topbar">
         <div className="container hosp-topbar-inner">
           <div className="hosp-meta-row">
             <span className="hosp-live-pill">
               <span className="hosp-pulse-dot"></span>
-              Đang mở cửa tiếp nhận bệnh nhân
+              Đang mở cửa
             </span>
             <span className="hosp-meta-item">
-              <Clock size={13} />
-              <span>{CLINIC_INFO.operatingHours.weekdays}</span>
+              <Clock size={12} />
+              <span>07:00 - 20:30</span>
             </span>
+            <span className="hosp-meta-divider">|</span>
             <span className="hosp-meta-item">
-              <MapPin size={13} />
-              <span>{CLINIC_INFO.address}</span>
+              <MapPin size={12} />
+              <span>215 Hồng Bàng, Q.5, TP.HCM</span>
             </span>
           </div>
 
           <div className="hosp-meta-row">
             <a href={`tel:${CLINIC_INFO.emergencyPhone}`} className="hosp-emergency-badge">
-              <Phone size={12} />
-              <span>Cấp cứu 24/7: {CLINIC_INFO.emergencyPhone}</span>
+              <Phone size={11} />
+              <span>Cấp cứu: {CLINIC_INFO.emergencyPhone}</span>
             </a>
-            <span style={{ fontSize: '0.78rem', color: '#93c5fd', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-              <Award size={13} />
-              <span>{CLINIC_INFO.accreditation}</span>
+            <span className="hosp-meta-divider">|</span>
+            <span className="hosp-meta-item hosp-accredit-item">
+              <Award size={12} />
+              <span>Chuẩn JCI Hoa Kỳ</span>
             </span>
           </div>
         </div>
@@ -81,10 +83,10 @@ export default function Header({ onOpenBooking, onOpenLookup }) {
 
             <button 
               type="button" 
-              className="btn-hosp btn-hosp-md btn-hosp-primary btn-hosp-pill"
+              className="btn-hosp btn-hosp-sm btn-hosp-primary btn-hosp-pill"
               onClick={onOpenBooking}
             >
-              <Calendar size={15} />
+              <Calendar size={14} />
               <span>Đặt lịch khám</span>
             </button>
 
