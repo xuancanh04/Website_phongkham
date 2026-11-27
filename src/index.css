@@ -1,55 +1,82 @@
 /* ==========================================================================
    BỆNH VIỆN ĐA KHOA QUỐC TẾ MEDICARE PLUS
-   International General Hospital Design System
+   Modern Clinical Design System - Nordic Medical Tech Palette
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap');
 
 :root {
-  /* Hospital Brand Colors */
-  --hospital-navy: #092540;
-  --hospital-navy-dark: #051626;
-  --hospital-blue: #0284c7;
-  --hospital-blue-hover: #0369a1;
-  --hospital-blue-light: #f0f9ff;
-  --hospital-blue-border: #bae6fd;
+  /* --------------------------------------------------------------------------
+     1. BRAND COLORS (MODERN SAPPHIRE & MEDICAL CERULEAN)
+     -------------------------------------------------------------------------- */
+  --hospital-navy: #0b2545;          /* Deep authoritative sapphire navy */
+  --hospital-navy-dark: #07192f;     /* Rich midnight navy for topbar & footer */
+  --hospital-navy-soft: #123762;
 
-  --hospital-teal: #0d9488;
-  --hospital-teal-light: #f0fdfa;
+  --hospital-blue: #0284c7;          /* Vibrant clinical cyan-blue */
+  --hospital-blue-hover: #0369a1;    /* Deep sky blue */
+  --hospital-blue-light: #f0f9ff;    /* Ice blue soft background */
+  --hospital-blue-soft: #e0f2fe;     /* Gentle sky wash */
+  --hospital-blue-border: #bae6fd;   /* Cyan-sky border */
+
+  /* --------------------------------------------------------------------------
+     2. HEALING & VITALITY (SURGICAL TEAL & EUCALYPTUS MINT)
+     -------------------------------------------------------------------------- */
+  --hospital-teal: #0d9488;          /* Surgical teal */
+  --hospital-teal-light: #f0fdf4;
+  --hospital-teal-soft: #ccfbf1;
   
-  --hospital-green: #10b981;
-  --hospital-green-light: #ecfdf5;
+  --hospital-green: #059669;         /* Vitality emerald */
+  --hospital-green-light: #ecfdf5;   /* Fresh mint wash */
+  --hospital-green-border: #a7f3d0;
 
-  --hospital-red: #dc2626;
-  --hospital-red-light: #fef2f2;
-  --hospital-red-border: #fecaca;
+  /* --------------------------------------------------------------------------
+     3. CLINICAL EMERGENCY & ALERT (HIGH-END MEDICAL ROSE)
+     -------------------------------------------------------------------------- */
+  --hospital-red: #e11d48;           /* High-visibility medical rose-red */
+  --hospital-red-hover: #be123c;
+  --hospital-red-light: #fff1f2;     /* Strawberry soft wash */
+  --hospital-red-border: #fecdd3;
 
+  /* --------------------------------------------------------------------------
+     4. ATTENTION & ACCREDITATION (WARM AMBER)
+     -------------------------------------------------------------------------- */
   --hospital-amber: #d97706;
   --hospital-amber-light: #fffbeb;
+  --hospital-amber-border: #fde68a;
 
-  /* Neutrals */
-  --text-main: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
-  --border-color: #e2e8f0;
-  --border-light: #f1f5f9;
-  --bg-page: #f8fafc;
-  --bg-card: #ffffff;
+  /* --------------------------------------------------------------------------
+     5. NEUTRALS & SURFACES
+     -------------------------------------------------------------------------- */
+  --text-main: #0f172a;              /* Slate 900 */
+  --text-secondary: #334155;         /* Slate 700 */
+  --text-muted: #64748b;             /* Slate 500 */
+  --border-color: #e2e8f0;           /* Clean slate border */
+  --border-light: #f1f5f9;           /* Ultra-soft border */
+  --bg-page: #f8fafc;                /* Crisp porcelain canvas */
+  --bg-card: #ffffff;                /* Pure white surface */
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(9, 37, 64, 0.05);
-  --shadow-md: 0 4px 14px rgba(9, 37, 64, 0.08);
-  --shadow-lg: 0 12px 28px rgba(9, 37, 64, 0.1);
-  --shadow-glow: 0 4px 16px rgba(2, 132, 199, 0.3);
+  /* --------------------------------------------------------------------------
+     6. AMBIENT SHADOWS (DIFFUSE MULTI-LAYER DEPTH)
+     -------------------------------------------------------------------------- */
+  --shadow-sm: 0 1px 3px rgba(11, 37, 69, 0.04), 0 1px 2px rgba(11, 37, 69, 0.02);
+  --shadow-md: 0 4px 14px -2px rgba(11, 37, 69, 0.07), 0 2px 6px -1px rgba(11, 37, 69, 0.04);
+  --shadow-lg: 0 16px 36px -4px rgba(11, 37, 69, 0.09), 0 4px 14px -2px rgba(11, 37, 69, 0.04);
+  --shadow-glow: 0 4px 18px rgba(2, 132, 199, 0.28);
+  --shadow-glow-red: 0 4px 18px rgba(225, 29, 72, 0.28);
 
-  /* Radii */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  /* --------------------------------------------------------------------------
+     7. RADII SCALE
+     -------------------------------------------------------------------------- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
   --radius-pill: 9999px;
 
-  /* Typography */
+  /* --------------------------------------------------------------------------
+     8. TYPOGRAPHY
+     -------------------------------------------------------------------------- */
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -68,7 +95,7 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--text-main);
-  background-color: #ffffff;
+  background-color: var(--bg-page);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -100,56 +127,61 @@ button, input, select, textarea {
 }
 
 .hospital-section {
-  padding: 76px 0;
+  padding: 80px 0;
   position: relative;
 }
 
 @media (max-width: 768px) {
   .hospital-section {
-    padding: 48px 0;
+    padding: 52px 0;
   }
 }
 
 .section-head-wrap {
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto 46px auto;
+  max-width: 740px;
+  margin: 0 auto 48px auto;
 }
 
 .hospital-badge-tag {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background-color: var(--hospital-blue-light);
+  gap: 8px;
+  background: rgba(2, 132, 199, 0.08);
   color: var(--hospital-blue);
-  border: 1px solid var(--hospital-blue-border);
-  font-size: 0.8rem;
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  font-size: 0.78rem;
   font-weight: 700;
-  padding: 4px 14px;
+  padding: 5px 15px;
   border-radius: var(--radius-pill);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(8px);
+}
+
+.hospital-badge-tag svg {
+  color: var(--hospital-blue);
 }
 
 .hospital-heading-h2 {
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   font-weight: 800;
   color: var(--hospital-navy);
-  margin-bottom: 12px;
-  letter-spacing: -0.015em;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
 }
 
 @media (max-width: 768px) {
   .hospital-heading-h2 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
 }
 
 .hospital-lead-desc {
   font-size: 0.98rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* ==========================================================================
@@ -166,7 +198,7 @@ button, input, select, textarea {
   border: 1.5px solid transparent;
   cursor: pointer;
   line-height: 1;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
   user-select: none;
   text-align: center;
 }
@@ -194,20 +226,20 @@ button, input, select, textarea {
   font-size: 0.94rem;
 }
 
-/* Blue Primary */
+/* Blue Primary - Modern Clinical Gradient */
 .btn-hosp-primary {
   background: linear-gradient(135deg, var(--hospital-blue) 0%, #0369a1 100%);
   color: #ffffff;
-  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);
+  box-shadow: 0 3px 12px rgba(2, 132, 199, 0.28);
 }
 
 .btn-hosp-primary:hover {
-  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+  background: linear-gradient(135deg, #0369a1 0%, #0c4a6e 100%);
   transform: translateY(-1.5px);
-  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.35);
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.38);
 }
 
-/* Secondary White */
+/* Secondary Clean White */
 .btn-hosp-secondary {
   background: #ffffff;
   color: var(--hospital-navy);
@@ -217,18 +249,20 @@ button, input, select, textarea {
 
 .btn-hosp-secondary:hover {
   background-color: var(--hospital-blue-light);
-  border-color: var(--hospital-blue);
+  border-color: var(--hospital-blue-border);
   color: var(--hospital-blue);
   transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(11, 37, 69, 0.06);
 }
 
 /* Red Emergency */
 .btn-hosp-danger {
   background-color: var(--hospital-red);
   color: #ffffff;
+  box-shadow: var(--shadow-glow-red);
 }
 
 .btn-hosp-danger:hover {
-  background-color: #b91c1c;
+  background-color: var(--hospital-red-hover);
   transform: translateY(-1.5px);
 }

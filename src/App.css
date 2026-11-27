@@ -10,7 +10,7 @@
   background-color: var(--hospital-navy-dark);
   color: #cbd5e1;
   font-size: 0.8rem;
-  padding: 6px 0;
+  padding: 7px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -39,30 +39,44 @@
   gap: 6px;
   padding: 2px 10px;
   border-radius: var(--radius-pill);
-  background: rgba(16, 185, 129, 0.15);
+  background: rgba(5, 150, 105, 0.16);
   color: #34d399;
   font-size: 0.76rem;
   font-weight: 700;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  border: 1px solid rgba(52, 211, 153, 0.3);
 }
 
 .hosp-pulse-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #10b981;
+  background-color: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
 }
 
 .hosp-emergency-badge {
   background: var(--hospital-red);
   color: #ffffff;
-  padding: 2px 10px;
+  padding: 3px 12px;
   border-radius: var(--radius-pill);
   font-weight: 700;
   font-size: 0.78rem;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
+  box-shadow: 0 2px 8px rgba(225, 29, 72, 0.3);
+  transition: all 0.2s ease;
+}
+
+.hosp-emergency-badge:hover {
+  background: var(--hospital-red-hover);
+  transform: translateY(-1px);
 }
 
 /* Main Navbar */
@@ -71,10 +85,10 @@
   top: 0;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 2px 10px rgba(9, 37, 64, 0.05);
+  box-shadow: 0 2px 10px rgba(11, 37, 69, 0.04);
 }
 
 .hosp-nav-container {
@@ -96,12 +110,12 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--hospital-blue) 0%, #0369a1 100%);
+  background: linear-gradient(135deg, var(--hospital-blue) 0%, var(--hospital-teal) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  box-shadow: 0 3px 8px rgba(2, 132, 199, 0.3);
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.35);
 }
 
 .hosp-brand-title {
@@ -201,8 +215,8 @@
    -------------------------------------------------------------------------- */
 .hosp-hero-wrap {
   position: relative;
-  background: radial-gradient(circle at 85% 15%, #e0f2fe 0%, #f0fdfa 30%, #f8fafc 70%);
-  padding: 56px 0 80px 0;
+  background: radial-gradient(110% 120% at 85% 15%, #e0f2fe 0%, #ecfdf5 35%, #f8fafc 85%);
+  padding: 56px 0 84px 0;
   overflow: hidden;
 }
 
@@ -223,7 +237,10 @@
 }
 
 .hosp-hero-h1 span.blue {
-  color: var(--hospital-blue);
+  background: linear-gradient(135deg, var(--hospital-blue) 0%, var(--hospital-teal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 .hosp-hero-lead {
@@ -391,21 +408,24 @@
 }
 
 .hosp-adv-icon {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border-radius: var(--radius-md);
-  background: var(--hospital-blue-light);
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%);
   color: var(--hospital-blue);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 18px;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(2, 132, 199, 0.15);
 }
 
 .hosp-adv-card:hover .hosp-adv-icon {
-  background: var(--hospital-blue);
+  background: linear-gradient(135deg, var(--hospital-blue) 0%, var(--hospital-teal) 100%);
   color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.3);
 }
 
 .hosp-adv-card h4 {
@@ -452,11 +472,12 @@
   position: absolute;
   top: 18px;
   right: 18px;
-  background-color: var(--bg-page);
-  color: var(--text-muted);
+  background: rgba(2, 132, 199, 0.08);
+  color: var(--hospital-blue);
+  border: 1px solid rgba(2, 132, 199, 0.2);
   font-size: 0.72rem;
   font-weight: 700;
-  padding: 3px 8px;
+  padding: 3px 10px;
   border-radius: var(--radius-pill);
 }
 
@@ -464,18 +485,21 @@
   width: 52px;
   height: 52px;
   border-radius: var(--radius-md);
-  background-color: var(--hospital-blue-light);
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%);
   color: var(--hospital-blue);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 18px;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(2, 132, 199, 0.15);
 }
 
 .hosp-spec-card:hover .hosp-spec-icon {
-  background-color: var(--hospital-blue);
+  background: linear-gradient(135deg, var(--hospital-blue) 0%, var(--hospital-teal) 100%);
   color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.3);
 }
 
 .hosp-spec-card h3 {
@@ -547,10 +571,17 @@
   transition: all 0.2s ease;
 }
 
-.hosp-filter-chip.active, .hosp-filter-chip:hover {
-  background-color: var(--hospital-navy);
+.hosp-filter-chip:hover {
+  border-color: var(--hospital-blue-border);
+  color: var(--hospital-blue);
+  background-color: var(--hospital-blue-light);
+}
+
+.hosp-filter-chip.active {
+  background: linear-gradient(135deg, var(--hospital-blue) 0%, #0369a1 100%);
   color: #ffffff;
-  border-color: var(--hospital-navy);
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28);
 }
 
 .hosp-doctors-grid {
@@ -658,14 +689,16 @@
    6. CLINICAL BOOKING CONSOLE
    -------------------------------------------------------------------------- */
 .hosp-booking-wrap {
-  background: linear-gradient(135deg, #f0fdfa 0%, #f0f9ff 50%, #ffffff 100%);
+  background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 45%, #ffffff 100%);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .hosp-booking-box {
   background: #ffffff;
   border-radius: var(--radius-xl);
-  box-shadow: 0 20px 45px rgba(9, 37, 64, 0.1);
-  border: 1px solid #bae6fd;
+  box-shadow: 0 20px 45px rgba(11, 37, 69, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.18);
   overflow: hidden;
   display: grid;
   grid-template-columns: 1.45fr 1fr;
@@ -786,13 +819,15 @@
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--hospital-navy) 0%, var(--hospital-blue) 100%);
+  background: linear-gradient(135deg, var(--hospital-blue) 0%, var(--hospital-teal) 100%);
   color: #ffffff;
   font-size: 0.74rem;
   font-weight: 800;
   text-transform: uppercase;
-  padding: 3px 14px;
+  padding: 4px 16px;
   border-radius: var(--radius-pill);
+  box-shadow: 0 3px 12px rgba(2, 132, 199, 0.35);
+  white-space: nowrap;
 }
 
 .hosp-plan-name {
@@ -946,11 +981,20 @@
   height: 52px;
   margin: 0 auto 16px auto;
   border-radius: var(--radius-md);
-  background: var(--hospital-blue-light);
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%);
   color: var(--hospital-blue);
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgba(2, 132, 199, 0.15);
+  transition: all 0.25s ease;
+}
+
+.hosp-step-box:hover .hosp-step-icon {
+  background: linear-gradient(135deg, var(--hospital-blue) 0%, var(--hospital-teal) 100%);
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
 }
 
 .hosp-step-box h4 {
@@ -1074,11 +1118,21 @@
 .hosp-float-btn.emergency {
   background: var(--hospital-red);
   color: #ffffff;
+  box-shadow: 0 4px 16px rgba(225, 29, 72, 0.35);
+}
+
+.hosp-float-btn.emergency:hover {
+  background: var(--hospital-red-hover);
 }
 
 .hosp-float-btn.book {
-  background: linear-gradient(135deg, var(--hospital-navy) 0%, var(--hospital-blue) 100%);
+  background: linear-gradient(135deg, var(--hospital-blue) 0%, #0369a1 100%);
   color: #ffffff;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35);
+}
+
+.hosp-float-btn.book:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #0c4a6e 100%);
 }
 
 .hosp-float-btn:hover {
