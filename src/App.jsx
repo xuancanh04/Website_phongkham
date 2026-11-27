@@ -1,122 +1,123 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import React, { useState } from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Advantages from './components/Advantages';
+import Specialties from './components/Specialties';
+import Doctors from './components/Doctors';
+import BookingSection from './components/BookingSection';
+import Pricing from './components/Pricing';
+import EquipmentSection from './components/EquipmentSection';
+import Testimonials from './components/Testimonials';
+import FaqSection from './components/FaqSection';
+import HealthNews from './components/HealthNews';
+import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
+import FloatingActions from './components/FloatingActions';
+import LookupModal from './components/LookupModal';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [bookingDraft, setBookingDraft] = useState(null);
+  const [isLookupOpen, setIsLookupOpen] = useState(false);
+
+  const scrollToBooking = () => {
+    const el = document.getElementById('booking');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleQuickSelectBooking = (draft) => {
+    setBookingDraft(draft);
+    scrollToBooking();
+  };
+
+  const handleSelectSpecialty = (specialtyId) => {
+    setBookingDraft(prev => ({ ...prev, specialtyId, doctorId: '' }));
+    scrollToBooking();
+  };
+
+  const handleSelectDoctor = (doctor) => {
+    setBookingDraft(prev => ({
+      ...prev,
+      specialtyId: doctor.specialtyId,
+      doctorId: doctor.id
+    }));
+    scrollToBooking();
+  };
+
+  const handleSelectPackage = (pkg) => {
+    setBookingDraft(prev => ({
+      ...prev,
+      symptoms: `Đăng ký gói khám: ${pkg.name} (${pkg.price})`
+    }));
+    scrollToBooking();
+  };
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="clinic-app-root">
+      {/* 1. Header with live status & sticky glass navbar */}
+      <Header 
+        onOpenBooking={scrollToBooking} 
+        onOpenLookup={() => setIsLookupOpen(true)} 
+      />
 
-      <div className="ticks"></div>
+      {/* 2. Hero with credibility metrics, live doctor badges & quick search widget */}
+      <Hero 
+        onQuickSelectBooking={handleQuickSelectBooking} 
+      />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      {/* 3. Core Advantages (JCI, Top specialists, Technology, Insurance) */}
+      <Advantages />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      {/* 4. Specialties Section */}
+      <Specialties 
+        onSelectSpecialty={handleSelectSpecialty} 
+      />
+
+      {/* 5. Doctor Faculty Showcase */}
+      <Doctors 
+        onSelectDoctor={handleSelectDoctor} 
+      />
+
+      {/* 6. Online Clinical Appointment Booking Console with Live Ticket Preview */}
+      <BookingSection 
+        bookingDraft={bookingDraft}
+      />
+
+      {/* 7. Comprehensive Health Packages Pricing */}
+      <Pricing 
+        onSelectPackage={handleSelectPackage} 
+      />
+
+      {/* 8. Medical Technology & Equipment Gallery */}
+      <EquipmentSection />
+
+      {/* 9. Verified Patient Testimonials */}
+      <Testimonials />
+
+      {/* 10. Patient FAQs */}
+      <FaqSection />
+
+      {/* 11. Health Knowledge & Advice Articles */}
+      <HealthNews />
+
+      {/* 12. Contact, Map & Direct Doctor Consultation Form */}
+      <ContactSection />
+
+      {/* 13. Luxury Clinical Footer */}
+      <Footer />
+
+      {/* 14. Floating Speed Dial (Emergency 24/7 & Quick Booking) */}
+      <FloatingActions 
+        onOpenBooking={scrollToBooking} 
+      />
+
+      {/* 15. Lookup Appointment Modal */}
+      <LookupModal 
+        isOpen={isLookupOpen} 
+        onClose={() => setIsLookupOpen(false)} 
+      />
+    </div>
+  );
 }
-
-export default App
