@@ -14,7 +14,7 @@ export default function LookupModal({ isOpen, onClose }) {
     if (!searchTerm.trim()) return;
 
     try {
-      const allBookings = JSON.parse(localStorage.getItem('medicare_appointments') || '[]');
+      const allBookings = JSON.parse(localStorage.getItem('qy7a_appointments') || localStorage.getItem('medicare_appointments') || '[]');
       const cleanTerm = searchTerm.trim().toLowerCase();
 
       const matched = allBookings.filter(b => 
@@ -35,14 +35,14 @@ export default function LookupModal({ isOpen, onClose }) {
   const handleCancelBooking = (code) => {
     if (window.confirm(`Bạn có chắc chắn muốn hủy phiếu khám mã ${code}?`)) {
       try {
-        const allBookings = JSON.parse(localStorage.getItem('medicare_appointments') || '[]');
+        const allBookings = JSON.parse(localStorage.getItem('qy7a_appointments') || localStorage.getItem('medicare_appointments') || '[]');
         const updated = allBookings.map(b => {
           if (b.bookingCode === code) {
             return { ...b, status: 'Đã hủy theo yêu cầu' };
           }
           return b;
         });
-        localStorage.setItem('medicare_appointments', JSON.stringify(updated));
+        localStorage.setItem('qy7a_appointments', JSON.stringify(updated));
         setResults(prev => prev.map(b => b.bookingCode === code ? { ...b, status: 'Đã hủy theo yêu cầu' } : b));
       } catch (e) {
         console.error(e);
@@ -56,7 +56,7 @@ export default function LookupModal({ isOpen, onClose }) {
         {/* Modal Header */}
         <div className="hosp-modal-head">
           <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--hospital-navy)' }}>
-            Tra Cứu Lịch Hẹn Khám Bệnh
+            Tra Cứu Lịch Hẹn Khám Bệnh - Quân Y 7A
           </h3>
           <button 
             type="button" 
@@ -70,7 +70,7 @@ export default function LookupModal({ isOpen, onClose }) {
         {/* Modal Body */}
         <div style={{ padding: '24px' }}>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '18px' }}>
-            Nhập <strong>Số điện thoại</strong> hoặc <strong>Mã phiếu khám (MCP-xxxxxx)</strong> để tra cứu lịch hẹn đã đăng ký:
+            Nhập <strong>Số điện thoại</strong> hoặc <strong>Mã phiếu khám (QY7A-xxxxxx)</strong> để tra cứu lịch hẹn đã đăng ký:
           </p>
 
           <form onSubmit={handleSearch} style={{ display: 'flex', gap: '8px', marginBottom: '22px' }}>
@@ -78,7 +78,7 @@ export default function LookupModal({ isOpen, onClose }) {
               type="text" 
               className="hosp-input"
               style={{ flex: 1 }}
-              placeholder="Ví dụ: 0912345678 hoặc MCP-123456"
+              placeholder="Ví dụ: 0912345678 hoặc QY7A-123456"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               autoFocus

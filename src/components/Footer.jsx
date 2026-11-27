@@ -24,17 +24,17 @@ export default function Footer() {
               </div>
               <div>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ffffff', lineHeight: 1.1 }}>
-                  MediCare <span style={{ color: '#38bdf8' }}>Plus</span>
+                  QUÂN Y <span style={{ color: '#38bdf8' }}>7A</span>
                 </h3>
                 <p style={{ fontSize: '0.68rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                  Bệnh Viện Đa Khoa Quốc Tế
+                  Cục Hậu Cần Quân Khu 7
                 </p>
               </div>
             </div>
 
             <p style={{ color: '#94a3b8', fontSize: '0.84rem', lineHeight: '1.6', marginBottom: '16px' }}>
-              Cung cấp giải pháp chăm sóc sức khỏe chuẩn mực quốc tế, tối ưu hóa phác đồ điều trị 
-              cho từng người bệnh với tinh thần y đức và sự tận tâm cao nhất.
+              Bệnh viện Đa khoa Hạng I tuyến cuối Quân khu 7. Y đức chuẩn mực, kỷ luật quân đội, 
+              kỹ thuật chuyên sâu, hết lòng phục vụ sức khỏe thương bệnh binh, bộ đội và nhân dân.
             </p>
 
             <div style={{
@@ -55,14 +55,14 @@ export default function Footer() {
 
           {/* Specialties links */}
           <div>
-            <h5 className="hosp-footer-h5">Chuyên Khoa Khám</h5>
+            <h5 className="hosp-footer-h5">Chuyên Khoa Mũi Nhọn</h5>
             <ul className="hosp-footer-list">
-              <li><a href="#specialties">Khoa Nội Tổng Quát</a></li>
-              <li><a href="#specialties">Khoa Tim Mạch Can Thiệp</a></li>
-              <li><a href="#specialties">Khoa Sản Phụ Khoa</a></li>
-              <li><a href="#specialties">Khoa Nhi & Tiêm Chủng</a></li>
-              <li><a href="#specialties">Khoa Cơ Xương Khớp</a></li>
-              <li><a href="#specialties">Khoa Tiêu Hóa - Gan Mật</a></li>
+              <li><a href="#specialties">Khoa Chấn Thương Chỉnh Hình (B1)</a></li>
+              <li><a href="#specialties">Khoa Nội Tim - Thận - Khớp (A1)</a></li>
+              <li><a href="#specialties">Khoa Ngoại Tổng Hợp (B2)</a></li>
+              <li><a href="#specialties">Khoa Thận Nhân Tạo (Lọc Máu)</a></li>
+              <li><a href="#specialties">Khoa Hồi Sức Cấp Cứu (ICU)</a></li>
+              <li><a href="#specialties">Khoa Y Học Cổ Truyền (A5)</a></li>
             </ul>
           </div>
 
@@ -116,7 +116,7 @@ export default function Footer() {
           color: '#64748b'
         }}>
           <div>
-            © {new Date().getFullYear()} {CLINIC_INFO.name}. Giấy phép hoạt động khám chữa bệnh số 1428/BYT-GPHĐ.
+            © {new Date().getFullYear()} {CLINIC_INFO.name}. Bệnh viện Đa khoa Hạng I tuyến cuối Quân khu 7 - Bộ Quốc Phòng.
           </div>
           <div style={{ display: 'flex', gap: '16px' }}>
             <a href="#faqs" style={{ color: '#94a3b8' }}>Chính sách bảo mật</a>

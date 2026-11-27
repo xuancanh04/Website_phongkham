@@ -16,12 +16,12 @@ export default function Advantages() {
         <div className="section-head-wrap">
           <div className="hospital-badge-tag">
             <ShieldCheck size={14} />
-            <span>Giá Trị Y Khoa Vượt Trội</span>
+            <span>Kỷ Luật & Y Đức Quân Y</span>
           </div>
-          <h2 className="hospital-heading-h2">Vì Sao Hơn 100.000 Bệnh Nhân Tin Chọn MediCare Plus?</h2>
+          <h2 className="hospital-heading-h2">Vì Sao Bộ Đội & Nhân Dân Tin Chọn Bệnh Viện Quân Y 7A?</h2>
           <p className="hospital-lead-desc">
-            Chúng tôi định chuẩn trải nghiệm y tế hiện đại: An toàn tuyệt đối, phác đồ điều trị 
-            chuẩn quốc tế, chi phí minh bạch và sự đồng hành chu đáo cùng sức khỏe người bệnh.
+            Bệnh viện Đa khoa Hạng I tuyến cuối Quân khu 7: Bề dày truyền thống Anh hùng Lực lượng Vũ trang, 
+            kỹ thuật phẫu thuật chấn thương chuyên sâu, máy móc đồng bộ và y đức tận tụy vì sức khỏe người bệnh.
           </p>
         </div>
 

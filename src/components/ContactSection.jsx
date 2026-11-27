@@ -81,10 +81,10 @@ export default function ContactSection() {
             }}>
               <MapPin size={32} color="var(--hospital-blue)" style={{ margin: '0 auto 8px auto' }} />
               <h4 style={{ color: 'var(--hospital-navy)', fontSize: '1rem', fontWeight: 700, marginBottom: '6px' }}>
-                Vị Trí Trung Tâm Bệnh Viện MediCare Plus
+                Vị Trí Bệnh Viện Quân Y 7A
               </h4>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.84rem', marginBottom: '14px' }}>
-                {CLINIC_INFO.address} (Có bãi đỗ xe ô tô, xe máy rộng rãi, bảo vệ 24/7)
+                {CLINIC_INFO.address} (Khuôn viên Quân y rộng rãi, có bãi đỗ xe ô tô và xe máy, Vệ binh quân đội trực bảo vệ 24/24)
               </p>
               <a 
                 href="https://maps.google.com" 

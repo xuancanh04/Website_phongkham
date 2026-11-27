@@ -28,49 +28,49 @@ export default function Hero({ onQuickSelectBooking }) {
           <div>
             <div className="hospital-badge-tag">
               <ShieldCheck size={15} />
-              <span>Bệnh Viện Đạt Chuẩn JCI Hoa Kỳ & Giấy Phép Bộ Y Tế</span>
+              <span>Bệnh Viện Đa Khoa Hạng I - Tuyến Cuối Quân Khu 7</span>
             </div>
 
             <h1 className="hosp-hero-h1">
-              Chăm Sóc Y Khoa <span className="blue">Chuẩn Quốc Tế</span>, <br />
-              Tận Tâm Vì Sức Khỏe Gia Đình
+              Y Đức Chuẩn Mực, <span className="blue">Kỹ Thuật Chuyên Sâu</span>, <br />
+              Hết Lòng Vì Bộ Đội & Nhân Dân
             </h1>
 
             <p className="hosp-hero-lead">
-              Bệnh viện Đa khoa Quốc tế MediCare Plus quy tụ đội ngũ Phó Giáo sư, Tiến sĩ, Bác sĩ Chuyên khoa cấp cao 
-              từng công tác tại BV Chợ Rẫy, Từ Dũ, Viện Tim TP.HCM. Hệ thống trang thiết bị chẩn đoán hình ảnh và xét nghiệm 
-              tự động thế hệ mới từ Đức & Thụy Sĩ, đảm bảo chẩn đoán chính xác và phác đồ điều trị an toàn, tối ưu.
+              Bệnh Viện Quân Y 7A (466 Nguyễn Trãi, Phường 8, Quận 5, TP.HCM) là bệnh viện đa khoa tuyến cuối trực thuộc Cục Hậu Cần Quân Khu 7. 
+              Thế mạnh vượt trội về Chấn thương Chỉnh hình cột sống (Khoa B1), Ngoại khoa nội soi, Nội Tim - Thận - Khớp, Thận nhân tạo Fresenius (Đức) 
+              và tiếp nhận khám BHYT thông tuyến toàn quốc cho mọi người dân.
             </p>
 
             <div className="hosp-hero-btns">
               <a href="#booking" className="btn-hosp btn-hosp-lg btn-hosp-primary btn-hosp-pill">
                 <Calendar size={18} />
-                <span>Đặt lịch khám trực tuyến</span>
+                <span>Đăng ký lịch khám trực tuyến</span>
               </a>
 
               <a href={`tel:${CLINIC_INFO.hotline}`} className="btn-hosp btn-hosp-lg btn-hosp-secondary btn-hosp-pill">
                 <PhoneCall size={17} color="#0284c7" />
-                <span>Tổng đài CSKH: {CLINIC_INFO.hotline}</span>
+                <span>Tổng đài Quân y 7A: {CLINIC_INFO.hotline}</span>
               </a>
             </div>
 
             {/* Metrics Bar */}
             <div className="hosp-stats-bar">
               <div className="hosp-stat-col">
-                <h4>15<span>+</span></h4>
-                <p>Năm đồng hành y tế</p>
+                <h4>Hạng <span>I</span></h4>
+                <p>Tuyến cuối Quân khu 7</p>
+              </div>
+              <div className="hosp-stat-col">
+                <h4>100<span>%</span></h4>
+                <p>Thông tuyến BHYT toàn quốc</p>
               </div>
               <div className="hosp-stat-col">
                 <h4>50<span>+</span></h4>
-                <p>Bác sĩ chuyên khoa</p>
+                <p>Năm truyền thống y đức</p>
               </div>
               <div className="hosp-stat-col">
-                <h4>100k<span>+</span></h4>
-                <p>Lượt khám mỗi năm</p>
-              </div>
-              <div className="hosp-stat-col">
-                <h4>99.6<span>%</span></h4>
-                <p>Bệnh nhân hài lòng</p>
+                <h4>30k<span>+</span></h4>
+                <p>Ca phẫu thuật thành công</p>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function Hero({ onQuickSelectBooking }) {
             <div className="hosp-hero-img-box">
               <img 
                 src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=900" 
-                alt="Bác sĩ thăm khám bệnh nhân tại Bệnh viện MediCare Plus" 
+                alt="Đội ngũ thầy thuốc Bệnh Viện Quân Y 7A" 
               />
             </div>
 
@@ -100,10 +100,10 @@ export default function Hero({ onQuickSelectBooking }) {
               </div>
               <div>
                 <strong style={{ fontSize: '0.9rem', color: 'var(--hospital-navy)', display: 'block' }}>
-                  100% Bác Sĩ Cấp Cao
+                  Bệnh Viện Hạng I Quân Khu 7
                 </strong>
                 <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-                  Nguyên Trưởng/Phó khoa BV Chợ Rẫy, Từ Dũ
+                  Đại tá, PGS. TS. BS. Lê Quang Trí Giám Đốc
                 </span>
               </div>
             </div>

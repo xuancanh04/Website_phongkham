@@ -9,12 +9,12 @@ export default function Pricing({ onSelectPackage }) {
         <div className="section-head-wrap">
           <div className="hospital-badge-tag">
             <ShieldCheck size={14} />
-            <span>Minh Bạch - Niêm Yết Công Khai</span>
+            <span>Thông Tuyến BHYT & Niêm Yết Công Khai</span>
           </div>
-          <h2 className="hospital-heading-h2">Bảng Giá Các Gói Khám Sức Khỏe Toàn Diện</h2>
+          <h2 className="hospital-heading-h2">Bảng Giá Các Gói Khám & Tầm Soát Chuyên Sâu</h2>
           <p className="hospital-lead-desc">
-            Chi phí được niêm yết rõ ràng theo quy định ngành y tế, tuyệt đối không phát sinh phụ phí ẩn. 
-            Tất cả các gói khám đều được tư vấn chuyên sâu cùng Bác sĩ Chuyên khoa cấp cao.
+            Chi phí được niêm yết công khai theo quy định của Bộ Quốc Phòng và Bộ Y Tế. Người có thẻ BHYT toàn quốc 
+            được thanh toán 100% quyền lợi đúng tuyến. Thăm khám và tư vấn trực tiếp bởi đội ngũ Thầy thuốc Quân y.
           </p>
         </div>
 

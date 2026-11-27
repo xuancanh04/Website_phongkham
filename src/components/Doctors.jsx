@@ -15,12 +15,12 @@ export default function Doctors({ onSelectDoctor }) {
         <div className="section-head-wrap">
           <div className="hospital-badge-tag">
             <UserCheck size={14} />
-            <span>Hội Đồng Bác Sĩ</span>
+            <span>Đội Ngũ Thầy Thuốc Quân Y</span>
           </div>
-          <h2 className="hospital-heading-h2">Đội Ngũ Chuyên Gia & Bác Sĩ Đầu Ngành</h2>
+          <h2 className="hospital-heading-h2">Ban Giám Đốc & Chủ Nhiệm Khoa Đầu Ngành</h2>
           <p className="hospital-lead-desc">
-            Quy tụ các Phó Giáo sư, Tiến sĩ, Bác sĩ Chuyên khoa cấp cao từng giữ cương vị 
-            trưởng phó khoa tại BV Chợ Rẫy, BV Từ Dũ, Viện Tim TP.HCM.
+            Quy tụ các Đại tá, Thượng tá, Phó Giáo sư, Tiến sĩ, Bác sĩ Chuyên khoa cấp cao của Bệnh Viện Quân Y 7A 
+            trực tiếp thăm khám lâm sàng, hội chẩn chuyên sâu và thực hiện các ca phẫu thuật kỹ thuật cao.
           </p>
         </div>
 

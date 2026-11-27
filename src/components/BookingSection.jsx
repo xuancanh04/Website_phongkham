@@ -71,7 +71,7 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
     e.preventDefault();
     if (!validate()) return;
 
-    const randomCode = 'MCP-' + Math.floor(100000 + Math.random() * 900000);
+    const randomCode = 'QY7A-' + Math.floor(100000 + Math.random() * 900000);
     const newBooking = {
       ...formData,
       bookingCode: randomCode,
@@ -82,8 +82,8 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
     };
 
     try {
-      const existing = JSON.parse(localStorage.getItem('medicare_appointments') || '[]');
-      localStorage.setItem('medicare_appointments', JSON.stringify([newBooking, ...existing]));
+      const existing = JSON.parse(localStorage.getItem('qy7a_appointments') || localStorage.getItem('medicare_appointments') || '[]');
+      localStorage.setItem('qy7a_appointments', JSON.stringify([newBooking, ...existing]));
     } catch (err) {
       console.error(err);
     }
@@ -197,7 +197,7 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
                   textAlign: 'left',
                   marginBottom: '22px'
                 }}>
-                  <strong>Lưu ý:</strong> Quý khách vui lòng đến trước 10 phút tại Quầy Lễ Tân (Tầng 1) và xuất trình mã <strong>{confirmedBooking.bookingCode}</strong> để được tiếp đón ưu tiên.
+                  <strong>Lưu ý:</strong> Quý khách vui lòng đến trước 10 phút tại Quầy Tiếp Đón Khu A (Khoa Khám Bệnh - Tầng trệt, 466 Nguyễn Trãi, Q.5) và xuất trình mã <strong>{confirmedBooking.bookingCode}</strong> để được phân luồng ưu tiên.
                 </div>
 
                 <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
@@ -455,7 +455,7 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '10px' }}>
                   <div>
                     <strong style={{ fontSize: '1rem' }}>{CLINIC_INFO.shortName}</strong>
-                    <p style={{ fontSize: '0.72rem', color: '#94a3b8' }}>MÃ DỰ KIẾN: MCP-ONLINE</p>
+                    <p style={{ fontSize: '0.72rem', color: '#94a3b8' }}>MÃ DỰ KIẾN: QY7A-ONLINE</p>
                   </div>
                   <QrCode size={24} color="#38bdf8" />
                 </div>

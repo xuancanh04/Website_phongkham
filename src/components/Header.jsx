@@ -17,12 +17,12 @@ export default function Header({ onOpenBooking, onOpenLookup }) {
             </span>
             <span className="hosp-meta-item">
               <Clock size={12} />
-              <span>07:00 - 20:30</span>
+              <span>07:00 - 16:30</span>
             </span>
             <span className="hosp-meta-divider">|</span>
             <span className="hosp-meta-item">
               <MapPin size={12} />
-              <span>215 Hồng Bàng, Q.5, TP.HCM</span>
+              <span>466 Nguyễn Trãi, Q.5, TP.HCM</span>
             </span>
           </div>
 
@@ -34,7 +34,7 @@ export default function Header({ onOpenBooking, onOpenLookup }) {
             <span className="hosp-meta-divider">|</span>
             <span className="hosp-meta-item hosp-accredit-item">
               <Award size={12} />
-              <span>Chuẩn JCI Hoa Kỳ</span>
+              <span>Bệnh Viện Hạng I Quân Khu 7</span>
             </span>
           </div>
         </div>
@@ -43,17 +43,17 @@ export default function Header({ onOpenBooking, onOpenLookup }) {
       {/* Main Navbar */}
       <nav className="hosp-main-header">
         <div className="container hosp-nav-container">
-          {/* Logo Bệnh Viện */}
+          {/* Logo Bệnh Viện Quân Y 7A */}
           <div className="hosp-brand" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <div className="hosp-logo-icon">
-              <HeartPulse size={24} strokeWidth={2.5} />
+              <HeartPulse size={22} strokeWidth={2.5} />
             </div>
             <div>
               <div className="hosp-brand-title">
-                MediCare <span>Plus</span>
+                QUÂN Y <span>7A</span>
               </div>
               <div className="hosp-brand-sub">
-                Bệnh Viện Đa Khoa Quốc Tế
+                Cục Hậu Cần Quân Khu 7
               </div>
             </div>
           </div>

@@ -31,12 +31,12 @@ export default function Specialties({ onSelectSpecialty }) {
         <div className="section-head-wrap">
           <div className="hospital-badge-tag">
             <ShieldCheck size={14} />
-            <span>Chuyên Khoa Mũi Nhọn</span>
+            <span>Chuyên Khoa Mũi Nhọn Tuyến Quân Khu 7</span>
           </div>
-          <h2 className="hospital-heading-h2">Các Chuyên Khoa Khám Chữa Bệnh Trọng Điểm</h2>
+          <h2 className="hospital-heading-h2">Các Chuyên Khoa Lâm Sàng & Cận Lâm Sàng Trọng Điểm</h2>
           <p className="hospital-lead-desc">
-            Bệnh viện đầu tư đồng bộ 8 chuyên khoa trọng điểm với phác đồ điều trị chuẩn y khoa, 
-            trang thiết bị máy móc thế hệ mới và phòng khám tiện nghi, vô trùng tuyệt đối.
+            Bệnh Viện Quân Y 7A phát triển đồng bộ các chuyên khoa mũi nhọn: Chấn thương chỉnh hình cột sống (Khoa B1), 
+            Nội tim - thận - khớp (Khoa A1), Ngoại khoa nội soi (Khoa B2), Trung tâm Lọc máu Thận nhân tạo và Y học cổ truyền.
           </p>
         </div>
 
