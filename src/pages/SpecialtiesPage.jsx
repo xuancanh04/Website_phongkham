@@ -31,7 +31,7 @@ export default function SpecialtiesPage({ onSelectSpecialty }) {
   // Categorize specialties into military hospital blocks
   const categorized = SPECIALTIES.map(spec => {
     let block = 'Khối Cận lâm sàng & Y học cổ truyền';
-    if (spec.id === 'chan-thuong-chinh-hinh' || spec.id === 'ngoai-tong-hop') {
+    if (spec.id === 'chan-thuong-chinh-hinh' || spec.id === 'ngoai-tong-hop' || spec.id === 'phu-san-an-dong' || spec.id === 'tao-hinh-tham-my') {
       block = 'Khối Ngoại khoa & Phẫu thuật';
     } else if (spec.id === 'tim-than-khop' || spec.id === 'than-nhan-tao' || spec.id === 'hoi-suc-cap-cuu' || spec.id === 'noi-than-kinh') {
       block = 'Khối Nội khoa & Hồi sức cấp cứu';

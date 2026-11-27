@@ -136,6 +136,28 @@ export const SPECIALTIES = [
     doctorCount: 11,
     patientsAnnual: "45.000+",
     procedures: ["Chụp cộng hưởng từ MRI sọ não, cột sống, khớp", "Chụp cắt lớp vi tính CT Scanner 128 dãy", "X-quang kỹ thuật số liều xạ thấp", "Xét nghiệm máu, đường huyết, mỡ máu tự động"]
+  },
+  {
+    id: "phu-san-an-dong",
+    name: "Khoa Phụ Sản An Đông (Quân Y 7A)",
+    lead: "Thượng tá, BS. CKII. Phan Thị Thu Thủy",
+    desc: "Đơn vị sản phụ khoa lâu năm uy tín tại Quận 5: sinh con trọn gói, chăm sóc mẹ và bé sơ sinh toàn diện, tầm soát ung thư cổ tử cung, phục hồi sàn chậu sau sinh.",
+    icon: "Baby",
+    tag: "Uy tín lâu đời",
+    doctorCount: 8,
+    patientsAnnual: "15.000+",
+    procedures: ["Theo dõi thai kỳ & sinh thường/sinh mổ trọn gói", "Phục hồi sàn chậu sau sinh kỹ thuật cao", "Tầm soát ung thư cổ tử cung & buồng trứng", "Phẫu thuật nội soi phụ khoa ít xâm lấn"]
+  },
+  {
+    id: "tao-hinh-tham-my",
+    name: "Đơn Vị Tạo Hình Thẩm Mỹ (Khu Kỹ Thuật Cao)",
+    lead: "Thượng tá, ThS. BS. Nguyễn Minh Tuấn",
+    desc: "Thuộc Khu Chẩn đoán và Điều trị Kỹ thuật cao Quân Y 7A: Phẫu thuật tạo hình vi phẫu phục hồi sẹo bỏng, khuyết hổng sau tai nạn, phẫu thuật thẩm mỹ an toàn chuẩn viện Quân y.",
+    icon: "Smile",
+    tag: "Khu Kỹ thuật cao",
+    doctorCount: 5,
+    patientsAnnual: "8.500+",
+    procedures: ["Phẫu thuật vi phẫu tạo hình sẹo di chứng", "Tạo hình thành bụng & chỉnh hình thẩm mỹ", "Điều trị sẹo lồi, sẹo xấu bằng laser công nghệ cao", "Phẫu thuật thẩm mỹ mí mắt, nâng mũi an toàn"]
   }
 ];
 
@@ -229,6 +251,36 @@ export const DOCTORS = [
     reviewCount: 365,
     schedule: "Thứ 2 đến Thứ 7 (07:30 - 16:30)",
     fee: "Theo quy định BHYT / Dịch vụ"
+  },
+  {
+    id: "bs-phan-thi-thu-thuy",
+    name: "Thượng tá, BS. CKII. Phan Thị Thu Thủy",
+    specialtyId: "phu-san-an-dong",
+    specialtyName: "Khoa Phụ Sản An Đông (Quân Y 7A)",
+    title: "Phụ Trách Khoa Phụ Sản An Đông",
+    degree: "Bác Sĩ Chuyên Khoa Cấp II Phụ Sản",
+    expYears: 22,
+    workHistory: "Hơn 22 năm công tác trong lĩnh vực sản phụ khoa tại Quân Y 7A, theo dõi thai kỳ nguy cơ cao, đỡ sinh an toàn và phẫu thuật nội soi phụ khoa.",
+    avatar: "https://images.unsplash.com/photo-1594824813593-9c86950e32f7?auto=format&fit=crop&q=80&w=600",
+    rating: 4.98,
+    reviewCount: 460,
+    schedule: "Thứ 2 đến Thứ 6 (07:30 - 16:30)",
+    fee: "Theo quy định BHYT / Dịch vụ"
+  },
+  {
+    id: "bs-nguyen-minh-tuan",
+    name: "Thượng tá, ThS. BS. Nguyễn Minh Tuấn",
+    specialtyId: "tao-hinh-tham-my",
+    specialtyName: "Đơn Vị Tạo Hình Thẩm Mỹ (Khu Kỹ Thuật Cao)",
+    title: "Phụ Trách Đơn Vị Tạo Hình Thẩm Mỹ",
+    degree: "Thạc Sĩ Phẫu Thuật Tạo Hình - Vi Phẫu",
+    expYears: 19,
+    workHistory: "Chuyên gia phẫu thuật vi phẫu tạo hình khuyết hổng mô mềm, phục hồi di chứng chấn thương và phẫu thuật thẩm mỹ an toàn chuẩn Bệnh viện Quân đội.",
+    avatar: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=600",
+    rating: 4.96,
+    reviewCount: 290,
+    schedule: "Thứ 2 đến Thứ 6 (08:00 - 16:00)",
+    fee: "Theo bảng giá Khu Kỹ thuật cao"
   }
 ];
 
