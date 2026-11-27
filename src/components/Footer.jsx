@@ -1,4 +1,4 @@
-import { HeartPulse, Phone, Mail, MapPin, Award } from 'lucide-react';
+import { Phone, Mail, MapPin, Award } from 'lucide-react';
 import { CLINIC_INFO } from '../data/clinicData';
 
 export default function Footer() {
@@ -8,22 +8,24 @@ export default function Footer() {
         <div className="hosp-footer-grid">
           {/* Brand Info */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
               <div style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '8px',
-                backgroundColor: 'var(--hospital-blue)',
-                display: 'flex',
+                backgroundColor: '#ffffff',
+                padding: '4px 8px',
+                borderRadius: '6px',
+                display: 'inline-flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                color: '#ffffff'
+                boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
               }}>
-                <HeartPulse size={20} strokeWidth={2.5} />
+                <img 
+                  src="/logo_7a_brand.png" 
+                  alt="Logo Bệnh Viện Quân Y 7A" 
+                  style={{ height: '38px', width: 'auto', objectFit: 'contain' }}
+                />
               </div>
               <div>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ffffff', lineHeight: 1.1 }}>
-                  QUÂN Y <span style={{ color: '#38bdf8' }}>7A</span>
+                  QUÂN Y <span style={{ color: '#ef4444' }}>7A</span>
                 </h3>
                 <p style={{ fontSize: '0.68rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Cục Hậu Cần Quân Khu 7
@@ -32,8 +34,8 @@ export default function Footer() {
             </div>
 
             <p style={{ color: '#94a3b8', fontSize: '0.84rem', lineHeight: '1.6', marginBottom: '16px' }}>
-              Bệnh viện Đa khoa Hạng I tuyến cuối Quân khu 7. Y đức chuẩn mực, kỷ luật quân đội, 
-              kỹ thuật chuyên sâu, hết lòng phục vụ sức khỏe thương bệnh binh, bộ đội và nhân dân.
+              Bệnh viện Đa khoa Hạng I tuyến cuối Quân khu 7. “Sự an toàn của người bệnh là ưu tiên hàng đầu của chúng tôi” 
+              — Hiện đại, Chuyên sâu, Thân thiện.
             </p>
 
             <div style={{

@@ -34,19 +34,24 @@
   cursor: pointer;
 }
 
-.portal-emblem {
-  width: 52px;
-  height: 52px;
+.portal-official-logo-img {
+  height: 54px;
+  width: auto;
+  object-fit: contain;
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 2px 5px rgba(197, 22, 36, 0.25));
 }
 
-.emblem-svg {
-  width: 100%;
-  height: 100%;
+.portal-brand-divider {
+  width: 1.5px;
+  height: 46px;
+  background-color: var(--border-slate);
+}
+
+.portal-slogan-official {
+  color: #065f46;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 0.72rem;
 }
 
 .portal-title-block {
