@@ -1,84 +1,62 @@
 /* ==========================================================================
-   BỆNH VIỆN ĐA KHOA QUỐC TẾ MEDICARE PLUS
-   Modern Clinical Design System - Nordic Medical Tech Palette
+   CỔNG THÔNG TIN ĐIỆN TỬ BỆNH VIỆN QUÂN Y 7A - CỤC HẬU CẦN QUÂN KHU 7
+   Hệ Thống Thiết Kế Cổng Y Tế Quân Đội Chính Quy (Government & Military Medical Portal)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
   /* --------------------------------------------------------------------------
-     1. BRAND COLORS (MODERN SAPPHIRE & MEDICAL CERULEAN)
+     1. MILITARY & INSTITUTIONAL BRAND TOKENS
      -------------------------------------------------------------------------- */
-  --hospital-navy: #0b2545;          /* Deep authoritative sapphire navy */
-  --hospital-navy-dark: #07192f;     /* Rich midnight navy for topbar & footer */
-  --hospital-navy-soft: #123762;
+  --portal-navy-dark: #07192f;      /* Xanh đậm kỳ đài Quân đội */
+  --portal-navy-deep: #0a2342;      /* Xanh Navy chỉ huy Quân khu 7 */
+  --portal-navy: #0d3663;           /* Xanh Navy chủ đạo */
+  --portal-navy-light: #eaf1f8;     /* Xanh nhạt nền thẻ hành chính */
+  --portal-navy-border: #cbd9ea;
 
-  --hospital-blue: #0284c7;          /* Vibrant clinical cyan-blue */
-  --hospital-blue-hover: #0369a1;    /* Deep sky blue */
-  --hospital-blue-light: #f0f9ff;    /* Ice blue soft background */
-  --hospital-blue-soft: #e0f2fe;     /* Gentle sky wash */
-  --hospital-blue-border: #bae6fd;   /* Cyan-sky border */
+  /* Sắc đỏ Quân kỳ & Chữ thập đỏ Quân y */
+  --portal-red: #c51624;            /* Đỏ cờ / Chữ thập đỏ */
+  --portal-red-dark: #991b1b;       /* Đỏ thẫm viền */
+  --portal-red-light: #fef2f2;      /* Đỏ nhạt cấp cứu */
+  --portal-red-border: #fecaca;
 
-  /* --------------------------------------------------------------------------
-     2. HEALING & VITALITY (SURGICAL TEAL & EUCALYPTUS MINT)
-     -------------------------------------------------------------------------- */
-  --hospital-teal: #0d9488;          /* Surgical teal */
-  --hospital-teal-light: #f0fdf4;
-  --hospital-teal-soft: #ccfbf1;
-  
-  --hospital-green: #059669;         /* Vitality emerald */
-  --hospital-green-light: #ecfdf5;   /* Fresh mint wash */
-  --hospital-green-border: #a7f3d0;
+  /* Sắc vàng Huân chương & Ngôi sao Quân đội */
+  --portal-gold: #c28b2e;           /* Vàng đồng huy chương */
+  --portal-gold-light: #fef9ee;
+  --portal-gold-border: #f5dfb2;
 
-  /* --------------------------------------------------------------------------
-     3. CLINICAL EMERGENCY & ALERT (HIGH-END MEDICAL ROSE)
-     -------------------------------------------------------------------------- */
-  --hospital-red: #e11d48;           /* High-visibility medical rose-red */
-  --hospital-red-hover: #be123c;
-  --hospital-red-light: #fff1f2;     /* Strawberry soft wash */
-  --hospital-red-border: #fecdd3;
+  /* Sắc xanh Phẫu thuật & Quân y (Surgical Emerald) */
+  --portal-teal: #086958;           /* Xanh áo mổ phẫu thuật */
+  --portal-teal-light: #f0fdf4;
+  --portal-teal-border: #bbf7d0;
 
   /* --------------------------------------------------------------------------
-     4. ATTENTION & ACCREDITATION (WARM AMBER)
+     2. NEUTRAL SURFACES & TYPOGRAPHY
      -------------------------------------------------------------------------- */
-  --hospital-amber: #d97706;
-  --hospital-amber-light: #fffbeb;
-  --hospital-amber-border: #fde68a;
+  --text-dark: #0f172a;             /* Đen mực in công văn */
+  --text-body: #334155;             /* Xám than văn bản */
+  --text-muted: #64748b;            /* Xám chú thích */
+  --text-light: #94a3b8;
 
-  /* --------------------------------------------------------------------------
-     5. NEUTRALS & SURFACES
-     -------------------------------------------------------------------------- */
-  --text-main: #0f172a;              /* Slate 900 */
-  --text-secondary: #334155;         /* Slate 700 */
-  --text-muted: #64748b;             /* Slate 500 */
-  --border-color: #e2e8f0;           /* Clean slate border */
-  --border-light: #f1f5f9;           /* Ultra-soft border */
-  --bg-page: #f8fafc;                /* Crisp porcelain canvas */
-  --bg-card: #ffffff;                /* Pure white surface */
+  --bg-canvas: #f4f6fa;             /* Nền cổng thông tin trang nhã */
+  --bg-card: #ffffff;               /* Nền thẻ trắng tinh */
+  --border-slate: #dbe2ec;          /* Viền ngăn cách chuyên nghiệp */
+  --border-light: #eef2f6;
 
-  /* --------------------------------------------------------------------------
-     6. AMBIENT SHADOWS (DIFFUSE MULTI-LAYER DEPTH)
-     -------------------------------------------------------------------------- */
-  --shadow-sm: 0 1px 3px rgba(11, 37, 69, 0.04), 0 1px 2px rgba(11, 37, 69, 0.02);
-  --shadow-md: 0 4px 14px -2px rgba(11, 37, 69, 0.07), 0 2px 6px -1px rgba(11, 37, 69, 0.04);
-  --shadow-lg: 0 16px 36px -4px rgba(11, 37, 69, 0.09), 0 4px 14px -2px rgba(11, 37, 69, 0.04);
-  --shadow-glow: 0 4px 18px rgba(2, 132, 199, 0.28);
-  --shadow-glow-red: 0 4px 18px rgba(225, 29, 72, 0.28);
+  /* Shadows: Chuẩn hành chính, không dùng neon rực rỡ */
+  --portal-shadow-sm: 0 1px 3px rgba(10, 35, 66, 0.05);
+  --portal-shadow-md: 0 4px 12px rgba(10, 35, 66, 0.07);
+  --portal-shadow-lg: 0 10px 25px -4px rgba(10, 35, 66, 0.1);
 
-  /* --------------------------------------------------------------------------
-     7. RADII SCALE
-     -------------------------------------------------------------------------- */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-xl: 26px;
-  --radius-pill: 9999px;
+  /* Bo góc chuẩn mực (không bo tròn dạng kẹo/fanpage) */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
 
-  /* --------------------------------------------------------------------------
-     8. TYPOGRAPHY
-     -------------------------------------------------------------------------- */
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Phông chữ Be Vietnam Pro chuyên dụng cho tiếng Việt hành chính */
+  --font-portal: 'Be Vietnam Pro', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 *, *::before, *::after {
@@ -93,19 +71,19 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
-  color: var(--text-main);
-  background-color: var(--bg-page);
+  font-family: var(--font-portal);
+  color: var(--text-dark);
+  background-color: var(--bg-canvas);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  color: var(--hospital-navy);
+  font-family: var(--font-portal);
+  color: var(--portal-navy-deep);
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
 a {
@@ -121,148 +99,77 @@ button, input, select, textarea {
 
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1260px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.hospital-section {
-  padding: 80px 0;
+/* ==========================================================================
+   STANDARDIZED SECTION HEADINGS (INSTITUTIONAL STYLE)
+   ========================================================================== */
+.portal-section {
+  padding: 70px 0;
   position: relative;
 }
 
-@media (max-width: 768px) {
-  .hospital-section {
-    padding: 52px 0;
-  }
+.portal-section.bg-surface {
+  background-color: #ffffff;
 }
 
-.section-head-wrap {
+.portal-section-head {
   text-align: center;
-  max-width: 740px;
-  margin: 0 auto 48px auto;
+  max-width: 780px;
+  margin: 0 auto 46px auto;
 }
 
-.hospital-badge-tag {
+.portal-tag-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(2, 132, 199, 0.08);
-  color: var(--hospital-blue);
-  border: 1px solid rgba(2, 132, 199, 0.22);
-  font-size: 0.78rem;
+  gap: 7px;
+  background-color: var(--portal-navy-light);
+  color: var(--portal-navy);
+  border: 1px solid var(--portal-navy-border);
+  font-size: 0.74rem;
   font-weight: 700;
-  padding: 5px 15px;
-  border-radius: var(--radius-pill);
-  margin-bottom: 14px;
+  padding: 4px 14px;
+  border-radius: var(--radius-xs);
+  margin-bottom: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  backdrop-filter: blur(8px);
+  letter-spacing: 0.04em;
 }
 
-.hospital-badge-tag svg {
-  color: var(--hospital-blue);
-}
-
-.hospital-heading-h2 {
-  font-size: 2.3rem;
+.portal-head-h2 {
+  font-size: 2.1rem;
   font-weight: 800;
-  color: var(--hospital-navy);
-  margin-bottom: 14px;
-  letter-spacing: -0.02em;
+  color: var(--portal-navy-deep);
+  margin-bottom: 12px;
+  letter-spacing: -0.015em;
 }
 
 @media (max-width: 768px) {
-  .hospital-heading-h2 {
-    font-size: 1.8rem;
+  .portal-head-h2 {
+    font-size: 1.65rem;
   }
 }
 
-.hospital-lead-desc {
-  font-size: 0.98rem;
+.portal-head-desc {
+  font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.65;
 }
 
-/* ==========================================================================
-   STANDARDIZED BUTTON SCALE
-   ========================================================================== */
-.btn-hosp {
+/* Base button styles */
+.btn-portal {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   white-space: nowrap;
   font-weight: 700;
-  border-radius: var(--radius-md);
-  border: 1.5px solid transparent;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
   cursor: pointer;
   line-height: 1;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   user-select: none;
-  text-align: center;
-}
-
-.btn-hosp-pill {
-  border-radius: var(--radius-pill);
-}
-
-/* Heights: 34px, 40px, 46px */
-.btn-hosp-sm {
-  height: 34px;
-  padding: 0 14px;
-  font-size: 0.82rem;
-}
-
-.btn-hosp-md {
-  height: 40px;
-  padding: 0 18px;
-  font-size: 0.88rem;
-}
-
-.btn-hosp-lg {
-  height: 46px;
-  padding: 0 24px;
-  font-size: 0.94rem;
-}
-
-/* Blue Primary - Modern Clinical Gradient */
-.btn-hosp-primary {
-  background: linear-gradient(135deg, var(--hospital-blue) 0%, #0369a1 100%);
-  color: #ffffff;
-  box-shadow: 0 3px 12px rgba(2, 132, 199, 0.28);
-}
-
-.btn-hosp-primary:hover {
-  background: linear-gradient(135deg, #0369a1 0%, #0c4a6e 100%);
-  transform: translateY(-1.5px);
-  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.38);
-}
-
-/* Secondary Clean White */
-.btn-hosp-secondary {
-  background: #ffffff;
-  color: var(--hospital-navy);
-  border-color: var(--border-color);
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-hosp-secondary:hover {
-  background-color: var(--hospital-blue-light);
-  border-color: var(--hospital-blue-border);
-  color: var(--hospital-blue);
-  transform: translateY(-1.5px);
-  box-shadow: 0 4px 12px rgba(11, 37, 69, 0.06);
-}
-
-/* Red Emergency */
-.btn-hosp-danger {
-  background-color: var(--hospital-red);
-  color: #ffffff;
-  box-shadow: var(--shadow-glow-red);
-}
-
-.btn-hosp-danger:hover {
-  background-color: var(--hospital-red-hover);
-  transform: translateY(-1.5px);
 }

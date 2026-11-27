@@ -10,15 +10,15 @@ export default function Doctors({ onSelectDoctor }) {
     : DOCTORS.filter(doc => doc.specialtyId === activeSpecialty);
 
   return (
-    <section className="hospital-section" style={{ backgroundColor: '#ffffff' }} id="doctors">
+    <section className="portal-section bg-surface" id="doctors">
       <div className="container">
-        <div className="section-head-wrap">
-          <div className="hospital-badge-tag">
+        <div className="portal-section-head">
+          <div className="portal-tag-pill">
             <UserCheck size={14} />
-            <span>Đội Ngũ Thầy Thuốc Quân Y</span>
+            <span>ĐỘI NGŨ THẦY THUỐC QUÂN Y</span>
           </div>
-          <h2 className="hospital-heading-h2">Ban Giám Đốc & Chủ Nhiệm Khoa Đầu Ngành</h2>
-          <p className="hospital-lead-desc">
+          <h2 className="portal-head-h2">Ban Giám Đốc & Chủ Nhiệm Khoa Đầu Ngành</h2>
+          <p className="portal-head-desc">
             Quy tụ các Đại tá, Thượng tá, Phó Giáo sư, Tiến sĩ, Bác sĩ Chuyên khoa cấp cao của Bệnh Viện Quân Y 7A 
             trực tiếp thăm khám lâm sàng, hội chẩn chuyên sâu và thực hiện các ca phẫu thuật kỹ thuật cao.
           </p>

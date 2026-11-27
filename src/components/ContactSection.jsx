@@ -17,17 +17,17 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="hospital-section" style={{ backgroundColor: 'var(--bg-page)' }} id="contact">
+    <section className="portal-section" id="contact">
       <div className="container">
-        <div className="section-head-wrap">
-          <div className="hospital-badge-tag">
+        <div className="portal-section-head">
+          <div className="portal-tag-pill">
             <MapPin size={14} />
-            <span>Liên Hệ Trực Tiếp</span>
+            <span>LIÊN HỆ & CHỈ DẪN ĐỊA LÝ</span>
           </div>
-          <h2 className="hospital-heading-h2">Thông Tin Liên Hệ & Vị Trí Bệnh Viện</h2>
-          <p className="hospital-lead-desc">
-            Hệ thống đường dây nóng tư vấn y khoa và tiếp nhận phản hồi luôn hoạt động 24/7. 
-            Quý khách có thể gửi câu hỏi hoặc liên hệ trực tiếp qua số hotline.
+          <h2 className="portal-head-h2">Thông Tin Trực Ban & Chỉ Dẫn Đường Đến Bệnh Viện</h2>
+          <p className="portal-head-desc">
+            Bệnh Viện Quân Y 7A tọa lạc ngay trung tâm Quận 5, TP.HCM. Hệ thống trực ban tác chiến, 
+            trực cấp cứu và đường dây nóng luôn duy trì 24/24 sẵn sàng phục vụ bộ đội và nhân dân.
           </p>
         </div>
 

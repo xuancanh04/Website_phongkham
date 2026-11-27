@@ -25,17 +25,19 @@ const ICON_MAP = {
 
 export default function Specialties({ onSelectSpecialty }) {
   return (
-    <section className="hospital-section" style={{ backgroundColor: 'var(--bg-page)' }} id="specialties">
+    <section className="portal-section" id="specialties">
       <div className="container">
-        <div className="section-head-wrap">
-          <div className="hospital-badge-tag">
+        <div className="portal-section-head">
+          <div className="portal-tag-pill">
             <ShieldCheck size={14} />
-            <span>Chuyên Khoa Mũi Nhọn Tuyến Quân Khu 7</span>
+            <span>CÁC KHOA LÂM SÀNG & CẬN LÂM SÀNG TRỌNG ĐIỂM</span>
           </div>
-          <h2 className="hospital-heading-h2">Các Chuyên Khoa Lâm Sàng & Cận Lâm Sàng Trọng Điểm</h2>
-          <p className="hospital-lead-desc">
-            Bệnh Viện Quân Y 7A phát triển đồng bộ các chuyên khoa mũi nhọn: Chấn thương chỉnh hình cột sống (Khoa B1), 
-            Nội tim - thận - khớp (Khoa A1), Ngoại khoa nội soi (Khoa B2), Trung tâm Lọc máu Thận nhân tạo và Y học cổ truyền.
+          <h2 className="portal-head-h2">
+            Hệ Thống Chuyên Khoa Mũi Nhọn Tuyến Quân Khu 7
+          </h2>
+          <p className="portal-head-desc">
+            Bệnh Viện Quân Y 7A phát triển đồng bộ và chuyên sâu: Chấn thương Chỉnh hình cột sống (Khoa B1), 
+            Nội Tim - Thận - Khớp (Khoa A1), Ngoại khoa nội soi (Khoa B2), Trung tâm Lọc máu Thận nhân tạo Đức và Khoa Y học cổ truyền.
           </p>
         </div>
 
@@ -46,7 +48,7 @@ export default function Specialties({ onSelectSpecialty }) {
               <div key={spec.id} className="hosp-spec-card">
                 <span className="hosp-spec-badge">{spec.tag}</span>
                 <div className="hosp-spec-icon">
-                  <IconComponent size={26} />
+                  <IconComponent size={24} />
                 </div>
                 <h3>{spec.name}</h3>
                 <div className="hosp-spec-lead">Trưởng khoa: {spec.lead}</div>
@@ -59,25 +61,25 @@ export default function Specialties({ onSelectSpecialty }) {
                 </div>
 
                 <div className="hosp-spec-footer">
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>
-                    {spec.doctorCount} Bác sĩ trực
+                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 700 }}>
+                    {spec.doctorCount} Bác sĩ biên chế
                   </span>
                   <button 
                     type="button" 
-                    onClick={() => onSelectSpecialty(spec.id)}
+                    onClick={() => onSelectSpecialty(spec)}
                     style={{
                       background: 'none',
                       border: 'none',
-                      color: 'var(--hospital-blue)',
-                      fontWeight: 700,
+                      color: 'var(--portal-navy)',
+                      fontWeight: 800,
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '4px',
                       cursor: 'pointer',
-                      fontSize: '0.86rem'
+                      fontSize: '0.82rem'
                     }}
                   >
-                    Đặt khám <ArrowRight size={14} />
+                    Đăng ký khám <ArrowRight size={13} />
                   </button>
                 </div>
               </div>

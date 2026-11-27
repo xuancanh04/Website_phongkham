@@ -1,48 +1,67 @@
-import { Star, CheckCircle2, HeartHandshake } from 'lucide-react';
+import { HeartHandshake, Mail, Calendar, MapPin, Building, Quote } from 'lucide-react';
 import { TESTIMONIALS } from '../data/clinicData';
 
 export default function Testimonials() {
   return (
-    <section className="hospital-section" style={{ backgroundColor: '#ffffff' }}>
+    <section className="portal-section bg-surface" id="testimonials">
       <div className="container">
-        <div className="section-head-wrap">
-          <div className="hospital-badge-tag">
+        <div className="portal-section-head">
+          <div className="portal-tag-pill">
             <HeartHandshake size={14} />
-            <span>Niềm Tin Người Bệnh</span>
+            <span>NGHĨA TÌNH QUÂN DÂN</span>
           </div>
-          <h2 className="hospital-heading-h2">Cảm Nhận Thực Tế Từ Bệnh Nhân & Thân Nhân</h2>
-          <p className="hospital-lead-desc">
-            Sức khỏe và sự an tâm của người bệnh khi hồi phục chính là phần thưởng cao quý 
-            và động lực lớn nhất của toàn thể đội ngũ y bác sĩ MediCare Plus.
+          <h2 className="portal-head-h2">
+            Góc Tri Ân & Thư Cảm Ơn Của Người Bệnh
+          </h2>
+          <p className="portal-head-desc">
+            Sự tin cậy và phục hồi sức khỏe của thương bệnh binh, cán bộ chiến sĩ và nhân dân là niềm tự hào 
+            và phần thưởng cao quý nhất đối với tập thể Thầy thuốc Bệnh Viện Quân Y 7A.
           </p>
         </div>
 
-        <div className="hosp-testimonials-row">
+        <div className="portal-letters-grid">
           {TESTIMONIALS.map((item) => (
-            <div key={item.id} className="hosp-quote-card">
-              <div>
-                <div className="hosp-quote-stars">
-                  {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} size={16} fill="#f59e0b" color="#f59e0b" />
-                  ))}
+            <div key={item.id} className="portal-letter-card">
+              <div className="letter-card-top">
+                <div className="letter-seal-icon">
+                  <Quote size={20} />
                 </div>
-                <p className="hosp-quote-body">
-                  "{item.comment}"
-                </p>
+                <div className="letter-header-meta">
+                  <span className="letter-date">
+                    <Calendar size={12} />
+                    {item.date}
+                  </span>
+                  <span className="letter-dept-badge">{item.department}</span>
+                </div>
               </div>
 
-              <div className="hosp-quote-author">
-                <div>
-                  <strong>{item.name} ({item.age} tuổi)</strong>
-                  <span>{item.address} • Khám cùng {item.doctor}</span>
-                </div>
-                <div className="hosp-quote-verified">
-                  <CheckCircle2 size={15} />
-                  <span>Đã khám</span>
+              <div className="letter-recipient-line">
+                <Mail size={13} />
+                <strong>{item.recipient}</strong>
+              </div>
+
+              <blockquote className="letter-body-quote">
+                "{item.excerpt}"
+              </blockquote>
+
+              <div className="letter-author-block">
+                <div className="author-name">{item.author}</div>
+                <div className="author-addr">
+                  <MapPin size={12} />
+                  <span>{item.address}</span>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Footnote about medical ethics */}
+        <div className="portal-ethics-callout">
+          <Building size={18} />
+          <span>
+            Bệnh viện Quân Y 7A luôn duy trì hòm thư góp ý và đường dây nóng 24/7 nhằm lắng nghe mọi phản hồi, 
+            không ngừng nâng cao chất lượng khám chữa bệnh phục vụ bộ đội và nhân dân.
+          </span>
         </div>
       </div>
     </section>

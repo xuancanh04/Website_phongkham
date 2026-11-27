@@ -1,629 +1,1339 @@
 /* ==========================================================================
-   MEDICARE PLUS GENERAL HOSPITAL - COMPLETE STYLESHEET
-   Pure Medical Standards | Zero AI Buzzwords | Balanced Proportions
+   CỔNG THÔNG TIN ĐIỆN TỬ BỆNH VIỆN QUÂN Y 7A - CỤC HẬU CẦN QUÂN KHU 7
+   Hệ Thống Giao Diện Cổng Y Tế Quân Đội Chính Quy (Tier-1 Military Hospital Portal)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. TOPBAR & NAVBAR (COMPACT & MODERN)
+   1. INSTITUTIONAL TOPBAR & IDENTITY HEADER
    -------------------------------------------------------------------------- */
-.hosp-topbar {
-  background-color: var(--hospital-navy-dark);
-  color: #94a3b8;
-  font-size: 0.75rem;
-  padding: 4px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  line-height: 1.4;
-}
-
-.hosp-topbar-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-
-.hosp-meta-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  white-space: nowrap;
-}
-
-.hosp-meta-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: #cbd5e1;
-}
-
-.hosp-meta-divider {
-  color: rgba(255, 255, 255, 0.18);
-  font-size: 0.7rem;
-}
-
-.hosp-live-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 1px 8px;
-  border-radius: var(--radius-pill);
-  background: rgba(5, 150, 105, 0.15);
-  color: #34d399;
-  font-size: 0.72rem;
-  font-weight: 700;
-  border: 1px solid rgba(52, 211, 153, 0.25);
-}
-
-.hosp-pulse-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: #34d399;
-  box-shadow: 0 0 6px #34d399;
-  animation: pulseGlow 2s infinite ease-in-out;
-}
-
-@keyframes pulseGlow {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.3); opacity: 0.6; }
-}
-
-.hosp-emergency-badge {
-  background: var(--hospital-red);
-  color: #ffffff;
-  padding: 2px 9px;
-  border-radius: var(--radius-pill);
-  font-weight: 700;
-  font-size: 0.73rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  box-shadow: 0 2px 6px rgba(225, 29, 72, 0.25);
-  transition: all 0.2s ease;
-}
-
-.hosp-emergency-badge:hover {
-  background: var(--hospital-red-hover);
-  transform: translateY(-1px);
-}
-
-.hosp-accredit-item {
-  color: #38bdf8;
-  font-size: 0.74rem;
-  font-weight: 600;
-}
-
-/* Main Navbar */
-.hosp-main-header {
+.hosp-portal-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 2px 10px rgba(11, 37, 69, 0.04);
+  background-color: #ffffff;
+  box-shadow: 0 4px 14px rgba(10, 35, 66, 0.08);
 }
 
-.hosp-nav-container {
+.portal-topbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-slate);
+  padding: 12px 0;
+}
+
+.portal-topbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px; /* Slim, compact standard height */
+  gap: 20px;
 }
 
-.hosp-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.hosp-logo-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--hospital-blue) 0%, var(--hospital-teal) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
-}
-
-.hosp-brand-title {
-  font-size: 1.18rem;
-  font-weight: 800;
-  color: var(--hospital-navy);
-  line-height: 1.1;
-  letter-spacing: -0.015em;
-}
-
-.hosp-brand-title span {
-  color: var(--hospital-blue);
-}
-
-.hosp-brand-sub {
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* Nav Menu */
-.hosp-menu-list {
+.portal-brand-wrap {
   display: flex;
   align-items: center;
   gap: 16px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  cursor: pointer;
 }
 
-.hosp-menu-item a {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-main);
-  padding: 5px 2px;
-  position: relative;
-  white-space: nowrap;
+.portal-emblem {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 5px rgba(197, 22, 36, 0.25));
 }
 
-.hosp-menu-item a:hover {
-  color: var(--hospital-blue);
-}
-
-.hosp-menu-item a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--hospital-blue);
-  transition: width 0.2s ease;
-  border-radius: 2px;
-}
-
-.hosp-menu-item a:hover::after {
+.emblem-svg {
   width: 100%;
+  height: 100%;
 }
 
-.hosp-nav-actions {
+.portal-title-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.portal-parent-org {
+  font-size: 0.73rem;
+  font-weight: 800;
+  color: var(--portal-red);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
+.portal-main-name {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--portal-navy-deep);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 1px 0;
+}
+
+.portal-sub-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.69rem;
+  font-weight: 700;
+  color: var(--portal-teal);
+  letter-spacing: 0.03em;
+}
+
+.portal-rank-tag {
+  color: var(--portal-navy);
+}
+
+.portal-tag-dot {
+  color: var(--border-slate);
+}
+
+.portal-hero-tag {
+  color: var(--portal-gold);
+}
+
+/* Helplines on Topbar */
+.portal-helplines {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.helpline-card {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.helpline-divider {
+  width: 1px;
+  height: 34px;
+  background-color: var(--border-slate);
+}
+
+.helpline-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
-.hosp-mobile-btn {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--hospital-navy);
-  padding: 6px;
+.emergency-helpline .helpline-icon {
+  background-color: var(--portal-red-light);
+  color: var(--portal-red);
+  border: 1px solid var(--portal-red-border);
 }
 
-.hosp-mobile-drawer {
-  background: #ffffff;
-  border-top: 1px solid var(--border-color);
-  padding: 20px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  box-shadow: var(--shadow-lg);
+.bg-navy-soft {
+  background-color: var(--portal-navy-light);
+  color: var(--portal-navy);
+  border: 1px solid var(--portal-navy-border);
 }
 
-.hosp-mobile-drawer a {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--hospital-navy);
-  padding: 6px 0;
+.helpline-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.helpline-num {
+  font-size: 1rem;
+  font-weight: 800;
+  display: block;
+  line-height: 1.2;
+}
+
+.text-danger {
+  color: var(--portal-red);
+}
+
+.text-navy {
+  color: var(--portal-navy);
 }
 
 /* --------------------------------------------------------------------------
-   2. HERO BANNER & QUICK APPOINTMENT BAR
+   2. MAIN PORTAL NAVBAR (DEEP MILITARY NAVY)
    -------------------------------------------------------------------------- */
-.hosp-hero-wrap {
-  position: relative;
-  background: radial-gradient(110% 120% at 85% 15%, #e0f2fe 0%, #ecfdf5 35%, #f8fafc 85%);
-  padding: 56px 0 84px 0;
-  overflow: hidden;
+.portal-navbar {
+  background-color: var(--portal-navy-deep);
+  border-top: 2px solid var(--portal-gold);
 }
 
-.hosp-hero-grid {
+.portal-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+}
+
+.portal-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2px;
+  height: 100%;
+}
+
+.portal-menu-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.portal-menu-item a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 13px;
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.portal-menu-item a:hover,
+.portal-menu-item.active a {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.09);
+  border-bottom-color: var(--portal-gold);
+}
+
+.portal-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-portal-lookup {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 33px;
+  padding: 0 12px;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-portal-lookup:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+.btn-portal-booking {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 33px;
+  padding: 0 14px;
+  background-color: var(--portal-red);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  border-radius: var(--radius-xs);
+  border: 1px solid #dc2626;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(197, 22, 36, 0.35);
+  transition: all 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.btn-portal-booking:hover {
+  background-color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+.portal-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.portal-mobile-drawer {
+  background-color: #ffffff;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border-slate);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: var(--portal-shadow-lg);
+}
+
+.portal-mobile-drawer a {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--portal-navy-deep);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.mobile-action-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   3. BREAKING INSTITUTIONAL ANNOUNCEMENT MARQUEE
+   -------------------------------------------------------------------------- */
+.portal-marquee-bar {
+  background-color: #fffbeb;
+  border-bottom: 1px solid #fde68a;
+  padding: 6px 0;
+  font-size: 0.77rem;
+  line-height: 1.4;
+}
+
+.portal-marquee-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.marquee-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--portal-red);
+  color: #ffffff;
+  padding: 2px 9px;
+  border-radius: var(--radius-xs);
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.marquee-text-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+  color: #78350f;
+  font-weight: 500;
+}
+
+.marquee-text-content {
+  display: inline-block;
+  animation: marqueeScroll 35s linear infinite;
+}
+
+.marquee-sep {
+  margin: 0 16px;
+  color: #d97706;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --------------------------------------------------------------------------
+   4. INSTITUTIONAL HERO SECTION
+   -------------------------------------------------------------------------- */
+.portal-hero-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f6fa 100%);
+  padding: 38px 0 60px 0;
+  border-bottom: 1px solid var(--border-slate);
+}
+
+.portal-hero-frame {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.2fr 0.8fr;
   align-items: center;
   gap: 40px;
+  margin-bottom: 34px;
 }
 
-.hosp-hero-h1 {
-  font-size: 3.1rem;
+.portal-badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background-color: var(--portal-gold-light);
+  color: #92400e;
+  border: 1px solid var(--portal-gold-border);
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-xs);
+  margin-bottom: 14px;
+  letter-spacing: 0.03em;
+}
+
+.portal-hero-title {
+  font-size: 2.5rem;
   font-weight: 900;
-  line-height: 1.18;
-  color: var(--hospital-navy);
-  margin-bottom: 18px;
-  letter-spacing: -0.025em;
+  line-height: 1.22;
+  color: var(--portal-navy-deep);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
 }
 
-.hosp-hero-h1 span.blue {
-  background: linear-gradient(135deg, var(--hospital-blue) 0%, var(--hospital-teal) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
+.gold-accent {
+  color: var(--portal-navy);
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 4px;
 }
 
-.hosp-hero-lead {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
+.portal-hero-desc {
+  font-size: 0.95rem;
+  color: var(--text-body);
   line-height: 1.65;
-  margin-bottom: 26px;
-  max-width: 600px;
+  margin-bottom: 24px;
 }
 
-.hosp-hero-btns {
+.portal-hero-ctas {
   display: flex;
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 34px;
+  margin-bottom: 28px;
 }
 
-.hosp-stats-bar {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  padding-top: 26px;
-  border-top: 1px solid var(--border-color);
-}
-
-.hosp-stat-col h4 {
-  font-size: 1.85rem;
-  font-weight: 800;
-  color: var(--hospital-navy);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-
-.hosp-stat-col h4 span {
-  color: var(--hospital-blue);
-}
-
-.hosp-stat-col p {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-
-.hosp-hero-visual {
-  position: relative;
-}
-
-.hosp-hero-img-box {
-  position: relative;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: 0 20px 45px rgba(9, 37, 64, 0.16);
-  border: 4px solid #ffffff;
-}
-
-.hosp-hero-img-box img {
-  width: 100%;
-  height: 460px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.hosp-hero-img-box:hover img {
-  transform: scale(1.02);
-}
-
-.hosp-hero-badge-float {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  padding: 12px 18px;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border: 1px solid #bae6fd;
-}
-
-/* Quick Appointment Search Bar */
-.hosp-quickbar-wrap {
-  margin-top: -46px;
-  position: relative;
-  z-index: 30;
-}
-
-.hosp-quickbar-card {
-  background: #ffffff;
-  border-radius: var(--radius-lg);
-  padding: 24px 30px;
-  box-shadow: 0 15px 35px rgba(9, 37, 64, 0.1);
-  border: 1px solid var(--border-color);
-}
-
-.hosp-quickbar-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
-  gap: 16px;
-  align-items: end;
-}
-
-.hosp-quick-field label {
-  display: block;
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--hospital-navy);
-  margin-bottom: 6px;
-}
-
-.hosp-quick-input {
-  display: flex;
+.btn-portal-hero-primary {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  height: 42px;
-  padding: 0 14px;
-  border-radius: var(--radius-md);
-  border: 1.5px solid var(--border-color);
-  background-color: var(--bg-page);
+  height: 44px;
+  padding: 0 22px;
+  background-color: var(--portal-red);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.88rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid #b91c1c;
+  box-shadow: 0 3px 10px rgba(197, 22, 36, 0.28);
   transition: all 0.2s ease;
 }
 
-.hosp-quick-input:focus-within {
-  border-color: var(--hospital-blue);
-  background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+.btn-portal-hero-primary:hover {
+  background-color: #991b1b;
+  transform: translateY(-1.5px);
 }
 
-.hosp-quick-input select, .hosp-quick-input input {
+.btn-portal-hero-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 20px;
+  background-color: #ffffff;
+  color: var(--portal-navy-deep);
+  font-weight: 700;
+  font-size: 0.86rem;
+  border-radius: var(--radius-xs);
+  border: 1.5px solid var(--border-slate);
+  box-shadow: var(--portal-shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.btn-portal-hero-outline:hover {
+  border-color: var(--portal-navy);
+  color: var(--portal-navy);
+  background-color: var(--portal-navy-light);
+}
+
+.portal-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-slate);
+}
+
+.metric-box {
+  background-color: #ffffff;
+  border: 1px solid var(--border-slate);
+  border-radius: var(--radius-xs);
+  padding: 10px 14px;
+}
+
+.metric-val {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--portal-navy-deep);
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.metric-sub {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* Imagery Box */
+.portal-hero-imagery {
+  position: relative;
+}
+
+.imagery-main-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 3px solid #ffffff;
+  box-shadow: var(--portal-shadow-lg);
+  position: relative;
+}
+
+.imagery-photo {
   width: 100%;
-  border: none;
-  background: transparent;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.imagery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(7, 25, 47, 0.92) 100%);
+  padding: 24px 20px 16px 20px;
+}
+
+.imagery-caption strong {
+  display: block;
+  color: #ffffff;
   font-size: 0.88rem;
-  color: var(--text-main);
-  outline: none;
-  font-weight: 600;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.imagery-caption span {
+  display: block;
+  color: #cbd5e1;
+  font-size: 0.75rem;
+}
+
+.imagery-badge-card {
+  margin-top: 14px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-slate);
+  border-left: 4px solid var(--portal-red);
+  border-radius: var(--radius-xs);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--portal-shadow-sm);
+}
+
+.badge-avatar-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-xs);
+  background-color: var(--portal-gold-light);
+  color: var(--portal-gold);
+  border: 1px solid var(--portal-gold-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.badge-lead-title {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--portal-red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-lead-name {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--portal-navy-deep);
+}
+
+.badge-lead-desc {
+  font-size: 0.76rem;
+  color: var(--text-muted);
 }
 
 /* --------------------------------------------------------------------------
-   3. ADVANTAGES PILLARS (ƯU THẾ BỆNH VIỆN)
+   5. CỔNG TIỆN ÍCH DỊCH VỤ Y TẾ TRỰC TUYẾN (DASHBOARD 6 CARDS)
    -------------------------------------------------------------------------- */
-.hosp-advantages-grid {
+.portal-quick-services {
+  background-color: #ffffff;
+  border: 1px solid var(--border-slate);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  box-shadow: var(--portal-shadow-md);
+  margin-bottom: 30px;
+}
+
+.quick-services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1.5px solid var(--border-light);
+  margin-bottom: 20px;
+}
+
+.quick-title-group {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.quick-title-group h3 {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--portal-navy-deep);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.text-military {
+  color: var(--portal-navy);
+}
+
+.quick-sub-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.quick-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.quick-service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-slate);
+  background-color: var(--bg-canvas);
+  transition: all 0.2s ease;
+}
+
+.quick-service-item:hover {
+  background-color: #ffffff;
+  border-color: var(--portal-navy);
+  box-shadow: var(--portal-shadow-md);
+  transform: translateY(-2px);
+}
+
+.quick-service-item.highlight-emergency {
+  background-color: #fff5f5;
+  border-color: #fca5a5;
+}
+
+.quick-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bg-blue-icon { background: #e0f2fe; color: #0284c7; }
+.bg-teal-icon { background: #ccfbf1; color: #0f766e; }
+.bg-green-icon { background: #dcfce7; color: #15803d; }
+.bg-red-icon { background: #fee2e2; color: #dc2626; }
+.bg-navy-icon { background: #e2e8f0; color: #1e3a8a; }
+.bg-amber-icon { background: #fef3c7; color: #b45309; }
+
+.quick-info h4 {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--portal-navy-deep);
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+.quick-info p {
+  font-size: 0.79rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 6px;
+}
+
+.quick-link-act {
+  font-size: 0.77rem;
+  font-weight: 800;
+  color: var(--portal-navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   6. PORTAL SEARCHBAR & QUICK SELECT
+   -------------------------------------------------------------------------- */
+.portal-searchbar-wrap {
+  position: relative;
+}
+
+.portal-searchbar-card {
+  background-color: var(--portal-navy-deep);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  box-shadow: var(--portal-shadow-md);
+  border: 1px solid #1e3a8a;
+}
+
+.searchbar-legend {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--portal-gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.portal-searchbar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 14px;
+  align-items: end;
+}
+
+.searchbar-field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  margin-bottom: 5px;
+}
+
+.searchbar-input-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  background-color: #ffffff;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-slate);
+}
+
+.searchbar-input-box select,
+.searchbar-input-box input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.btn-portal-search-submit {
+  height: 40px;
+  padding: 0 20px;
+  background-color: var(--portal-red);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.82rem;
+  border-radius: var(--radius-xs);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  box-shadow: 0 2px 6px rgba(197, 22, 36, 0.4);
+  transition: all 0.2s ease;
+}
+
+.btn-portal-search-submit:hover {
+  background-color: #b91c1c;
+}
+
+/* --------------------------------------------------------------------------
+   7. ADVANTAGES GRID (NĂNG LỰC BỆNH VIỆN)
+   -------------------------------------------------------------------------- */
+.portal-adv-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-.hosp-adv-card {
+.portal-adv-card {
   background-color: #ffffff;
-  border-radius: var(--radius-lg);
-  padding: 28px 20px;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-  transition: all 0.25s ease;
+  border: 1px solid var(--border-slate);
+  border-radius: var(--radius-xs);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+  box-shadow: var(--portal-shadow-sm);
+}
+
+.portal-adv-card:hover {
+  border-color: var(--portal-navy);
+  box-shadow: var(--portal-shadow-md);
+  transform: translateY(-2px);
+}
+
+.adv-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.adv-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  background-color: var(--portal-navy-light);
+  color: var(--portal-navy);
+  border: 1px solid var(--portal-navy-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adv-order-index {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #cbd5e1;
+}
+
+.adv-card-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--portal-navy-deep);
+  margin-bottom: 8px;
+}
+
+.adv-card-desc {
+  font-size: 0.84rem;
+  color: var(--text-body);
+  line-height: 1.55;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.adv-card-footer {
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
+}
+
+.adv-verified-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--portal-teal);
+}
+
+/* --------------------------------------------------------------------------
+   8. TESTIMONIALS (GÓC TRI ÂN & THƯ CẢM ƠN TỪ NGƯỜI BỆNH)
+   -------------------------------------------------------------------------- */
+.portal-letters-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 24px;
+}
+
+.portal-letter-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-slate);
+  border-top: 3px solid var(--portal-red);
+  border-radius: var(--radius-xs);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--portal-shadow-sm);
+  position: relative;
+}
+
+.letter-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.letter-seal-icon {
+  color: var(--portal-red);
+  opacity: 0.7;
+}
+
+.letter-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.letter-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.letter-dept-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background-color: var(--portal-navy-light);
+  color: var(--portal-navy);
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+.letter-recipient-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--portal-navy-deep);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--border-slate);
+}
+
+.letter-body-quote {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.letter-author-block {
+  padding-top: 10px;
+  border-top: 1px solid var(--border-light);
+}
+
+.author-name {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--portal-navy-deep);
+}
+
+.author-addr {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.portal-ethics-callout {
+  background-color: var(--portal-navy-light);
+  border: 1px solid var(--portal-navy-border);
+  border-radius: var(--radius-xs);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: var(--portal-navy);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   9. HEALTH NEWS (CỔNG TIN TỨC & HOẠT ĐỘNG Y KHOA)
+   -------------------------------------------------------------------------- */
+.portal-news-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 28px;
+}
+
+.portal-featured-article {
+  background-color: #ffffff;
+  border: 1px solid var(--border-slate);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  box-shadow: var(--portal-shadow-sm);
   display: flex;
   flex-direction: column;
 }
 
-.hosp-adv-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: #bae6fd;
+.featured-thumb-wrap {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
 }
 
-.hosp-adv-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%);
-  color: var(--hospital-blue);
+.featured-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.portal-featured-article:hover .featured-img {
+  transform: scale(1.02);
+}
+
+.featured-cat-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: var(--portal-red);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.featured-article-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.article-meta-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 18px;
-  transition: all 0.25s ease;
-  border: 1px solid rgba(2, 132, 199, 0.15);
-}
-
-.hosp-adv-card:hover .hosp-adv-icon {
-  background: linear-gradient(135deg, var(--hospital-blue) 0%, var(--hospital-teal) 100%);
-  color: #ffffff;
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.3);
-}
-
-.hosp-adv-card h4 {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--hospital-navy);
+  gap: 14px;
+  font-size: 0.74rem;
+  color: var(--text-muted);
   margin-bottom: 8px;
 }
 
-.hosp-adv-card p {
-  font-size: 0.86rem;
+.article-date, .article-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.featured-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--portal-navy-deep);
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.featured-summary {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.btn-article-read {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--portal-navy);
+}
+
+.btn-article-read:hover {
+  color: var(--portal-red);
+}
+
+.portal-side-news {
+  background-color: #ffffff;
+  border: 1px solid var(--border-slate);
+  border-radius: var(--radius-xs);
+  padding: 20px;
+  box-shadow: var(--portal-shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.side-news-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--portal-navy);
+  margin-bottom: 14px;
+  color: var(--portal-navy-deep);
+}
+
+.side-news-header h4 {
+  font-size: 0.92rem;
+  font-weight: 900;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.side-articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.side-article-card {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.side-article-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.side-thumb {
+  width: 90px;
+  height: 70px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.side-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.side-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  margin-bottom: 3px;
+}
+
+.side-badge {
+  color: var(--portal-navy);
+  font-weight: 700;
+}
+
+.side-time {
   color: var(--text-muted);
-  line-height: 1.55;
+}
+
+.side-title {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--portal-navy-deep);
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.side-desc {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.side-author-sign {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--portal-teal);
 }
 
 /* --------------------------------------------------------------------------
-   4. SPECIALTIES (CHUYÊN KHOA)
+   10. SPECIALTIES, DOCTORS, PRICING, FACILITIES (INSTITUTIONAL REFINEMENT)
    -------------------------------------------------------------------------- */
 .hosp-specialties-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .hosp-spec-card {
   background: #ffffff;
-  border-radius: var(--radius-lg);
-  padding: 28px 22px;
-  border: 1.5px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-  transition: all 0.25s ease;
+  border-radius: var(--radius-xs);
+  padding: 24px 20px;
+  border: 1px solid var(--border-slate);
+  box-shadow: var(--portal-shadow-sm);
+  transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
 .hosp-spec-card:hover {
-  transform: translateY(-5px);
-  border-color: #7dd3fc;
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  border-color: var(--portal-navy);
+  box-shadow: var(--portal-shadow-md);
 }
 
 .hosp-spec-badge {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  background: rgba(2, 132, 199, 0.08);
-  color: var(--hospital-blue);
-  border: 1px solid rgba(2, 132, 199, 0.2);
-  font-size: 0.72rem;
+  top: 16px;
+  right: 16px;
+  background: var(--portal-navy-light);
+  color: var(--portal-navy);
+  border: 1px solid var(--portal-navy-border);
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
+  padding: 2px 8px;
+  border-radius: 3px;
 }
 
 .hosp-spec-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%);
-  color: var(--hospital-blue);
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-xs);
+  background-color: var(--portal-navy-light);
+  color: var(--portal-navy);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
-  transition: all 0.25s ease;
-  border: 1px solid rgba(2, 132, 199, 0.15);
-}
-
-.hosp-spec-card:hover .hosp-spec-icon {
-  background: linear-gradient(135deg, var(--hospital-blue) 0%, var(--hospital-teal) 100%);
-  color: #ffffff;
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.3);
+  margin-bottom: 14px;
+  border: 1px solid var(--portal-navy-border);
 }
 
 .hosp-spec-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 800;
-  color: var(--hospital-navy);
+  color: var(--portal-navy-deep);
   margin-bottom: 4px;
 }
 
 .hosp-spec-lead {
-  font-size: 0.8rem;
-  color: var(--hospital-teal);
+  font-size: 0.78rem;
+  color: var(--portal-teal);
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .hosp-spec-desc {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  line-height: 1.55;
-  margin-bottom: 18px;
+  font-size: 0.84rem;
+  color: var(--text-body);
+  line-height: 1.5;
+  margin-bottom: 14px;
   flex-grow: 1;
 }
 
 .hosp-proc-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  margin-bottom: 20px;
+  gap: 4px;
+  margin-bottom: 16px;
 }
 
 .hosp-proc-pill {
-  font-size: 0.72rem;
-  background-color: var(--bg-page);
-  color: var(--text-secondary);
-  padding: 2px 7px;
-  border-radius: 4px;
+  font-size: 0.7rem;
+  background-color: var(--bg-canvas);
+  color: var(--text-body);
+  padding: 2px 6px;
+  border-radius: 2px;
   font-weight: 600;
+  border: 1px solid var(--border-light);
 }
 
 .hosp-spec-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 14px;
-  border-top: 1px solid var(--border-color);
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.76rem;
+  color: var(--text-muted);
 }
 
-/* --------------------------------------------------------------------------
-   5. DOCTOR PROFILES (BÁC SĨ CHUYÊN KHOA)
-   -------------------------------------------------------------------------- */
+/* Doctor Profiles */
 .hosp-doc-filter-row {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 36px;
+  gap: 6px;
+  margin-bottom: 28px;
 }
 
 .hosp-filter-chip {
-  padding: 7px 16px;
-  border-radius: var(--radius-pill);
-  font-size: 0.84rem;
-  font-weight: 600;
-  border: 1.5px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: var(--radius-xs);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid var(--border-slate);
   background-color: #ffffff;
-  color: var(--text-secondary);
+  color: var(--text-body);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .hosp-filter-chip:hover {
-  border-color: var(--hospital-blue-border);
-  color: var(--hospital-blue);
-  background-color: var(--hospital-blue-light);
+  border-color: var(--portal-navy);
+  color: var(--portal-navy);
+  background-color: var(--portal-navy-light);
 }
 
 .hosp-filter-chip.active {
-  background: linear-gradient(135deg, var(--hospital-blue) 0%, #0369a1 100%);
+  background-color: var(--portal-navy-deep);
   color: #ffffff;
-  border-color: transparent;
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28);
+  border-color: var(--portal-navy-deep);
 }
 
 .hosp-doctors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 26px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 22px;
 }
 
 .hosp-doc-card {
   background: #ffffff;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xs);
   overflow: hidden;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-  transition: all 0.25s ease;
+  border: 1px solid var(--border-slate);
+  box-shadow: var(--portal-shadow-sm);
+  transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
 }
 
 .hosp-doc-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: #bae6fd;
+  transform: translateY(-2px);
+  box-shadow: var(--portal-shadow-md);
+  border-color: var(--portal-navy);
 }
 
 .hosp-doc-photo {
   position: relative;
-  height: 250px;
+  height: 220px;
   background-color: #f1f5f9;
   overflow: hidden;
 }
@@ -632,108 +1342,105 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.hosp-doc-card:hover .hosp-doc-photo img {
-  transform: scale(1.03);
 }
 
 .hosp-doc-exp {
   position: absolute;
-  bottom: 12px;
-  left: 12px;
-  background-color: rgba(9, 37, 64, 0.85);
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(10, 35, 66, 0.9);
   color: #ffffff;
-  font-size: 0.76rem;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
 }
 
 .hosp-doc-body {
-  padding: 22px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
 .hosp-doc-spec-name {
-  font-size: 0.78rem;
+  font-size: 0.73rem;
   font-weight: 800;
-  color: var(--hospital-blue);
+  color: var(--portal-navy);
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .hosp-doc-name {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 800;
-  color: var(--hospital-navy);
-  margin-bottom: 4px;
+  color: var(--portal-navy-deep);
+  margin-bottom: 2px;
 }
 
 .hosp-doc-deg {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .hosp-doc-history {
-  font-size: 0.86rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 18px;
+  font-size: 0.8rem;
+  color: var(--text-body);
+  line-height: 1.45;
+  margin-bottom: 14px;
   flex-grow: 1;
 }
 
 .hosp-doc-sched {
-  background-color: var(--bg-page);
-  border-radius: var(--radius-sm);
-  padding: 8px 12px;
+  background-color: var(--bg-canvas);
+  border-radius: var(--radius-xs);
+  padding: 6px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.8rem;
-  margin-bottom: 18px;
+  font-size: 0.76rem;
+  margin-bottom: 14px;
+  border: 1px solid var(--border-light);
 }
 
 /* --------------------------------------------------------------------------
-   6. CLINICAL BOOKING CONSOLE
+   11. BOOKING CONSOLE & LOOKUP MODAL
    -------------------------------------------------------------------------- */
 .hosp-booking-wrap {
-  background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 45%, #ffffff 100%);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-slate);
+  border-bottom: 1px solid var(--border-slate);
 }
 
 .hosp-booking-box {
   background: #ffffff;
-  border-radius: var(--radius-xl);
-  box-shadow: 0 20px 45px rgba(11, 37, 69, 0.08);
-  border: 1px solid rgba(2, 132, 199, 0.18);
+  border-radius: var(--radius-xs);
+  box-shadow: var(--portal-shadow-md);
+  border: 1px solid var(--border-slate);
   overflow: hidden;
   display: grid;
   grid-template-columns: 1.45fr 1fr;
 }
 
 .hosp-form-pane {
-  padding: 38px;
+  padding: 32px;
 }
 
 .hosp-summary-pane {
-  background: linear-gradient(135deg, var(--hospital-navy) 0%, var(--hospital-navy-dark) 100%);
+  background-color: var(--portal-navy-deep);
   color: #ffffff;
-  padding: 38px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-left: 1px solid #1e3a8a;
 }
 
 .hosp-slot-title {
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 800;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -743,49 +1450,48 @@
 .hosp-slots-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  gap: 7px;
+  gap: 6px;
 }
 
 .hosp-slot-btn {
-  height: 36px;
+  height: 34px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  border: 1.5px solid var(--border-color);
-  background-color: var(--bg-page);
-  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-slate);
+  background-color: var(--bg-canvas);
+  border-radius: var(--radius-xs);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 
 .hosp-slot-btn:hover {
-  border-color: var(--hospital-blue);
-  color: var(--hospital-blue);
+  border-color: var(--portal-navy);
+  color: var(--portal-navy);
   background: #ffffff;
 }
 
 .hosp-slot-btn.active {
-  background-color: var(--hospital-blue);
+  background-color: var(--portal-navy-deep);
   color: #ffffff;
-  border-color: var(--hospital-blue);
+  border-color: var(--portal-navy-deep);
 }
 
-/* Digital Ticket */
 .hosp-digital-ticket {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1.5px dashed rgba(255, 255, 255, 0.22);
-  border-radius: var(--radius-md);
-  padding: 20px;
-  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px dashed rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-xs);
+  padding: 16px;
+  margin-top: 14px;
 }
 
 .hosp-ticket-line {
   display: flex;
   justify-content: space-between;
-  font-size: 0.86rem;
-  padding: 5px 0;
+  font-size: 0.8rem;
+  padding: 4px 0;
   color: #cbd5e1;
 }
 
@@ -793,86 +1499,80 @@
   color: #ffffff;
 }
 
-/* --------------------------------------------------------------------------
-   7. PRICING PACKAGES (BẢNG GIÁ GÓI KHÁM)
-   -------------------------------------------------------------------------- */
+/* Pricing Packages */
 .hosp-pricing-deck {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 26px;
+  gap: 22px;
 }
 
 .hosp-plan-card {
   background: #ffffff;
-  border-radius: var(--radius-lg);
-  padding: 34px 26px;
-  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-xs);
+  padding: 28px 22px;
+  border: 1px solid var(--border-slate);
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
+  box-shadow: var(--portal-shadow-sm);
 }
 
 .hosp-plan-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  box-shadow: var(--portal-shadow-md);
 }
 
 .hosp-plan-card.featured {
-  border: 2px solid var(--hospital-blue);
-  box-shadow: 0 16px 36px rgba(2, 132, 199, 0.18);
-  transform: scale(1.02);
-}
-
-.hosp-plan-card.featured:hover {
-  transform: scale(1.02) translateY(-4px);
+  border: 2px solid var(--portal-navy);
+  box-shadow: 0 8px 24px rgba(10, 35, 66, 0.1);
 }
 
 .hosp-featured-ribbon {
   position: absolute;
-  top: -12px;
+  top: -11px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--hospital-blue) 0%, var(--hospital-teal) 100%);
+  background-color: var(--portal-red);
   color: #ffffff;
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   font-weight: 800;
   text-transform: uppercase;
-  padding: 4px 16px;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 3px 12px rgba(2, 132, 199, 0.35);
+  padding: 3px 14px;
+  border-radius: 3px;
+  letter-spacing: 0.03em;
   white-space: nowrap;
 }
 
 .hosp-plan-name {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 800;
-  color: var(--hospital-navy);
+  color: var(--portal-navy-deep);
   margin-bottom: 4px;
 }
 
 .hosp-plan-sub {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
-  line-height: 1.5;
-  margin-bottom: 14px;
+  line-height: 1.45;
+  margin-bottom: 12px;
 }
 
 .hosp-price-row {
   display: flex;
   align-items: baseline;
-  gap: 10px;
-  margin-bottom: 16px;
+  gap: 8px;
+  margin-bottom: 14px;
 }
 
 .hosp-price-current {
-  font-size: 2.1rem;
+  font-size: 1.85rem;
   font-weight: 900;
-  color: var(--hospital-blue);
+  color: var(--portal-navy);
 }
 
 .hosp-price-old {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
   text-decoration: line-through;
 }
@@ -881,50 +1581,49 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 11px;
-  margin-bottom: 26px;
+  gap: 9px;
+  margin-bottom: 22px;
   flex-grow: 1;
 }
 
 .hosp-feature-item {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  font-size: 0.86rem;
-  color: var(--text-secondary);
+  gap: 7px;
+  font-size: 0.82rem;
+  color: var(--text-body);
 }
 
 .hosp-feature-item svg {
-  color: var(--hospital-green);
+  color: var(--portal-teal);
   flex-shrink: 0;
   margin-top: 2px;
 }
 
-/* --------------------------------------------------------------------------
-   8. EQUIPMENT SHOWCASE
-   -------------------------------------------------------------------------- */
+/* Equipment Grid */
 .hosp-equip-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
 .hosp-equip-card {
   background: #ffffff;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-xs);
   overflow: hidden;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-  transition: all 0.25s ease;
+  border: 1px solid var(--border-slate);
+  box-shadow: var(--portal-shadow-sm);
+  transition: all 0.2s ease;
 }
 
 .hosp-equip-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  box-shadow: var(--portal-shadow-md);
+  border-color: var(--portal-navy);
 }
 
 .hosp-equip-thumb {
-  height: 200px;
+  height: 180px;
   overflow: hidden;
 }
 
@@ -932,197 +1631,229 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.hosp-equip-card:hover .hosp-equip-thumb img {
-  transform: scale(1.03);
 }
 
 .hosp-equip-body {
-  padding: 20px;
+  padding: 18px;
 }
 
 .hosp-equip-body h4 {
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   font-weight: 800;
-  color: var(--hospital-navy);
-  margin-bottom: 6px;
+  color: var(--portal-navy-deep);
+  margin-bottom: 4px;
 }
 
 .hosp-equip-body p {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.55;
+  font-size: 0.82rem;
+  color: var(--text-body);
+  line-height: 1.5;
 }
 
-/* --------------------------------------------------------------------------
-   9. PROCESS STEPS
-   -------------------------------------------------------------------------- */
+/* Process Steps */
 .hosp-proc-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 16px;
 }
 
 .hosp-step-box {
-  background-color: var(--bg-page);
-  border-radius: var(--radius-md);
-  padding: 24px 18px;
-  border: 1px solid var(--border-light);
-  position: relative;
-  transition: all 0.25s ease;
-  text-align: center;
-}
-
-.hosp-step-box:hover {
   background-color: #ffffff;
-  border-color: #bae6fd;
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-xs);
+  padding: 22px 16px;
+  border: 1px solid var(--border-slate);
+  position: relative;
+  text-align: center;
+  box-shadow: var(--portal-shadow-sm);
 }
 
 .hosp-step-num {
   position: absolute;
-  top: 10px;
-  left: 14px;
-  font-size: 1.3rem;
+  top: 8px;
+  left: 12px;
+  font-size: 1.1rem;
   font-weight: 900;
   color: #cbd5e1;
 }
 
 .hosp-step-icon {
-  width: 52px;
-  height: 52px;
-  margin: 0 auto 16px auto;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%);
-  color: var(--hospital-blue);
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 12px auto;
+  border-radius: var(--radius-xs);
+  background-color: var(--portal-navy-light);
+  color: var(--portal-navy);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(2, 132, 199, 0.15);
-  transition: all 0.25s ease;
-}
-
-.hosp-step-box:hover .hosp-step-icon {
-  background: linear-gradient(135deg, var(--hospital-blue) 0%, var(--hospital-teal) 100%);
-  color: #ffffff;
-  transform: scale(1.05);
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+  border: 1px solid var(--portal-navy-border);
 }
 
 .hosp-step-box h4 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--hospital-navy);
-  margin-bottom: 6px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--portal-navy-deep);
+  margin-bottom: 4px;
 }
 
 .hosp-step-box p {
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
-/* --------------------------------------------------------------------------
-   10. CONTACT & FOOTER
-   -------------------------------------------------------------------------- */
+/* FAQs */
+.hosp-faq-stack {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hosp-faq-card {
+  background: #ffffff;
+  border: 1px solid var(--border-slate);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.hosp-faq-card.open {
+  border-color: var(--portal-navy);
+}
+
+.hosp-faq-btn {
+  width: 100%;
+  padding: 14px 18px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--portal-navy-deep);
+  cursor: pointer;
+}
+
+.hosp-faq-btn:hover {
+  color: var(--portal-navy);
+}
+
+.hosp-faq-answer {
+  padding: 0 18px 16px 18px;
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  border-top: 1px dashed var(--border-slate);
+  padding-top: 10px;
+}
+
+/* Contact Section */
 .hosp-contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 36px;
+  gap: 32px;
 }
 
 .hosp-contact-tiles {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 14px;
+  margin-bottom: 20px;
 }
 
 .hosp-tile {
-  background-color: var(--bg-page);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-slate);
+  border-radius: var(--radius-xs);
+  padding: 14px;
 }
 
 .hosp-tile svg {
-  color: var(--hospital-blue);
-  margin-bottom: 8px;
+  color: var(--portal-navy);
+  margin-bottom: 6px;
 }
 
 .hosp-tile h5 {
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--hospital-navy);
-  margin-bottom: 4px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--portal-navy-deep);
+  margin-bottom: 2px;
 }
 
 .hosp-tile p {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
 }
 
+/* Official Footer */
 .hosp-footer {
-  background-color: var(--hospital-navy-dark);
+  background-color: var(--portal-navy-dark);
   color: #94a3b8;
-  padding: 60px 0 26px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 50px 0 24px 0;
+  border-top: 3px solid var(--portal-gold);
 }
 
 .hosp-footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-  gap: 32px;
-  margin-bottom: 40px;
+  gap: 28px;
+  margin-bottom: 34px;
 }
 
 .hosp-footer-h5 {
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-left: 3px solid var(--portal-gold);
+  padding-left: 8px;
 }
 
 .hosp-footer-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 8px;
 }
 
 .hosp-footer-list a {
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   color: #94a3b8;
 }
 
 .hosp-footer-list a:hover {
-  color: #38bdf8;
+  color: #ffffff;
   padding-left: 3px;
 }
 
-/* Floating Cockpit */
+/* Floating Actions */
 .hosp-floating-cockpit {
   position: fixed;
-  bottom: 24px;
+  bottom: 22px;
   right: 20px;
   z-index: 999;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .hosp-float-btn {
-  height: 42px;
-  padding: 0 18px;
+  height: 40px;
+  padding: 0 16px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border-radius: var(--radius-pill);
-  font-weight: 700;
-  font-size: 0.86rem;
-  box-shadow: 0 6px 18px rgba(9, 37, 64, 0.2);
+  border-radius: var(--radius-xs);
+  font-weight: 800;
+  font-size: 0.82rem;
+  box-shadow: 0 4px 14px rgba(10, 35, 66, 0.25);
   cursor: pointer;
   border: none;
   transition: all 0.2s ease;
@@ -1130,368 +1861,112 @@
 }
 
 .hosp-float-btn.emergency {
-  background: var(--hospital-red);
+  background: var(--portal-red);
   color: #ffffff;
-  box-shadow: 0 4px 16px rgba(225, 29, 72, 0.35);
-}
-
-.hosp-float-btn.emergency:hover {
-  background: var(--hospital-red-hover);
 }
 
 .hosp-float-btn.book {
-  background: linear-gradient(135deg, var(--hospital-blue) 0%, #0369a1 100%);
+  background: var(--portal-navy-deep);
   color: #ffffff;
-  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35);
-}
-
-.hosp-float-btn.book:hover {
-  background: linear-gradient(135deg, #0369a1 0%, #0c4a6e 100%);
+  border: 1px solid #1e3a8a;
 }
 
 .hosp-float-btn:hover {
   transform: translateY(-2px);
 }
 
-/* General Hospital Inputs */
+/* Inputs */
 .hosp-input {
-  height: 40px;
-  padding: 0 14px;
-  border-radius: var(--radius-sm);
-  border: 1.5px solid var(--border-color);
+  height: 38px;
+  padding: 0 12px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-slate);
   background-color: #ffffff;
-  color: var(--hospital-navy);
-  font-size: 0.88rem;
+  color: var(--text-dark);
+  font-size: 0.85rem;
   font-family: inherit;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   outline: none;
 }
 
 .hosp-input:focus {
-  border-color: var(--hospital-blue);
-  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+  border-color: var(--portal-navy);
+  box-shadow: 0 0 0 2px rgba(13, 54, 99, 0.15);
 }
 
 textarea.hosp-input {
   height: auto;
-  padding: 10px 14px;
+  padding: 8px 12px;
 }
 
-/* --------------------------------------------------------------------------
-   11. TESTIMONIALS (CẢM NHẬN BỆNH NHÂN)
-   -------------------------------------------------------------------------- */
-.hosp-testimonials-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.hosp-quote-card {
-  background: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.25s ease;
-}
-
-.hosp-quote-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: #bae6fd;
-}
-
-.hosp-quote-stars {
-  display: flex;
-  gap: 3px;
-  margin-bottom: 12px;
-}
-
-.hosp-quote-body {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  font-style: italic;
-  margin-bottom: 18px;
-}
-
-.hosp-quote-author {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 14px;
-  border-top: 1px solid var(--border-color);
-  font-size: 0.82rem;
-}
-
-.hosp-quote-author strong {
-  display: block;
-  color: var(--hospital-navy);
-  font-weight: 700;
-}
-
-.hosp-quote-author span {
-  color: var(--text-muted);
-}
-
-.hosp-quote-verified {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  color: #16a34a;
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-/* --------------------------------------------------------------------------
-   12. FAQS (HỎI ĐÁP Y KHOA)
-   -------------------------------------------------------------------------- */
-.hosp-faq-stack {
-  max-width: 860px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.hosp-faq-card {
-  background: #ffffff;
-  border: 1.5px solid var(--border-color);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  transition: all 0.2s ease;
-}
-
-.hosp-faq-card.open {
-  border-color: var(--hospital-blue);
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.08);
-}
-
-.hosp-faq-btn {
-  width: 100%;
-  padding: 16px 20px;
-  background: none;
-  border: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 14px;
-  text-align: left;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--hospital-navy);
-  cursor: pointer;
-  transition: color 0.15s ease;
-}
-
-.hosp-faq-btn:hover {
-  color: var(--hospital-blue);
-}
-
-.hosp-faq-answer {
-  padding: 0 20px 18px 20px;
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  border-top: 1px dashed var(--border-color);
-  padding-top: 12px;
-}
-
-/* --------------------------------------------------------------------------
-   13. HEALTH NEWS (CẨM NANG Y KHOA)
-   -------------------------------------------------------------------------- */
-.hosp-news-deck {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.hosp-news-card {
-  background: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.25s ease;
-}
-
-.hosp-news-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-
-.hosp-news-thumb {
-  height: 180px;
-  overflow: hidden;
-}
-
-.hosp-news-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.hosp-news-card:hover .hosp-news-thumb img {
-  transform: scale(1.04);
-}
-
-.hosp-news-body {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.hosp-news-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.76rem;
-  margin-bottom: 8px;
-}
-
-.hosp-news-tag {
-  background: var(--hospital-blue-light);
-  color: var(--hospital-blue);
-  font-weight: 800;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-
-.hosp-news-time {
-  color: var(--text-muted);
-}
-
-.hosp-news-title {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--hospital-navy);
-  margin-bottom: 8px;
-  line-height: 1.4;
-}
-
-.hosp-news-desc {
-  font-size: 0.84rem;
-  color: var(--text-secondary);
-  line-height: 1.55;
-  margin-bottom: 16px;
-  flex-grow: 1;
-}
-
-.hosp-news-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 12px;
-  border-top: 1px solid var(--border-color);
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.hosp-news-link {
-  color: var(--hospital-blue);
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-}
-
-.hosp-news-link:hover {
-  text-decoration: underline;
-}
-
-/* --------------------------------------------------------------------------
-   14. LOOKUP MODAL
-   -------------------------------------------------------------------------- */
-.hosp-modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(9, 37, 64, 0.6);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.hosp-modal-dialog {
-  background: #ffffff;
-  border-radius: var(--radius-lg);
-  max-width: 580px;
-  width: 100%;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-color);
-  overflow: hidden;
-  animation: modalPopIn 0.2s ease-out;
-}
-
-@keyframes modalPopIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-.hosp-modal-head {
-  padding: 18px 24px;
-  background-color: var(--bg-page);
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.hosp-modal-close {
-  background: none;
-  border: none;
-  color: var(--text-muted);
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 4px;
-  display: flex;
-}
-
-.hosp-modal-close:hover {
-  color: var(--hospital-red);
-}
-
-/* --------------------------------------------------------------------------
-   15. RESPONSIVE QUERIES
-   -------------------------------------------------------------------------- */
-@media (max-width: 1100px) {
-  .hosp-menu-list { gap: 12px; }
-  .hosp-advantages-grid { grid-template-columns: 1fr 1fr; }
-  .hosp-quickbar-grid { grid-template-columns: 1fr 1fr; }
-  .hosp-booking-box { grid-template-columns: 1fr; }
-  .hosp-equip-grid { grid-template-columns: 1fr; }
-  .hosp-proc-grid { grid-template-columns: 1fr 1fr; }
-  .hosp-footer-grid { grid-template-columns: 1fr 1fr; }
-  .hosp-testimonials-row { grid-template-columns: 1fr 1fr; }
-  .hosp-news-deck { grid-template-columns: 1fr 1fr; }
-}
-
+/* Responsive Overrides */
 @media (max-width: 1024px) {
-  .hosp-menu-list { display: none; }
-  .hosp-mobile-btn { display: block; }
-  .hosp-hero-grid { grid-template-columns: 1fr; }
+  .portal-hero-frame {
+    grid-template-columns: 1fr;
+  }
+  .quick-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .portal-adv-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .portal-letters-grid {
+    grid-template-columns: 1fr;
+  }
+  .portal-news-layout {
+    grid-template-columns: 1fr;
+  }
+  .portal-searchbar-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hosp-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .portal-menu {
+    display: none;
+  }
+  .portal-mobile-toggle {
+    display: block;
+  }
 }
 
 @media (max-width: 768px) {
-  .hosp-topbar { display: none; }
-  .hosp-hero-h1 { font-size: 2.2rem; }
-  .hosp-stats-bar { grid-template-columns: 1fr 1fr; }
-  .hosp-quickbar-grid { grid-template-columns: 1fr; }
-  .hosp-advantages-grid { grid-template-columns: 1fr; }
-  .hosp-doctors-grid { grid-template-columns: 1fr; }
-  .hosp-contact-grid { grid-template-columns: 1fr; }
-  .hosp-contact-tiles { grid-template-columns: 1fr; }
-  .hosp-footer-grid { grid-template-columns: 1fr; }
-  .hosp-testimonials-row { grid-template-columns: 1fr; }
-  .hosp-news-deck { grid-template-columns: 1fr; }
+  .portal-topbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .portal-helplines {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .quick-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .portal-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .portal-adv-grid {
+    grid-template-columns: 1fr;
+  }
+  .hosp-proc-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hosp-equip-grid {
+    grid-template-columns: 1fr;
+  }
+  .hosp-booking-box {
+    grid-template-columns: 1fr;
+  }
+  .hosp-contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .hosp-footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .portal-hero-title {
+    font-size: 1.85rem;
+  }
+  .gold-accent {
+    font-size: 1.5rem;
+  }
 }

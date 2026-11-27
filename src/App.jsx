@@ -67,16 +67,16 @@ export default function App() {
         onOpenLookup={() => setLookupOpen(true)} 
       />
 
-      {/* 2. Hero Section with Quick Booking Search Bar */}
+      {/* 2. Hero Section with Quick Services Dashboard & Search Bar */}
       <Hero onQuickSelectBooking={handleQuickBooking} />
 
-      {/* 3. Core Advantages (Why Medicare Plus) */}
+      {/* 3. Core Military Hospital Strengths */}
       <Advantages />
 
-      {/* 4. 8 Medical Specialties */}
+      {/* 4. Clinical & High-Tech Specialties */}
       <Specialties onSelectSpecialty={handleSelectSpecialty} />
 
-      {/* 5. Doctor Specialist Team */}
+      {/* 5. Military Doctor Specialist Team */}
       <Doctors onSelectDoctor={handleSelectDoctor} />
 
       {/* 6. Online Booking Console */}
@@ -88,19 +88,19 @@ export default function App() {
       {/* 7. Health Checkup Packages & Transparent Pricing */}
       <Pricing onSelectPackage={handleSelectPackage} />
 
-      {/* 8. Diagnostic Equipment Showcase (Siemens, GE, Roche) */}
+      {/* 8. Diagnostic Equipment Showcase */}
       <EquipmentSection />
 
       {/* 9. 4-Step Standard Examination Process */}
       <Process />
 
-      {/* 10. Patient Testimonials */}
+      {/* 10. Patient Letters of Appreciation (Thư Cảm Ơn) */}
       <Testimonials />
 
-      {/* 11. Frequently Asked Questions (BHYT, Preparation) */}
+      {/* 11. Frequently Asked Questions (BHYT & Hospital Guidelines) */}
       <FaqSection />
 
-      {/* 12. Medical Knowledge & Family Health News */}
+      {/* 12. Medical Activities & Scientific Reports */}
       <HealthNews />
 
       {/* 13. Contact & Direct Consultation Form */}

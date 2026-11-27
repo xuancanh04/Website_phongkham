@@ -29,17 +29,17 @@ export default function Process() {
   ];
 
   return (
-    <section className="hospital-section" style={{ backgroundColor: 'var(--bg-page)' }} id="process">
+    <section className="portal-section bg-surface" id="process">
       <div className="container">
-        <div className="section-head-wrap">
-          <div className="hospital-badge-tag">
+        <div className="portal-section-head">
+          <div className="portal-tag-pill">
             <ClipboardCheck size={14} />
-            <span>Quy Trình Chuẩn Y Khoa</span>
+            <span>QUY TRÌNH TIẾP ĐÓN CHUẨN MỰC QUÂN Y</span>
           </div>
-          <h2 className="hospital-heading-h2">4 Bước Khám Chữa Bệnh Nhanh Chóng, Tiện Lợi</h2>
-          <p className="hospital-lead-desc">
-            Mô hình tiếp đón và khám bệnh khép kín giúp tiết kiệm tối đa thời gian chờ đợi, 
-            trung bình người bệnh chỉ mất 45 - 60 phút cho một lần khám tổng quát.
+          <h2 className="portal-head-h2">4 Bước Khám Chữa Bệnh Nhanh Chóng — Chu Đáo</h2>
+          <p className="portal-head-desc">
+            Mô hình tiếp đón và khám bệnh khép kín, ứng dụng quản lý số hóa thông tin giúp tiết kiệm tối đa thời gian chờ đợi 
+            cho người bệnh có thẻ BHYT và cán bộ chiến sĩ quân đội.
           </p>
         </div>
 

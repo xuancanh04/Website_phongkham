@@ -3,15 +3,15 @@ import { PRICING_PACKAGES } from '../data/clinicData';
 
 export default function Pricing({ onSelectPackage }) {
   return (
-    <section className="hospital-section" style={{ backgroundColor: 'var(--bg-page)' }} id="pricing">
+    <section className="portal-section bg-surface" id="pricing">
       <div className="container">
-        <div className="section-head-wrap">
-          <div className="hospital-badge-tag">
+        <div className="portal-section-head">
+          <div className="portal-tag-pill">
             <ShieldCheck size={14} />
-            <span>Thông Tuyến BHYT & Niêm Yết Công Khai</span>
+            <span>THÔNG TUYẾN BHYT & CÔNG KHAI VIỆN PHÍ</span>
           </div>
-          <h2 className="hospital-heading-h2">Bảng Giá Các Gói Khám & Tầm Soát Chuyên Sâu</h2>
-          <p className="hospital-lead-desc">
+          <h2 className="portal-head-h2">Bảng Giá Các Gói Khám & Tầm Soát Sức Khỏe</h2>
+          <p className="portal-head-desc">
             Chi phí được niêm yết công khai theo quy định của Bộ Quốc Phòng và Bộ Y Tế. Người có thẻ BHYT toàn quốc 
             được thanh toán 100% quyền lợi đúng tuyến. Thăm khám và tư vấn trực tiếp bởi đội ngũ Thầy thuốc Quân y.
           </p>

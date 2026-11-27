@@ -3,15 +3,15 @@ import { EQUIPMENT_LIST } from '../data/clinicData';
 
 export default function EquipmentSection() {
   return (
-    <section className="hospital-section" style={{ backgroundColor: '#ffffff' }} id="facilities">
+    <section className="portal-section" id="facilities">
       <div className="container">
-        <div className="section-head-wrap">
-          <div className="hospital-badge-tag">
+        <div className="portal-section-head">
+          <div className="portal-tag-pill">
             <Cpu size={14} />
-            <span>Trang Thiết Bị Kỹ Thuật Cao Tuyến Quân Khu</span>
+            <span>TRANG THIẾT BỊ Y TẾ TUYẾN CUỐI QUÂN KHU</span>
           </div>
-          <h2 className="hospital-heading-h2">Hệ Thống Thiết Bị Chẩn Đoán & Phẫu Thuật Hiện Đại</h2>
-          <p className="hospital-lead-desc">
+          <h2 className="portal-head-h2">Hệ Thống Thiết Bị Chẩn Đoán & Phẫu Thuật Đồng Bộ</h2>
+          <p className="portal-head-desc">
             Bệnh Viện Quân Y 7A được Bộ Quốc Phòng và Quân khu 7 đầu tư đồng bộ hệ thống máy chụp cộng hưởng từ MRI 1.5 Tesla, 
             CT-Scanner đa lát cắt, máy tăng sáng truyền hình C-Arm phẫu thuật cột sống và trung tâm chạy thận nhân tạo Fresenius (Đức).
           </p>

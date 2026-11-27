@@ -359,61 +359,67 @@ export const CLINIC_FAQS = [
 
 export const TESTIMONIALS = [
   {
-    id: "test-1",
-    name: "Thương binh Nguyễn Văn Hải",
-    age: 68,
-    address: "Quận 5, TP.HCM",
-    doctor: "PGS. TS. BS. Lê Quang Trí (Khoa B1)",
-    comment: "Tôi bị xẹp đốt sống thắt lưng đau buốt không đi lại được. Được Giám đốc Trí và kíp mổ Khoa Chấn thương Chỉnh hình bơm xi măng sinh học chỉ 30 phút, sáng mổ chiều tôi đã đứng dậy đi lại bình thường. Tác phong bộ đội Quân khu 7 vô cùng trách nhiệm và chu đáo.",
-    rating: 5
+    id: "thu-1",
+    author: "Bác Đặng Văn Hoan (72 tuổi, Cựu chiến binh Sư đoàn 5)",
+    address: "Ngụ tại TP. Tân An, Tỉnh Long An",
+    recipient: "Kính gửi: Ban Giám đốc & Kíp mổ Khoa Chấn thương Chỉnh hình (B1)",
+    excerpt: "Tôi bị trượt ngã xẹp lún đốt sống thắt lưng L3 do loãng xương nặng, đau đớn không thể trở mình suốt 2 tuần. Được gia đình chuyển đến BV Quân y 7A, Đại tá PGS.TS Lê Quang Trí cùng kíp mổ Khoa B1 đã trực tiếp bơm xi măng sinh học tạo hình thân đốt sống. Chỉ sau 40 phút phẫu thuật qua da, cơn đau giảm hẳn 90%, buổi chiều tôi đã có thể tự ngồi dậy đi lại được. Sự ân cần, tác phong chuẩn mực của người lính Bộ đội Cụ Hồ làm tôi và gia đình vô cùng xúc động.",
+    date: "15/10/2026",
+    department: "Khoa Chấn thương Chỉnh hình (B1)"
   },
   {
-    id: "test-2",
-    name: "Chị Trần Thanh Thảo",
-    age: 45,
-    address: "Bình Chánh, TP.HCM",
-    doctor: "BS. CKII. Lê Thị Kim Anh (Khoa A1)",
-    comment: "Mẹ tôi chạy thận nhân tạo định kỳ tại Khoa Thận Lọc Máu BV Quân y 7A hơn 3 năm nay. Máy móc Fresenius rất mới, phòng lọc sạch sẽ, điều dưỡng tận tình gọi dạ bảo vâng. BHYT thanh toán đúng tuyến 100% đỡ gánh nặng kinh tế gia đình rất nhiều.",
-    rating: 5
+    id: "thu-2",
+    author: "Gia đình bà Nguyễn Thị Cúc (68 tuổi)",
+    address: "Ngụ tại Phường 8, Quận 5, TP.HCM",
+    recipient: "Kính gửi: Ban Lãnh đạo & Đội ngũ Y bác sĩ Đơn nguyên Thận Nhân Tạo",
+    excerpt: "Mẹ tôi suy thận mạn giai đoạn cuối, lọc máu chu kỳ tại BV Quân y 7A hơn 4 năm nay. Hệ thống máy lọc thận Fresenius của Đức rất đồng bộ, phòng lọc vô trùng nghiêm ngặt. Dù bệnh nhân rất đông nhưng các bác sĩ, điều dưỡng luôn nhỏ nhẹ, túc trực bên giường bệnh kiểm tra huyết áp từng giờ. Nhờ chính sách BHYT thông tuyến chi trả đúng tuyến 100%, gia đình tôi đã vượt qua được giai đoạn ngặt nghèo nhất.",
+    date: "02/11/2026",
+    department: "Khoa Thận Lọc Máu (Fresenius)"
   },
   {
-    id: "test-3",
-    name: "Anh Hoàng Minh Tuấn",
-    age: 34,
-    address: "Quận 10, TP.HCM",
-    doctor: "BS. CKII. Nguyễn Văn Dũng (Khoa B2)",
-    comment: "Tôi mổ ruột thừa nội soi tại Khoa Ngoại B2. Bác sĩ mổ vết rạch siêu nhỏ, không đau nhiều, nằm viện 2 ngày là được xuất viện. Thủ tục nhập viện xuất viện tại khu đón tiếp rất nhanh nhẹn, trật tự đúng chất kỷ luật quân y.",
-    rating: 5
+    id: "thu-3",
+    author: "Đồng chí Trung tá QNCN Trần Quốc Bình",
+    address: "Bộ Chỉ huy Quân sự Tỉnh Đồng Nai",
+    recipient: "Kính gửi: Kíp trực Khoa Hồi Sức Cấp Cứu (ICU) & Khoa Ngoại B2",
+    excerpt: "Trong lúc làm nhiệm vụ huấn luyện, tôi bị viêm ruột thừa cấp hoại tử nguy cơ viêm phúc mạc. Nhận được điện thoại điều phối, kíp cấp cứu 7A đã tiếp nhận khẩn cấp trong đêm, kích hoạt quy trình báo động đỏ và tiến hành phẫu thuật nội soi ổ bụng xử lý triệt để. Tinh thần khẩn trương, 'coi bệnh nhân như người thân ruột thịt' của các đồng chí quân y đã cứu sống tôi kịp thời.",
+    date: "20/09/2026",
+    department: "Khoa Ngoại B2 & Hồi Sức Cấp Cứu"
   }
 ];
 
 export const HEALTH_ARTICLES = [
   {
     id: "art-1",
-    title: "Lún xẹp đốt sống ở người lớn tuổi: Giải pháp giảm đau tức thì bằng xi măng sinh học",
-    category: "Chấn Thương Chỉnh Hình",
-    readTime: "5 phút đọc",
-    summary: "Phương pháp tạo hình thân đốt sống qua da (Vertebroplasty) tại BV Quân y 7A giúp bệnh nhân lớn tuổi hết đau lưng tức thì, tránh nguy cơ nằm bất động gây loét tỳ đè và viêm phổi.",
+    title: "Ứng dụng kỹ thuật bơm xi măng sinh học phục hồi lún xẹp cột sống cho người cao tuổi",
+    category: "Thành Tựu Y Học Quân Y",
+    publishDate: "25/11/2026",
+    readTime: "Tin chuyên môn",
+    summary: "Báo cáo khoa học từ Khoa B1: Kỹ thuật tạo hình thân đốt sống qua da (Vertebroplasty) dưới sự dẫn đường của hệ thống C-Arm giúp phục hồi chiều cao thân đốt, giảm đau tức thì và ngăn biến chứng loét tỳ đè ở bệnh nhân cao tuổi.",
     author: "Đại tá, PGS. TS. BS. Lê Quang Trí",
-    img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800"
+    img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800",
+    isFeatured: true
   },
   {
     id: "art-2",
-    title: "Quyền lợi thông tuyến BHYT toàn quốc khi khám chữa bệnh tại Bệnh Viện Quân Y 7A",
-    category: "Chính Sách BHYT",
-    readTime: "4 phút đọc",
-    summary: "Hướng dẫn chi tiết thủ tục hưởng 100% quyền lợi BHYT đúng tuyến cho người dân có thẻ BHYT trên cả nước khi khám ngoại trú và nội trú tại Bệnh Viện Quân Y 7A.",
-    author: "Ban Kế Hoạch Tổng Hợp Quân Y 7A",
-    img: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=800"
+    title: "Bệnh Viện Quân Y 7A tổ chức khám bệnh, cấp thuốc miễn phí cho hơn 1.200 đồng bào vùng sâu",
+    category: "Hoạt Động Dân Quân Y",
+    publishDate: "20/11/2026",
+    readTime: "Hoạt động xã hội",
+    summary: "Đoàn y bác sĩ Bệnh Viện Quân Y 7A phối hợp cùng Bộ Chỉ huy Quân sự tỉnh thực hiện chương trình khám bệnh, tầm soát cơ xương khớp, siêu âm và tặng quà cho các gia đình thương binh, liệt sĩ và hộ nghèo.",
+    author: "Phòng Chính Trị - Quân Y 7A",
+    img: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=800",
+    isFeatured: false
   },
   {
     id: "art-3",
-    title: "Chăm sóc và bảo tồn chức năng thận ở bệnh nhân tăng huyết áp và đái tháo đường",
-    category: "Nội Tim - Thận - Khớp",
-    readTime: "6 phút đọc",
-    summary: "Lời khuyên từ bác sĩ chuyên khoa A1 về chế độ dinh dưỡng giảm muối, kiểm soát huyết áp mục tiêu và lịch khám định kỳ nhằm ngăn ngừa tiến triển suy thận mạn.",
-    author: "Trung tá, BS. CKII. Lê Thị Kim Anh",
-    img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800"
+    title: "Thông báo quyền lợi khám chữa bệnh BHYT thông tuyến toàn quốc tại Bệnh Viện Quân Y 7A",
+    category: "Chính Sách & Chế Độ BHYT",
+    publishDate: "15/11/2026",
+    readTime: "Thông báo người bệnh",
+    summary: "Mọi công dân có thẻ BHYT trên phạm vi toàn quốc khi đến khám ngoại trú, điều trị nội trú tại BV Quân y 7A đều được thanh toán đúng mức hưởng 100% theo quy định, thủ tục tiếp nhận số hóa nhanh gọn.",
+    author: "Ban Kế Hoạch Tổng Hợp",
+    img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800",
+    isFeatured: false
   }
 ];
 

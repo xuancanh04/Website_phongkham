@@ -10,17 +10,17 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="hospital-section" style={{ backgroundColor: 'var(--bg-page)' }} id="faqs">
+    <section className="portal-section" id="faqs">
       <div className="container">
-        <div className="section-head-wrap">
-          <div className="hospital-badge-tag">
+        <div className="portal-section-head">
+          <div className="portal-tag-pill">
             <HelpCircle size={14} />
-            <span>Hỏi Đáp Y Khoa</span>
+            <span>HƯỚNG DẪN NGƯỜI BỆNH & CHÍNH SÁCH BHYT</span>
           </div>
-          <h2 className="hospital-heading-h2">Những Câu Hỏi Thường Gặp Của Bệnh Nhân</h2>
-          <p className="hospital-lead-desc">
-            Giải đáp chi tiết các thắc mắc về quyền lợi hưởng BHYT, lưu ý trước khi xét nghiệm máu 
-            và quy trình trả kết quả khám nhanh tại MediCare Plus.
+          <h2 className="portal-head-h2">Những Câu Hỏi Thường Gặp Về Khám Chữa Bệnh</h2>
+          <p className="portal-head-desc">
+            Giải đáp chi tiết các thắc mắc về quyền lợi hưởng BHYT thông tuyến, thủ tục nhập viện, 
+            kỹ thuật bơm xi măng sinh học cột sống và lịch khám bệnh tại Bệnh Viện Quân Y 7A.
           </p>
         </div>
 
