@@ -81,28 +81,16 @@ export default function Header({ onOpenBooking, onOpenLookup }) {
               <a href="#about">Trang chủ</a>
             </li>
             <li className="portal-menu-item">
-              <a href="#advantages">Năng lực bệnh viện</a>
+              <a href="#specialties">Chuyên khoa</a>
             </li>
             <li className="portal-menu-item">
-              <a href="#specialties">Chuyên khoa mũi nhọn</a>
+              <a href="#doctors">Bác sĩ Quân Y</a>
             </li>
             <li className="portal-menu-item">
-              <a href="#doctors">Thầy thuốc Quân Y</a>
+              <a href="#pricing">Bảng giá & BHYT</a>
             </li>
             <li className="portal-menu-item">
-              <a href="#facilities">Trang thiết bị y tế</a>
-            </li>
-            <li className="portal-menu-item">
-              <a href="#pricing">Gói khám & BHYT</a>
-            </li>
-            <li className="portal-menu-item">
-              <a href="#process">Quy trình khám</a>
-            </li>
-            <li className="portal-menu-item">
-              <a href="#testimonials">Thư tri ân</a>
-            </li>
-            <li className="portal-menu-item">
-              <a href="#news">Tin tức - Sự kiện</a>
+              <a href="#news">Tin tức & Hoạt động</a>
             </li>
             <li className="portal-menu-item">
               <a href="#contact">Liên hệ</a>
@@ -144,15 +132,11 @@ export default function Header({ onOpenBooking, onOpenLookup }) {
         {mobileMenuOpen && (
           <div className="portal-mobile-drawer">
             <a href="#about" onClick={() => setMobileMenuOpen(false)}>Trang chủ</a>
-            <a href="#advantages" onClick={() => setMobileMenuOpen(false)}>Năng lực bệnh viện</a>
-            <a href="#specialties" onClick={() => setMobileMenuOpen(false)}>Chuyên khoa lâm sàng</a>
-            <a href="#doctors" onClick={() => setMobileMenuOpen(false)}>Đội ngũ Thầy thuốc Quân Y</a>
-            <a href="#facilities" onClick={() => setMobileMenuOpen(false)}>Trang thiết bị y khoa</a>
-            <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>Bảng giá gói khám & BHYT</a>
-            <a href="#process" onClick={() => setMobileMenuOpen(false)}>Quy trình khám bệnh</a>
-            <a href="#testimonials" onClick={() => setMobileMenuOpen(false)}>Góc tri ân người bệnh</a>
-            <a href="#news" onClick={() => setMobileMenuOpen(false)}>Tin tức & Hoạt động y khoa</a>
-            <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Địa chỉ & Bản đồ viện</a>
+            <a href="#specialties" onClick={() => setMobileMenuOpen(false)}>Chuyên khoa</a>
+            <a href="#doctors" onClick={() => setMobileMenuOpen(false)}>Bác sĩ Quân Y</a>
+            <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>Bảng giá & BHYT</a>
+            <a href="#news" onClick={() => setMobileMenuOpen(false)}>Tin tức & Hoạt động</a>
+            <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Liên hệ & Bản đồ viện</a>
             <div className="mobile-action-group">
               <button 
                 type="button" 
