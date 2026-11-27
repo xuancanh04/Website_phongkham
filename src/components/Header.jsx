@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { Phone, Clock, Calendar, Search, Menu, X, Bell } from 'lucide-react';
 import { CLINIC_INFO } from '../data/clinicData';
 
-export default function Header({ onOpenBooking, onOpenLookup }) {
+export default function Header({ onOpenLookup }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -11,7 +12,7 @@ export default function Header({ onOpenBooking, onOpenLookup }) {
       <div className="portal-topbar">
         <div className="container portal-topbar-inner">
           {/* Official Emblem & Title */}
-          <div className="portal-brand-wrap" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <Link to="/" className="portal-brand-wrap">
             <img 
               src="/logo_7a_brand.png" 
               alt="Logo Bệnh Viện Quân Y 7A - 7a Military Hospital" 
@@ -31,7 +32,7 @@ export default function Header({ onOpenBooking, onOpenLookup }) {
                 <span className="portal-slogan-official">“Sự an toàn của người bệnh là ưu tiên hàng đầu của chúng tôi”</span>
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Right Direct Medical Helplines */}
           <div className="portal-helplines">
@@ -68,23 +69,35 @@ export default function Header({ onOpenBooking, onOpenLookup }) {
       <nav className="portal-navbar">
         <div className="container portal-nav-inner">
           <ul className="portal-menu">
-            <li className="portal-menu-item active">
-              <a href="#about">Trang chủ</a>
+            <li className="portal-menu-item">
+              <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>
+                Trang chủ
+              </NavLink>
             </li>
             <li className="portal-menu-item">
-              <a href="#specialties">Chuyên khoa</a>
+              <NavLink to="/chuyen-khoa" className={({ isActive }) => isActive ? 'active' : ''}>
+                Chuyên khoa
+              </NavLink>
             </li>
             <li className="portal-menu-item">
-              <a href="#doctors">Bác sĩ Quân Y</a>
+              <NavLink to="/bac-si" className={({ isActive }) => isActive ? 'active' : ''}>
+                Bác sĩ Quân Y
+              </NavLink>
             </li>
             <li className="portal-menu-item">
-              <a href="#pricing">Bảng giá & BHYT</a>
+              <NavLink to="/bang-gia" className={({ isActive }) => isActive ? 'active' : ''}>
+                Bảng giá & BHYT
+              </NavLink>
             </li>
             <li className="portal-menu-item">
-              <a href="#news">Tin tức & Hoạt động</a>
+              <NavLink to="/tin-tuc" className={({ isActive }) => isActive ? 'active' : ''}>
+                Tin tức & Hoạt động
+              </NavLink>
             </li>
             <li className="portal-menu-item">
-              <a href="#contact">Liên hệ</a>
+              <NavLink to="/lien-he" className={({ isActive }) => isActive ? 'active' : ''}>
+                Liên hệ
+              </NavLink>
             </li>
           </ul>
 
@@ -99,14 +112,13 @@ export default function Header({ onOpenBooking, onOpenLookup }) {
               <span>Tra cứu hồ sơ</span>
             </button>
 
-            <button 
-              type="button" 
+            <Link 
+              to="/dat-lich" 
               className="btn-portal-booking"
-              onClick={onOpenBooking}
             >
               <Calendar size={15} />
               <span>ĐĂNG KÝ KHÁM</span>
-            </button>
+            </Link>
 
             <button 
               type="button"
@@ -122,12 +134,12 @@ export default function Header({ onOpenBooking, onOpenLookup }) {
         {/* Mobile Dropdown Drawer */}
         {mobileMenuOpen && (
           <div className="portal-mobile-drawer">
-            <a href="#about" onClick={() => setMobileMenuOpen(false)}>Trang chủ</a>
-            <a href="#specialties" onClick={() => setMobileMenuOpen(false)}>Chuyên khoa</a>
-            <a href="#doctors" onClick={() => setMobileMenuOpen(false)}>Bác sĩ Quân Y</a>
-            <a href="#pricing" onClick={() => setMobileMenuOpen(false)}>Bảng giá & BHYT</a>
-            <a href="#news" onClick={() => setMobileMenuOpen(false)}>Tin tức & Hoạt động</a>
-            <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Liên hệ & Bản đồ viện</a>
+            <Link to="/" onClick={() => setMobileMenuOpen(false)}>Trang chủ</Link>
+            <Link to="/chuyen-khoa" onClick={() => setMobileMenuOpen(false)}>Chuyên khoa</Link>
+            <Link to="/bac-si" onClick={() => setMobileMenuOpen(false)}>Bác sĩ Quân Y</Link>
+            <Link to="/bang-gia" onClick={() => setMobileMenuOpen(false)}>Bảng giá & BHYT</Link>
+            <Link to="/tin-tuc" onClick={() => setMobileMenuOpen(false)}>Tin tức & Hoạt động</Link>
+            <Link to="/lien-he" onClick={() => setMobileMenuOpen(false)}>Liên hệ & Bản đồ viện</Link>
             <div className="mobile-action-group">
               <button 
                 type="button" 
@@ -137,14 +149,14 @@ export default function Header({ onOpenBooking, onOpenLookup }) {
               >
                 Tra cứu
               </button>
-              <button 
-                type="button" 
+              <Link 
+                to="/dat-lich"
                 className="btn-portal-booking"
-                style={{ flex: 1 }}
-                onClick={() => { setMobileMenuOpen(false); onOpenBooking(); }}
+                style={{ flex: 1, textAlign: 'center' }}
+                onClick={() => setMobileMenuOpen(false)}
               >
                 Đăng ký khám
-              </button>
+              </Link>
             </div>
           </div>
         )}

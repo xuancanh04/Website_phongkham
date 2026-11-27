@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Award } from 'lucide-react';
 import { CLINIC_INFO } from '../data/clinicData';
 
@@ -58,12 +59,12 @@ export default function Footer() {
           <div>
             <h5 className="hosp-footer-h5">Chuyên Khoa Mũi Nhọn</h5>
             <ul className="hosp-footer-list">
-              <li><a href="#specialties">Khoa Chấn Thương Chỉnh Hình (B1)</a></li>
-              <li><a href="#specialties">Khoa Nội Tim - Thận - Khớp (A1)</a></li>
-              <li><a href="#specialties">Khoa Ngoại Tổng Hợp (B2)</a></li>
-              <li><a href="#specialties">Khoa Thận Nhân Tạo (Lọc Máu)</a></li>
-              <li><a href="#specialties">Khoa Hồi Sức Cấp Cứu (ICU)</a></li>
-              <li><a href="#specialties">Khoa Y Học Cổ Truyền (A5)</a></li>
+              <li><Link to="/chuyen-khoa">Khoa Chấn Thương Chỉnh Hình (B1)</Link></li>
+              <li><Link to="/chuyen-khoa">Khoa Nội Tim - Thận - Khớp (A1)</Link></li>
+              <li><Link to="/chuyen-khoa">Khoa Ngoại Tổng Hợp (B2)</Link></li>
+              <li><Link to="/chuyen-khoa">Khoa Thận Nhân Tạo (Lọc Máu)</Link></li>
+              <li><Link to="/chuyen-khoa">Khoa Hồi Sức Cấp Cứu (ICU)</Link></li>
+              <li><Link to="/chuyen-khoa">Khoa Y Học Cổ Truyền (A5)</Link></li>
             </ul>
           </div>
 
@@ -71,12 +72,12 @@ export default function Footer() {
           <div>
             <h5 className="hosp-footer-h5">Dịch Vụ & Tiện Ích</h5>
             <ul className="hosp-footer-list">
-              <li><a href="#booking">Đặt lịch khám online</a></li>
-              <li><a href="#pricing">Bảng giá gói khám tổng quát</a></li>
-              <li><a href="#doctors">Danh sách Bác sĩ chuyên khoa</a></li>
-              <li><a href="#facilities">Trang thiết bị chẩn đoán</a></li>
-              <li><a href="#faqs">Chính sách thanh toán BHYT</a></li>
-              <li><a href="#contact">Đăng ký tư vấn y khoa</a></li>
+              <li><Link to="/dat-lich">Đăng ký lịch khám trực tuyến</Link></li>
+              <li><Link to="/bang-gia">Bảng giá viện phí & gói khám</Link></li>
+              <li><Link to="/bac-si">Danh sách Bác sĩ chuyên khoa</Link></li>
+              <li><Link to="/bang-gia">Chính sách thanh toán BHYT</Link></li>
+              <li><Link to="/tin-tuc">Tin tức & hoạt động y khoa</Link></li>
+              <li><Link to="/lien-he">Thông tin liên hệ & bản đồ</Link></li>
             </ul>
           </div>
 

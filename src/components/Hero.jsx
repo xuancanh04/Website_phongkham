@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   Calendar, 
   PhoneCall, 
@@ -20,6 +21,7 @@ export default function Hero({ onQuickSelectBooking }) {
   const [selectedSpecialty, setSelectedSpecialty] = useState('');
   const [selectedDoctor, setSelectedDoctor] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
+  const navigate = useNavigate();
 
   const filteredDoctors = selectedSpecialty
     ? DOCTORS.filter(d => d.specialtyId === selectedSpecialty)
@@ -27,11 +29,14 @@ export default function Hero({ onQuickSelectBooking }) {
 
   const handleQuickSubmit = (e) => {
     e.preventDefault();
-    onQuickSelectBooking({
-      specialtyId: selectedSpecialty,
-      doctorId: selectedDoctor,
-      date: selectedDate
-    });
+    if (onQuickSelectBooking) {
+      onQuickSelectBooking({
+        specialtyId: selectedSpecialty,
+        doctorId: selectedDoctor,
+        date: selectedDate
+      });
+    }
+    navigate('/dat-lich');
   };
 
   return (
@@ -58,10 +63,10 @@ export default function Hero({ onQuickSelectBooking }) {
             </p>
 
             <div className="portal-hero-ctas">
-              <a href="#booking" className="btn-portal-hero-primary">
+              <Link to="/dat-lich" className="btn-portal-hero-primary">
                 <Calendar size={17} />
                 <span>ĐĂNG KÝ LỊCH KHÁM TRỰC TUYẾN</span>
-              </a>
+              </Link>
 
               <a href={`tel:${CLINIC_INFO.hotline}`} className="btn-portal-hero-outline">
                 <PhoneCall size={17} />
@@ -132,7 +137,7 @@ export default function Hero({ onQuickSelectBooking }) {
 
           <div className="quick-cards-grid">
             {/* Card 1 */}
-            <a href="#booking" className="quick-service-item">
+            <Link to="/dat-lich" className="quick-service-item">
               <div className="quick-icon-wrap bg-blue-icon">
                 <Calendar size={22} />
               </div>
@@ -141,10 +146,10 @@ export default function Hero({ onQuickSelectBooking }) {
                 <p>Đăng ký lịch hẹn trực tuyến, chọn chuyên khoa & bác sĩ, giảm thời gian chờ đợi.</p>
                 <span className="quick-link-act">Đăng ký ngay <ArrowRight size={13} /></span>
               </div>
-            </a>
+            </Link>
 
             {/* Card 2 */}
-            <a href="#booking" className="quick-service-item">
+            <Link to="/dat-lich" className="quick-service-item">
               <div className="quick-icon-wrap bg-teal-icon">
                 <FileText size={22} />
               </div>
@@ -153,10 +158,10 @@ export default function Hero({ onQuickSelectBooking }) {
                 <p>Tra cứu tình trạng phiếu khám, xem thông tin chuẩn bị trước khi đến bệnh viện.</p>
                 <span className="quick-link-act">Tra cứu ngay <ArrowRight size={13} /></span>
               </div>
-            </a>
+            </Link>
 
             {/* Card 3 */}
-            <a href="#faqs" className="quick-service-item">
+            <Link to="/bang-gia" className="quick-service-item">
               <div className="quick-icon-wrap bg-green-icon">
                 <ShieldCheck size={22} />
               </div>
@@ -165,7 +170,7 @@ export default function Hero({ onQuickSelectBooking }) {
                 <p>Hưởng 100% quyền lợi BHYT thông tuyến toàn quốc cho mọi đối tượng nhân dân.</p>
                 <span className="quick-link-act">Xem chính sách <ArrowRight size={13} /></span>
               </div>
-            </a>
+            </Link>
 
             {/* Card 4 */}
             <a href={`tel:${CLINIC_INFO.emergencyPhone}`} className="quick-service-item highlight-emergency">
@@ -180,7 +185,7 @@ export default function Hero({ onQuickSelectBooking }) {
             </a>
 
             {/* Card 5 */}
-            <a href="#specialties" className="quick-service-item">
+            <Link to="/chuyen-khoa" className="quick-service-item">
               <div className="quick-icon-wrap bg-navy-icon">
                 <HeartPulse size={22} />
               </div>
@@ -189,10 +194,10 @@ export default function Hero({ onQuickSelectBooking }) {
                 <p>Bơm xi măng sinh học phục hồi cột sống (Khoa B1), phẫu thuật thay khớp háng/gối.</p>
                 <span className="quick-link-act">Tìm hiểu kỹ thuật <ArrowRight size={13} /></span>
               </div>
-            </a>
+            </Link>
 
             {/* Card 6 */}
-            <a href="#pricing" className="quick-service-item">
+            <Link to="/bang-gia" className="quick-service-item">
               <div className="quick-icon-wrap bg-amber-icon">
                 <CreditCard size={22} />
               </div>
@@ -201,7 +206,7 @@ export default function Hero({ onQuickSelectBooking }) {
                 <p>Minh bạch chi phí khám, xét nghiệm và điều trị theo khung quy định Bộ Y tế.</p>
                 <span className="quick-link-act">Xem bảng giá <ArrowRight size={13} /></span>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
 

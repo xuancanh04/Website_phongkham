@@ -1975,3 +1975,465 @@ textarea.hosp-input {
     font-size: 1.5rem;
   }
 }
+
+/* ==========================================================================
+   MULTI-PAGE SUBPAGE STYLING (CHUYÊN KHOA, BÁC SĨ, BẢNG GIÁ, TIN TỨC, LIÊN HỆ)
+   ========================================================================== */
+.portal-subpage {
+  min-height: 70vh;
+  background-color: var(--bg-canvas);
+}
+
+.portal-page-header {
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg-canvas) 100%);
+  border-bottom: 1px solid var(--border-slate);
+  padding: 32px 0 28px 0;
+}
+
+.portal-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.portal-breadcrumb a {
+  color: var(--portal-navy);
+}
+
+.portal-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.portal-breadcrumb span {
+  color: var(--text-dark);
+}
+
+.page-header-title {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: var(--portal-navy-deep);
+  line-height: 1.25;
+  margin-bottom: 10px;
+  letter-spacing: -0.015em;
+}
+
+.page-header-desc {
+  font-size: 0.94rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+.page-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.portal-filter-btn {
+  padding: 8px 18px;
+  border-radius: var(--radius-xs);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: 1px solid var(--border-slate);
+  background-color: #ffffff;
+  color: var(--text-body);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.portal-filter-btn:hover {
+  border-color: var(--portal-navy);
+  color: var(--portal-navy);
+}
+
+.portal-filter-btn.active {
+  background-color: var(--portal-navy-deep);
+  color: #ffffff;
+  border-color: var(--portal-navy-deep);
+}
+
+.btn-portal-book-spec,
+.btn-portal-book-doctor {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  background-color: var(--portal-navy-light);
+  color: var(--portal-navy);
+  border: 1px solid var(--portal-navy-border);
+  padding: 6px 12px;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-portal-book-spec:hover,
+.btn-portal-book-doctor:hover {
+  background-color: var(--portal-navy-deep);
+  color: #ffffff;
+  border-color: var(--portal-navy-deep);
+}
+
+.btn-portal-view-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 1.5px solid var(--portal-navy);
+  color: var(--portal-navy);
+  font-size: 0.84rem;
+  font-weight: 800;
+  padding: 10px 24px;
+  border-radius: var(--radius-xs);
+  box-shadow: var(--portal-shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.btn-portal-view-more:hover {
+  background-color: var(--portal-navy-deep);
+  color: #ffffff;
+  border-color: var(--portal-navy-deep);
+}
+
+.portal-subpage-callout {
+  background-color: #ffffff;
+  border: 1px solid var(--border-slate);
+  border-left: 4px solid var(--portal-navy);
+  border-radius: var(--radius-xs);
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 40px;
+  box-shadow: var(--portal-shadow-sm);
+}
+
+.portal-subpage-callout h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--portal-navy-deep);
+  margin-bottom: 4px;
+}
+
+.portal-subpage-callout p {
+  font-size: 0.84rem;
+  color: var(--text-body);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* BHYT Notice Box */
+.portal-bhyt-notice-box {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-left: 4px solid var(--portal-navy);
+  border-radius: var(--radius-xs);
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.portal-bhyt-notice-box h3 {
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--portal-navy-deep);
+  margin-bottom: 4px;
+}
+
+.portal-bhyt-notice-box p {
+  font-size: 0.86rem;
+  color: #1e3a8a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Fee table */
+.portal-fee-table-wrap {
+  background-color: #ffffff;
+  border: 1px solid var(--border-slate);
+  border-radius: var(--radius-xs);
+  padding: 24px;
+  box-shadow: var(--portal-shadow-sm);
+  overflow-x: auto;
+}
+
+.portal-fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+.portal-fee-table th {
+  background-color: var(--portal-navy-deep);
+  color: #ffffff;
+  font-weight: 800;
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.portal-fee-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-slate);
+  color: var(--text-dark);
+}
+
+.portal-fee-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* News page layout */
+.portal-news-hero-banner {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  background-color: #ffffff;
+  border: 1px solid var(--border-slate);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  box-shadow: var(--portal-shadow-sm);
+}
+
+.news-hero-img-box {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+
+.news-hero-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-hero-content-box {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.news-hero-content-box h2 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--portal-navy-deep);
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.news-hero-content-box p {
+  font-size: 0.88rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.portal-news-grid-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.portal-news-card-page {
+  background-color: #ffffff;
+  border: 1px solid var(--border-slate);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--portal-shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.portal-news-card-page:hover {
+  transform: translateY(-2px);
+  border-color: var(--portal-navy);
+  box-shadow: var(--portal-shadow-md);
+}
+
+.news-card-thumb {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.news-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.side-badge-pill {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(10, 35, 66, 0.88);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+.news-card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.news-card-body h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--portal-navy-deep);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.news-card-body p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Booking Page guide */
+.portal-booking-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.guide-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-slate);
+  border-radius: var(--radius-xs);
+  padding: 18px;
+  box-shadow: var(--portal-shadow-sm);
+  position: relative;
+}
+
+.guide-step {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #cbd5e1;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.guide-card h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--portal-navy-deep);
+  margin-bottom: 4px;
+}
+
+.guide-card p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Contact page top tiles */
+.portal-contact-top-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.contact-info-tile {
+  background-color: #ffffff;
+  border: 1px solid var(--border-slate);
+  border-radius: var(--radius-xs);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: var(--portal-shadow-sm);
+}
+
+.contact-info-tile.emergency-tile {
+  border-left: 4px solid var(--portal-red);
+  background-color: #fffbfb;
+}
+
+.tile-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+}
+
+.tile-value {
+  font-size: 1.25rem;
+  font-weight: 900;
+  display: block;
+  line-height: 1.2;
+}
+
+.tile-value-text {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--portal-navy-deep);
+  line-height: 1.35;
+}
+
+.contact-info-tile p {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .portal-news-hero-banner {
+    grid-template-columns: 1fr;
+  }
+  .portal-news-grid-page {
+    grid-template-columns: 1fr 1fr;
+  }
+  .portal-booking-guide-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .portal-contact-top-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .portal-subpage-callout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .portal-news-grid-page {
+    grid-template-columns: 1fr;
+  }
+  .portal-booking-guide-grid {
+    grid-template-columns: 1fr;
+  }
+  .portal-contact-top-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
