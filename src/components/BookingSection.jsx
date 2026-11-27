@@ -1,17 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   Calendar, 
-  Clock, 
-  User, 
-  Phone, 
-  Mail, 
-  FileText, 
   ShieldCheck, 
-  CheckCircle2, 
-  AlertCircle,
-  QrCode,
-  Printer,
-  Check
+  QrCode, 
+  Printer, 
+  Check 
 } from 'lucide-react';
 import { SPECIALTIES, DOCTORS, TIME_SLOTS, CLINIC_INFO } from '../data/clinicData';
 

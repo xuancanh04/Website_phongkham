@@ -1,4 +1,3 @@
-import React from 'react';
 import { PhoneCall, Calendar } from 'lucide-react';
 import { CLINIC_INFO } from '../data/clinicData';
 

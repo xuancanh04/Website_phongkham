@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Search, X, Calendar, User, Phone, Trash2, AlertCircle } from 'lucide-react';
-import { CLINIC_INFO } from '../data/clinicData';
+import { useState } from 'react';
+import { Search, X, Trash2, AlertCircle } from 'lucide-react';
 
 export default function LookupModal({ isOpen, onClose }) {
   const [searchTerm, setSearchTerm] = useState('');

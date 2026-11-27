@@ -1,4 +1,3 @@
-import React from 'react';
 import { Star, CheckCircle2, HeartHandshake } from 'lucide-react';
 import { TESTIMONIALS } from '../data/clinicData';
 

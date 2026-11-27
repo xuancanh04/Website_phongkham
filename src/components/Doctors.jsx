@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Star, Clock, Calendar, Award, UserCheck } from 'lucide-react';
+import { useState } from 'react';
+import { Clock, Calendar, UserCheck } from 'lucide-react';
 import { DOCTORS, SPECIALTIES } from '../data/clinicData';
 
 export default function Doctors({ onSelectDoctor }) {

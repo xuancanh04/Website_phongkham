@@ -1,4 +1,3 @@
-import React from 'react';
 import { Award, Users, Cpu, ShieldCheck } from 'lucide-react';
 import { CLINIC_ADVANTAGES } from '../data/clinicData';
 

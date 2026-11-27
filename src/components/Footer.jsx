@@ -1,4 +1,3 @@
-import React from 'react';
 import { HeartPulse, Phone, Mail, MapPin, Award } from 'lucide-react';
 import { CLINIC_INFO } from '../data/clinicData';
 

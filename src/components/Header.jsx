@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Phone, MapPin, Clock, Calendar, Search, Menu, X, HeartPulse, Award } from 'lucide-react';
 import { CLINIC_INFO } from '../data/clinicData';
 

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Calendar, PhoneCall, ShieldCheck, Award, Users, Star, Search, Stethoscope } from 'lucide-react';
+import { useState } from 'react';
+import { Calendar, PhoneCall, ShieldCheck, Award, Users, Search, Stethoscope } from 'lucide-react';
 import { CLINIC_INFO, SPECIALTIES, DOCTORS } from '../data/clinicData';
 
 export default function Hero({ onQuickSelectBooking }) {

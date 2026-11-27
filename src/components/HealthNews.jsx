@@ -1,4 +1,3 @@
-import React from 'react';
 import { BookOpen, ArrowRight } from 'lucide-react';
 import { HEALTH_ARTICLES } from '../data/clinicData';
 

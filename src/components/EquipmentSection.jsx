@@ -1,5 +1,4 @@
-import React from 'react';
-import { Cpu, ShieldCheck } from 'lucide-react';
+import { Cpu } from 'lucide-react';
 import { EQUIPMENT_LIST } from '../data/clinicData';
 
 export default function EquipmentSection() {
