@@ -1,44 +1,60 @@
 /* ==========================================================================
-   TEENNIE DENTAL CLINIC - APP CSS (PROPORTIONALLY HARMONIZED)
+   MEDICARE PLUS GENERAL HOSPITAL - COMPLETE STYLESHEET
+   Pure Medical Standards | Zero AI Buzzwords | Balanced Proportions
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. TOPBAR & NAVBAR (COMPACT & BALANCED)
+   1. TOPBAR & NAVBAR
    -------------------------------------------------------------------------- */
-.site-header-wrapper {
-  position: relative;
-  z-index: 1000;
-}
-
-.teennie-topbar {
-  background-color: var(--teennie-blue-deep);
+.hosp-topbar {
+  background-color: var(--hospital-navy-dark);
   color: #cbd5e1;
   font-size: 0.8rem;
   padding: 6px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.topbar-flex {
+.hosp-topbar-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
 }
 
-.topbar-left-meta, .topbar-right-meta {
+.hosp-meta-row {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.topbar-meta-item {
+.hosp-meta-item {
   display: inline-flex;
   align-items: center;
   gap: 5px;
 }
 
-.topbar-badge-hotline {
-  background: var(--teennie-coral);
+.hosp-live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  font-size: 0.76rem;
+  font-weight: 700;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.hosp-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+.hosp-emergency-badge {
+  background: var(--hospital-red);
   color: #ffffff;
   padding: 2px 10px;
   border-radius: var(--radius-pill);
@@ -49,73 +65,67 @@
   gap: 4px;
 }
 
-.topbar-founder-tag {
-  color: #fed7aa;
-  font-size: 0.78rem;
-  font-weight: 600;
-}
-
 /* Main Navbar */
-.teennie-header {
+.hosp-main-header {
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 1000;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--teennie-border);
-  box-shadow: 0 2px 12px rgba(15, 61, 99, 0.05);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(9, 37, 64, 0.05);
 }
 
-.navbar-container {
+.hosp-nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 68px; /* Balanced height */
+  height: 68px; /* Balanced standard height */
 }
 
-.brand-clickable {
+.hosp-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   cursor: pointer;
   flex-shrink: 0;
 }
 
-.teennie-logo-img {
-  height: 38px;
-  width: auto;
-  object-fit: contain;
-}
-
-.brand-text-wrap {
+.hosp-logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--hospital-blue) 0%, #0369a1 100%);
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(2, 132, 199, 0.3);
 }
 
-.brand-primary-name {
+.hosp-brand-title {
   font-size: 1.25rem;
-  font-weight: 900;
-  color: var(--teennie-blue-dark);
-  line-height: 1;
-  letter-spacing: -0.01em;
-}
-
-.brand-accent-coral {
-  color: var(--teennie-coral);
-}
-
-.brand-subline {
-  font-size: 0.65rem;
   font-weight: 800;
-  color: var(--teennie-muted);
+  color: var(--hospital-navy);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.hosp-brand-title span {
+  color: var(--hospital-blue);
+}
+
+.hosp-brand-sub {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-top: 2px;
 }
 
-/* Nav Menu List */
-.teennie-nav-list {
+/* Nav Menu */
+.hosp-menu-list {
   display: flex;
   align-items: center;
   gap: 18px;
@@ -124,55 +134,54 @@
   padding: 0;
 }
 
-.teennie-nav-item a {
+.hosp-menu-item a {
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--teennie-text);
+  color: var(--text-main);
   padding: 6px 2px;
   position: relative;
   white-space: nowrap;
 }
 
-.teennie-nav-item a:hover {
-  color: var(--teennie-coral);
+.hosp-menu-item a:hover {
+  color: var(--hospital-blue);
 }
 
-.teennie-nav-item a::after {
+.hosp-menu-item a::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--teennie-coral);
+  background-color: var(--hospital-blue);
   transition: width 0.2s ease;
   border-radius: 2px;
 }
 
-.teennie-nav-item a:hover::after {
+.hosp-menu-item a:hover::after {
   width: 100%;
 }
 
-.nav-actions-wrap {
+.hosp-nav-actions {
   display: flex;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
 }
 
-.mobile-menu-btn {
+.hosp-mobile-btn {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--teennie-blue-dark);
+  color: var(--hospital-navy);
   padding: 6px;
-  border-radius: var(--radius-sm);
 }
 
-.mobile-drawer-pane {
+.hosp-mobile-drawer {
   background: #ffffff;
-  border-top: 1px solid var(--teennie-border);
+  border-top: 1px solid var(--border-color);
   padding: 20px 24px;
   display: flex;
   flex-direction: column;
@@ -180,118 +189,109 @@
   box-shadow: var(--shadow-lg);
 }
 
-.mobile-drawer-pane a {
+.hosp-mobile-drawer a {
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--teennie-blue-dark);
+  color: var(--hospital-navy);
   padding: 6px 0;
 }
 
 /* --------------------------------------------------------------------------
-   2. HERO BANNER
+   2. HERO BANNER & QUICK APPOINTMENT BAR
    -------------------------------------------------------------------------- */
-.teennie-hero-section {
+.hosp-hero-wrap {
   position: relative;
-  background: radial-gradient(circle at 80% 20%, #fff0f3 0%, #f0f7fc 45%, #ffffff 85%);
-  padding: 56px 0 76px 0;
+  background: radial-gradient(circle at 85% 15%, #e0f2fe 0%, #f0fdfa 30%, #f8fafc 70%);
+  padding: 56px 0 80px 0;
   overflow: hidden;
 }
 
-.hero-teennie-grid {
+.hosp-hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  gap: 36px;
+  gap: 40px;
 }
 
-.cofounder-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #ffffff;
-  border: 1px solid #fed7aa;
-  padding: 5px 14px;
-  border-radius: var(--radius-pill);
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #c2410c;
-  box-shadow: 0 1px 4px rgba(194, 65, 12, 0.08);
-  margin-bottom: 16px;
-}
-
-.teennie-hero-title {
-  font-size: 2.9rem;
+.hosp-hero-h1 {
+  font-size: 3.1rem;
   font-weight: 900;
-  line-height: 1.2;
-  color: var(--teennie-blue-dark);
-  margin-bottom: 16px;
-  letter-spacing: -0.02em;
+  line-height: 1.18;
+  color: var(--hospital-navy);
+  margin-bottom: 18px;
+  letter-spacing: -0.025em;
 }
 
-.teennie-hero-title .highlight-coral {
-  color: var(--teennie-coral);
+.hosp-hero-h1 span.blue {
+  color: var(--hospital-blue);
 }
 
-.teennie-hero-title .highlight-blue {
-  background: linear-gradient(135deg, var(--teennie-blue) 0%, var(--teennie-blue-dark) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.teennie-hero-lead {
+.hosp-hero-lead {
   font-size: 1.05rem;
-  color: var(--teennie-secondary);
+  color: var(--text-secondary);
   line-height: 1.65;
-  margin-bottom: 24px;
-  max-width: 580px;
+  margin-bottom: 26px;
+  max-width: 600px;
 }
 
-.teennie-promo-chips {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 28px;
-}
-
-.promo-chip-item {
+.hosp-hero-btns {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid #bae6fd;
-  padding: 9px 14px;
-  border-radius: var(--radius-md);
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--teennie-blue-dark);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
 }
 
-.promo-chip-item svg {
-  color: var(--teennie-coral);
-  flex-shrink: 0;
+.hosp-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border-color);
 }
 
-.hero-image-box {
+.hosp-stat-col h4 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--hospital-navy);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hosp-stat-col h4 span {
+  color: var(--hospital-blue);
+}
+
+.hosp-stat-col p {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.hosp-hero-visual {
+  position: relative;
+}
+
+.hosp-hero-img-box {
   position: relative;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(15, 61, 99, 0.16);
+  box-shadow: 0 20px 45px rgba(9, 37, 64, 0.16);
   border: 4px solid #ffffff;
 }
 
-.hero-image-box img {
+.hosp-hero-img-box img {
   width: 100%;
-  height: 450px;
+  height: 460px;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.hero-image-box:hover img {
+.hosp-hero-img-box:hover img {
   transform: scale(1.02);
 }
 
-.floating-teennie-card {
+.hosp-hero-badge-float {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -303,542 +303,749 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  border: 1px solid #fed7aa;
+  border: 1px solid #bae6fd;
+}
+
+/* Quick Appointment Search Bar */
+.hosp-quickbar-wrap {
+  margin-top: -46px;
+  position: relative;
+  z-index: 30;
+}
+
+.hosp-quickbar-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 24px 30px;
+  box-shadow: 0 15px 35px rgba(9, 37, 64, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.hosp-quickbar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.hosp-quick-field label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--hospital-navy);
+  margin-bottom: 6px;
+}
+
+.hosp-quick-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-color);
+  background-color: var(--bg-page);
+  transition: all 0.2s ease;
+}
+
+.hosp-quick-input:focus-within {
+  border-color: var(--hospital-blue);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+}
+
+.hosp-quick-input select, .hosp-quick-input input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 0.88rem;
+  color: var(--text-main);
+  outline: none;
+  font-weight: 600;
 }
 
 /* --------------------------------------------------------------------------
-   3. DENTAL PROBLEMS TABS
+   3. ADVANTAGES PILLARS (ƯU THẾ BỆNH VIỆN)
    -------------------------------------------------------------------------- */
-.problems-grid {
+.hosp-advantages-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 14px;
-  margin-bottom: 28px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
-.problem-card-tab {
-  background: #ffffff;
-  border: 1.5px solid var(--teennie-border);
+.hosp-adv-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.hosp-adv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: #bae6fd;
+}
+
+.hosp-adv-icon {
+  width: 50px;
+  height: 50px;
   border-radius: var(--radius-md);
-  padding: 16px 12px;
-  text-align: center;
+  background: var(--hospital-blue-light);
+  color: var(--hospital-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: all 0.2s ease;
+}
+
+.hosp-adv-card:hover .hosp-adv-icon {
+  background: var(--hospital-blue);
+  color: #ffffff;
+}
+
+.hosp-adv-card h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--hospital-navy);
+  margin-bottom: 8px;
+}
+
+.hosp-adv-card p {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   4. SPECIALTIES (CHUYÊN KHOA)
+   -------------------------------------------------------------------------- */
+.hosp-specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 22px;
+}
+
+.hosp-spec-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  border: 1.5px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.hosp-spec-card:hover {
+  transform: translateY(-5px);
+  border-color: #7dd3fc;
+  box-shadow: var(--shadow-lg);
+}
+
+.hosp-spec-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background-color: var(--bg-page);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.hosp-spec-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background-color: var(--hospital-blue-light);
+  color: var(--hospital-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: all 0.2s ease;
+}
+
+.hosp-spec-card:hover .hosp-spec-icon {
+  background-color: var(--hospital-blue);
+  color: #ffffff;
+}
+
+.hosp-spec-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--hospital-navy);
+  margin-bottom: 4px;
+}
+
+.hosp-spec-lead {
+  font-size: 0.8rem;
+  color: var(--hospital-teal);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hosp-spec-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.hosp-proc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.hosp-proc-pill {
+  font-size: 0.72rem;
+  background-color: var(--bg-page);
+  color: var(--text-secondary);
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.hosp-spec-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* --------------------------------------------------------------------------
+   5. DOCTOR PROFILES (BÁC SĨ CHUYÊN KHOA)
+   -------------------------------------------------------------------------- */
+.hosp-doc-filter-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.hosp-filter-chip {
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.84rem;
+  font-weight: 600;
+  border: 1.5px solid var(--border-color);
+  background-color: #ffffff;
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.problem-card-tab:hover, .problem-card-tab.active {
-  border-color: var(--teennie-coral);
-  background-color: var(--teennie-coral-soft);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+.hosp-filter-chip.active, .hosp-filter-chip:hover {
+  background-color: var(--hospital-navy);
+  color: #ffffff;
+  border-color: var(--hospital-navy);
 }
 
-.problem-card-tab h4 {
-  font-size: 1.05rem;
+.hosp-doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 26px;
+}
+
+.hosp-doc-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.hosp-doc-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: #bae6fd;
+}
+
+.hosp-doc-photo {
+  position: relative;
+  height: 250px;
+  background-color: #f1f5f9;
+  overflow: hidden;
+}
+
+.hosp-doc-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.hosp-doc-card:hover .hosp-doc-photo img {
+  transform: scale(1.03);
+}
+
+.hosp-doc-exp {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background-color: rgba(9, 37, 64, 0.85);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.hosp-doc-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.hosp-doc-spec-name {
+  font-size: 0.78rem;
   font-weight: 800;
-  color: var(--teennie-blue-dark);
+  color: var(--hospital-blue);
+  text-transform: uppercase;
   margin-bottom: 4px;
 }
 
-.problem-card-tab.active h4 {
-  color: var(--teennie-coral);
+.hosp-doc-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--hospital-navy);
+  margin-bottom: 4px;
 }
 
-.problem-card-tab span.badge {
-  font-size: 0.72rem;
-  font-weight: 700;
-  background: #ffffff;
-  color: #c2410c;
-  padding: 2px 8px;
-  border-radius: var(--radius-pill);
-  border: 1px solid #fed7aa;
+.hosp-doc-deg {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 12px;
 }
 
-.problem-detail-box {
-  background: linear-gradient(135deg, #ffffff 0%, #fffbf8 100%);
-  border: 1.5px solid #fed7aa;
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 28px;
+.hosp-doc-history {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.hosp-doc-sched {
+  background-color: var(--bg-page);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  display: flex;
   align-items: center;
-  box-shadow: var(--shadow-md);
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 18px;
 }
 
 /* --------------------------------------------------------------------------
-   4. BRACES METHODS CARDS
+   6. CLINICAL BOOKING CONSOLE
    -------------------------------------------------------------------------- */
-.methods-deck {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-  gap: 22px;
+.hosp-booking-wrap {
+  background: linear-gradient(135deg, #f0fdfa 0%, #f0f9ff 50%, #ffffff 100%);
 }
 
-.method-card {
+.hosp-booking-box {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 45px rgba(9, 37, 64, 0.1);
+  border: 1px solid #bae6fd;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+}
+
+.hosp-form-pane {
+  padding: 38px;
+}
+
+.hosp-summary-pane {
+  background: linear-gradient(135deg, var(--hospital-navy) 0%, var(--hospital-navy-dark) 100%);
+  color: #ffffff;
+  padding: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hosp-slot-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 10px 0 5px 0;
+}
+
+.hosp-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 7px;
+}
+
+.hosp-slot-btn {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1.5px solid var(--border-color);
+  background-color: var(--bg-page);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hosp-slot-btn:hover {
+  border-color: var(--hospital-blue);
+  color: var(--hospital-blue);
+  background: #ffffff;
+}
+
+.hosp-slot-btn.active {
+  background-color: var(--hospital-blue);
+  color: #ffffff;
+  border-color: var(--hospital-blue);
+}
+
+/* Digital Ticket */
+.hosp-digital-ticket {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px dashed rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-top: 18px;
+}
+
+.hosp-ticket-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  padding: 5px 0;
+  color: #cbd5e1;
+}
+
+.hosp-ticket-line strong {
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   7. PRICING PACKAGES (BẢNG GIÁ GÓI KHÁM)
+   -------------------------------------------------------------------------- */
+.hosp-pricing-deck {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 26px;
+}
+
+.hosp-plan-card {
   background: #ffffff;
   border-radius: var(--radius-lg);
-  padding: 30px 22px;
-  border: 1.5px solid var(--teennie-border);
+  padding: 34px 26px;
+  border: 1.5px solid var(--border-color);
   display: flex;
   flex-direction: column;
   position: relative;
   transition: all 0.25s ease;
 }
 
-.method-card:hover {
+.hosp-plan-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
-  border-color: #38bdf8;
 }
 
-.method-card.popular {
-  border: 2px solid var(--teennie-coral);
-  box-shadow: var(--shadow-coral);
+.hosp-plan-card.featured {
+  border: 2px solid var(--hospital-blue);
+  box-shadow: 0 16px 36px rgba(2, 132, 199, 0.18);
+  transform: scale(1.02);
 }
 
-.popular-tag-badge {
+.hosp-plan-card.featured:hover {
+  transform: scale(1.02) translateY(-4px);
+}
+
+.hosp-featured-ribbon {
   position: absolute;
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--teennie-coral) 0%, var(--teennie-orange) 100%);
+  background: linear-gradient(135deg, var(--hospital-navy) 0%, var(--hospital-blue) 100%);
   color: #ffffff;
   font-size: 0.74rem;
   font-weight: 800;
   text-transform: uppercase;
   padding: 3px 14px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 3px 8px rgba(255, 71, 110, 0.35);
 }
 
-.method-head {
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--teennie-border);
+.hosp-plan-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--hospital-navy);
+  margin-bottom: 4px;
+}
+
+.hosp-plan-sub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.hosp-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
   margin-bottom: 16px;
 }
 
-.method-name {
-  font-size: 1.22rem;
-  font-weight: 800;
-  color: var(--teennie-blue-dark);
-  margin-bottom: 4px;
-}
-
-.method-tagline {
-  font-size: 0.82rem;
-  color: var(--teennie-coral);
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.method-price-row {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  margin-bottom: 4px;
-}
-
-.price-sale {
-  font-size: 1.75rem;
+.hosp-price-current {
+  font-size: 2.1rem;
   font-weight: 900;
-  color: var(--teennie-blue-dark);
+  color: var(--hospital-blue);
 }
 
-.price-range {
-  font-size: 0.8rem;
-  color: var(--teennie-muted);
+.hosp-price-old {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
 }
 
-.installment-highlight {
-  display: inline-block;
-  background-color: var(--teennie-yellow-soft);
-  color: #854d0e;
-  font-size: 0.78rem;
-  font-weight: 800;
-  padding: 3px 8px;
-  border-radius: 4px;
-  border: 1px solid #fef08a;
-}
-
-.method-feature-list {
+.hosp-feature-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: 11px;
+  margin-bottom: 26px;
   flex-grow: 1;
 }
 
-.method-feature-item {
+.hosp-feature-item {
   display: flex;
   align-items: flex-start;
   gap: 8px;
   font-size: 0.86rem;
-  color: #334155;
-  line-height: 1.5;
+  color: var(--text-secondary);
 }
 
-.method-feature-item svg {
-  color: #10b981;
+.hosp-feature-item svg {
+  color: var(--hospital-green);
   flex-shrink: 0;
   margin-top: 2px;
 }
 
 /* --------------------------------------------------------------------------
-   5. INSTALLMENT CALCULATOR
+   8. EQUIPMENT SHOWCASE
    -------------------------------------------------------------------------- */
-.calculator-wrap {
-  background: linear-gradient(135deg, #f0f7fc 0%, #e0f0fe 50%, #ffffff 100%);
-  border-radius: var(--radius-xl);
-  border: 1.5px solid #bae6fd;
-  padding: 36px;
-  box-shadow: var(--shadow-md);
-}
-
-.calculator-grid {
+.hosp-equip-grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 32px;
-  align-items: center;
-}
-
-.calc-control-group {
-  margin-bottom: 18px;
-}
-
-.calc-control-group label {
-  display: block;
-  font-size: 0.86rem;
-  font-weight: 800;
-  color: var(--teennie-blue-dark);
-  margin-bottom: 8px;
-}
-
-.term-chips-row {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.term-chip {
-  height: 38px;
-  padding: 0 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-pill);
-  border: 1.5px solid var(--teennie-border);
-  background: #ffffff;
-  font-size: 0.84rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.term-chip.active {
-  background-color: var(--teennie-blue-dark);
-  color: #ffffff;
-  border-color: var(--teennie-blue-dark);
-}
-
-.calc-result-box {
-  background: #ffffff;
-  border-radius: var(--radius-lg);
-  padding: 26px 20px;
-  border: 2px dashed var(--teennie-coral);
-  box-shadow: var(--shadow-sm);
-  text-align: center;
-}
-
-.result-monthly-amount {
-  font-size: 2.2rem;
-  font-weight: 900;
-  color: var(--teennie-coral);
-  margin: 6px 0;
-}
-
-/* --------------------------------------------------------------------------
-   6. BEFORE / AFTER REAL CASES
-   -------------------------------------------------------------------------- */
-.before-after-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 22px;
-}
-
-.ba-card {
-  background: #ffffff;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--teennie-border);
-  box-shadow: var(--shadow-sm);
-  transition: all 0.25s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.ba-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.ba-image-wrap {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
-  background-color: #f1f5f9;
-}
-
-.ba-image-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.ba-card:hover .ba-image-wrap img {
-  transform: scale(1.03);
-}
-
-.ba-appointments-pill {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(15, 61, 99, 0.9);
-  color: #ffffff;
-  font-size: 0.74rem;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
-}
-
-.ba-content {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.ba-name {
-  font-size: 1.08rem;
-  font-weight: 800;
-  color: var(--teennie-blue-dark);
-  margin-bottom: 4px;
-}
-
-.ba-problem-tag {
-  font-size: 0.76rem;
-  color: #c2410c;
-  background: #fff7ed;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-weight: 700;
-  display: inline-block;
-  margin-bottom: 8px;
-}
-
-.ba-quote {
-  font-size: 0.85rem;
-  color: var(--teennie-muted);
-  font-style: italic;
-  line-height: 1.5;
-  margin-bottom: 14px;
-  flex-grow: 1;
-}
-
-/* --------------------------------------------------------------------------
-   7. 5 REASONS WHY TEENNIE
-   -------------------------------------------------------------------------- */
-.reasons-timeline-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-}
-
-.reason-card {
-  background: #ffffff;
-  border: 1px solid var(--teennie-border);
-  border-radius: var(--radius-md);
-  padding: 22px 16px;
-  transition: all 0.25s ease;
-}
-
-.reason-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--teennie-coral);
-  box-shadow: var(--shadow-md);
-}
-
-.reason-number {
-  font-size: 1.9rem;
-  font-weight: 900;
-  color: #fed7aa;
-  line-height: 1;
-  margin-bottom: 10px;
-}
-
-.reason-card h4 {
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--teennie-blue-dark);
-  margin-bottom: 6px;
-}
-
-.reason-card p {
-  font-size: 0.82rem;
-  color: var(--teennie-muted);
-  line-height: 1.5;
-}
-
-/* --------------------------------------------------------------------------
-   8. DOCTORS & CO-FOUNDER
-   -------------------------------------------------------------------------- */
-.doctors-deck {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-.doctor-item-card {
+.hosp-equip-card {
   background: #ffffff;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid var(--teennie-border);
+  border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
   transition: all 0.25s ease;
-  display: flex;
-  flex-direction: column;
 }
 
-.doctor-item-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+.hosp-equip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
-.doctor-photo-frame {
-  height: 250px;
+.hosp-equip-thumb {
+  height: 200px;
   overflow: hidden;
-  background-color: #f1f5f9;
 }
 
-.doctor-photo-frame img {
+.hosp-equip-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.doctor-item-card:hover .doctor-photo-frame img {
+.hosp-equip-card:hover .hosp-equip-thumb img {
   transform: scale(1.03);
 }
 
-.doctor-info-box {
+.hosp-equip-body {
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+}
+
+.hosp-equip-body h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--hospital-navy);
+  margin-bottom: 6px;
+}
+
+.hosp-equip-body p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
 }
 
 /* --------------------------------------------------------------------------
-   9. BOOKING FORM
+   9. PROCESS STEPS
    -------------------------------------------------------------------------- */
-.booking-teennie-section {
-  background: linear-gradient(135deg, var(--teennie-blue-deep) 0%, var(--teennie-blue-dark) 100%);
-  color: #ffffff;
+.hosp-proc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
-.booking-teennie-box {
-  background: #ffffff;
-  color: var(--teennie-text);
-  border-radius: var(--radius-xl);
-  padding: 38px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+.hosp-step-box {
+  background-color: var(--bg-page);
+  border-radius: var(--radius-md);
+  padding: 24px 18px;
+  border: 1px solid var(--border-light);
+  position: relative;
+  transition: all 0.25s ease;
+  text-align: center;
+}
+
+.hosp-step-box:hover {
+  background-color: #ffffff;
+  border-color: #bae6fd;
+  box-shadow: var(--shadow-md);
+}
+
+.hosp-step-num {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #cbd5e1;
+}
+
+.hosp-step-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px auto;
+  border-radius: var(--radius-md);
+  background: var(--hospital-blue-light);
+  color: var(--hospital-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hosp-step-box h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--hospital-navy);
+  margin-bottom: 6px;
+}
+
+.hosp-step-box p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   10. CONTACT & FOOTER
+   -------------------------------------------------------------------------- */
+.hosp-contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1fr 1fr;
   gap: 36px;
 }
 
-.booking-left-promo {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.hosp-contact-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
-.input-teennie-group {
-  margin-bottom: 14px;
+.hosp-tile {
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
 }
 
-.input-teennie-group label {
-  display: block;
-  font-size: 0.84rem;
+.hosp-tile svg {
+  color: var(--hospital-blue);
+  margin-bottom: 8px;
+}
+
+.hosp-tile h5 {
+  font-size: 0.92rem;
   font-weight: 700;
-  color: var(--teennie-blue-dark);
-  margin-bottom: 5px;
+  color: var(--hospital-navy);
+  margin-bottom: 4px;
 }
 
-.input-teennie-ctrl {
-  width: 100%;
-  height: 42px;
-  padding: 0 14px;
-  border-radius: var(--radius-sm);
-  border: 1.5px solid var(--teennie-border);
-  background-color: #f8fafc;
-  font-size: 0.9rem;
-  color: var(--teennie-text);
-  transition: all 0.2s ease;
+.hosp-tile p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
 }
 
-.input-teennie-ctrl:focus {
-  outline: none;
-  border-color: var(--teennie-coral);
-  background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(255, 71, 110, 0.12);
-}
-
-/* --------------------------------------------------------------------------
-   10. FOOTER & FLOATING SPEED DIALS
-   -------------------------------------------------------------------------- */
-.teennie-footer {
-  background-color: #061c2c;
+.hosp-footer {
+  background-color: var(--hospital-navy-dark);
   color: #94a3b8;
-  padding: 60px 0 28px 0;
+  padding: 60px 0 26px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.footer-grid-quad {
+.hosp-footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
   gap: 32px;
-  margin-bottom: 38px;
+  margin-bottom: 40px;
 }
 
-.footer-title-h5 {
+.hosp-footer-h5 {
   color: #ffffff;
   font-size: 1rem;
   font-weight: 800;
   margin-bottom: 16px;
 }
 
-.footer-links-col {
+.hosp-footer-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 9px;
 }
 
-.footer-links-col a {
-  font-size: 0.85rem;
+.hosp-footer-list a {
+  font-size: 0.86rem;
   color: #94a3b8;
 }
 
-.footer-links-col a:hover {
-  color: var(--teennie-coral);
+.hosp-footer-list a:hover {
+  color: #38bdf8;
   padding-left: 3px;
 }
 
-/* Floating Actions */
-.teennie-floating-dial {
+/* Floating Cockpit */
+.hosp-floating-cockpit {
   position: fixed;
   bottom: 24px;
   right: 20px;
@@ -848,86 +1055,375 @@
   gap: 10px;
 }
 
-.dial-btn {
+.hosp-float-btn {
   height: 42px;
   padding: 0 18px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   border-radius: var(--radius-pill);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 0.86rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 18px rgba(9, 37, 64, 0.2);
   cursor: pointer;
   border: none;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
-.dial-btn.call {
-  background: var(--teennie-coral);
+.hosp-float-btn.emergency {
+  background: var(--hospital-red);
   color: #ffffff;
 }
 
-.dial-btn.book {
-  background: linear-gradient(135deg, var(--teennie-blue-dark) 0%, var(--teennie-blue) 100%);
+.hosp-float-btn.book {
+  background: linear-gradient(135deg, var(--hospital-navy) 0%, var(--hospital-blue) 100%);
   color: #ffffff;
 }
 
-.dial-btn:hover {
+.hosp-float-btn:hover {
   transform: translateY(-2px);
 }
 
+/* General Hospital Inputs */
+.hosp-input {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-color);
+  background-color: #ffffff;
+  color: var(--hospital-navy);
+  font-size: 0.88rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.hosp-input:focus {
+  border-color: var(--hospital-blue);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+}
+
+textarea.hosp-input {
+  height: auto;
+  padding: 10px 14px;
+}
+
 /* --------------------------------------------------------------------------
-   11. RESPONSIVE MEDIA QUERIES
+   11. TESTIMONIALS (CẢM NHẬN BỆNH NHÂN)
    -------------------------------------------------------------------------- */
-@media (max-width: 1180px) {
-  .hotline-pill {
-    display: none !important;
-  }
-  .teennie-nav-list {
-    gap: 12px;
-  }
+.hosp-testimonials-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.hosp-quote-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.hosp-quote-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: #bae6fd;
+}
+
+.hosp-quote-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 12px;
+}
+
+.hosp-quote-body {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+.hosp-quote-author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.82rem;
+}
+
+.hosp-quote-author strong {
+  display: block;
+  color: var(--hospital-navy);
+  font-weight: 700;
+}
+
+.hosp-quote-author span {
+  color: var(--text-muted);
+}
+
+.hosp-quote-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #16a34a;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   12. FAQS (HỎI ĐÁP Y KHOA)
+   -------------------------------------------------------------------------- */
+.hosp-faq-stack {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hosp-faq-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.hosp-faq-card.open {
+  border-color: var(--hospital-blue);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.08);
+}
+
+.hosp-faq-btn {
+  width: 100%;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--hospital-navy);
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.hosp-faq-btn:hover {
+  color: var(--hospital-blue);
+}
+
+.hosp-faq-answer {
+  padding: 0 20px 18px 20px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  border-top: 1px dashed var(--border-color);
+  padding-top: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   13. HEALTH NEWS (CẨM NANG Y KHOA)
+   -------------------------------------------------------------------------- */
+.hosp-news-deck {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.hosp-news-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.hosp-news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.hosp-news-thumb {
+  height: 180px;
+  overflow: hidden;
+}
+
+.hosp-news-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hosp-news-card:hover .hosp-news-thumb img {
+  transform: scale(1.04);
+}
+
+.hosp-news-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.hosp-news-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.76rem;
+  margin-bottom: 8px;
+}
+
+.hosp-news-tag {
+  background: var(--hospital-blue-light);
+  color: var(--hospital-blue);
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.hosp-news-time {
+  color: var(--text-muted);
+}
+
+.hosp-news-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--hospital-navy);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.hosp-news-desc {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.hosp-news-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.hosp-news-link {
+  color: var(--hospital-blue);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.hosp-news-link:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   14. LOOKUP MODAL
+   -------------------------------------------------------------------------- */
+.hosp-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 37, 64, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.hosp-modal-dialog {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  max-width: 580px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  animation: modalPopIn 0.2s ease-out;
+}
+
+@keyframes modalPopIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.hosp-modal-head {
+  padding: 18px 24px;
+  background-color: var(--bg-page);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hosp-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+}
+
+.hosp-modal-close:hover {
+  color: var(--hospital-red);
+}
+
+/* --------------------------------------------------------------------------
+   15. RESPONSIVE QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .hosp-menu-list { gap: 12px; }
+  .hosp-advantages-grid { grid-template-columns: 1fr 1fr; }
+  .hosp-quickbar-grid { grid-template-columns: 1fr 1fr; }
+  .hosp-booking-box { grid-template-columns: 1fr; }
+  .hosp-equip-grid { grid-template-columns: 1fr; }
+  .hosp-proc-grid { grid-template-columns: 1fr 1fr; }
+  .hosp-footer-grid { grid-template-columns: 1fr 1fr; }
+  .hosp-testimonials-row { grid-template-columns: 1fr 1fr; }
+  .hosp-news-deck { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 1024px) {
-  .teennie-nav-list {
-    display: none;
-  }
-  .mobile-menu-btn {
-    display: block;
-  }
-  .hero-teennie-grid {
-    grid-template-columns: 1fr;
-  }
-  .problem-detail-box {
-    grid-template-columns: 1fr;
-  }
-  .calculator-grid {
-    grid-template-columns: 1fr;
-  }
-  .booking-teennie-box {
-    grid-template-columns: 1fr;
-  }
-  .reasons-timeline-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .footer-grid-quad {
-    grid-template-columns: 1fr 1fr;
-  }
+  .hosp-menu-list { display: none; }
+  .hosp-mobile-btn { display: block; }
+  .hosp-hero-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-  .teennie-topbar {
-    display: none;
-  }
-  .teennie-hero-title {
-    font-size: 2.15rem;
-  }
-  .reasons-timeline-grid {
-    grid-template-columns: 1fr;
-  }
-  .footer-grid-quad {
-    grid-template-columns: 1fr;
-  }
+  .hosp-topbar { display: none; }
+  .hosp-hero-h1 { font-size: 2.2rem; }
+  .hosp-stats-bar { grid-template-columns: 1fr 1fr; }
+  .hosp-quickbar-grid { grid-template-columns: 1fr; }
+  .hosp-advantages-grid { grid-template-columns: 1fr; }
+  .hosp-doctors-grid { grid-template-columns: 1fr; }
+  .hosp-contact-grid { grid-template-columns: 1fr; }
+  .hosp-contact-tiles { grid-template-columns: 1fr; }
+  .hosp-footer-grid { grid-template-columns: 1fr; }
+  .hosp-testimonials-row { grid-template-columns: 1fr; }
+  .hosp-news-deck { grid-template-columns: 1fr; }
 }

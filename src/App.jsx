@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
-import TeennieHeader from './components/TeennieHeader';
-import TeennieHero from './components/TeennieHero';
-import DentalProblems from './components/DentalProblems';
-import BracesMethods from './components/BracesMethods';
-import InstallmentCalculator from './components/InstallmentCalculator';
-import BeforeAfterShowcase from './components/BeforeAfterShowcase';
-import WhyTeennie from './components/WhyTeennie';
-import TeennieDoctors from './components/TeennieDoctors';
-import TeennieBooking from './components/TeennieBooking';
-import TeennieFaq from './components/TeennieFaq';
-import TeennieFooter from './components/TeennieFooter';
-import TeennieFloating from './components/TeennieFloating';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Advantages from './components/Advantages';
+import Specialties from './components/Specialties';
+import Doctors from './components/Doctors';
+import BookingSection from './components/BookingSection';
+import Pricing from './components/Pricing';
+import EquipmentSection from './components/EquipmentSection';
+import Process from './components/Process';
+import Testimonials from './components/Testimonials';
+import FaqSection from './components/FaqSection';
+import HealthNews from './components/HealthNews';
+import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
+import FloatingActions from './components/FloatingActions';
+import LookupModal from './components/LookupModal';
 import './App.css';
 
 export default function App() {
   const [bookingDraft, setBookingDraft] = useState(null);
+  const [lookupOpen, setLookupOpen] = useState(false);
 
   const scrollToBooking = () => {
     const el = document.getElementById('booking');
@@ -23,61 +28,95 @@ export default function App() {
     }
   };
 
-  const handleSelectProblem = (problem) => {
-    setBookingDraft({ problem: problem.title });
+  const handleQuickBooking = (criteria) => {
+    setBookingDraft({
+      specialtyId: criteria.specialtyId,
+      doctorId: criteria.doctorId,
+      date: criteria.date
+    });
     scrollToBooking();
   };
 
-  const handleSelectMethod = (method) => {
-    setBookingDraft({ method: method.name });
+  const handleSelectSpecialty = (spec) => {
+    setBookingDraft({
+      specialtyId: spec.id
+    });
     scrollToBooking();
   };
 
-  const handleSelectPlan = (plan) => {
-    setBookingDraft({ 
-      method: plan.method, 
-      note: `Gói trả góp: ${plan.monthly}/tháng trong ${plan.term}` 
+  const handleSelectDoctor = (doctor) => {
+    setBookingDraft({
+      specialtyId: doctor.specialtyId,
+      doctorId: doctor.id
+    });
+    scrollToBooking();
+  };
+
+  const handleSelectPackage = (pkg) => {
+    setBookingDraft({
+      symptoms: `Đăng ký gói khám: ${pkg.name} (${pkg.price})`
     });
     scrollToBooking();
   };
 
   return (
-    <div className="teennie-site-app">
-      {/* 1. Topbar & Header */}
-      <TeennieHeader onOpenBooking={scrollToBooking} />
+    <div className="hosp-site-app">
+      {/* 1. Header with Topbar & Standard Nav Menu */}
+      <Header 
+        onOpenBooking={scrollToBooking} 
+        onOpenLookup={() => setLookupOpen(true)} 
+      />
 
-      {/* 2. Hero Section with Promos & Ngô Kiến Huy co-founder badge */}
-      <TeennieHero onOpenBooking={scrollToBooking} />
+      {/* 2. Hero Section with Quick Booking Search Bar */}
+      <Hero onQuickSelectBooking={handleQuickBooking} />
 
-      {/* 3. Dental Problems Selector ("Răng của bạn/con đang gặp vấn đề gì?") */}
-      <DentalProblems onSelectProblem={handleSelectProblem} />
+      {/* 3. Core Advantages (Why Medicare Plus) */}
+      <Advantages />
 
-      {/* 4. Braces Methods ("Các phương pháp niềng răng tại Teennie") */}
-      <BracesMethods onSelectMethod={handleSelectMethod} />
+      {/* 4. 8 Medical Specialties */}
+      <Specialties onSelectSpecialty={handleSelectSpecialty} />
 
-      {/* 5. 0% Installment Calculator ("Bảng tính trả góp 0% tại phòng khám") */}
-      <InstallmentCalculator onSelectPlan={handleSelectPlan} />
+      {/* 5. Doctor Specialist Team */}
+      <Doctors onSelectDoctor={handleSelectDoctor} />
 
-      {/* 6. Real Before / After Transformations ("Nụ cười thay đổi sau niềng răng") */}
-      <BeforeAfterShowcase onOpenBooking={scrollToBooking} />
+      {/* 6. Online Booking Console */}
+      <BookingSection 
+        bookingDraft={bookingDraft}
+        onBookingSuccess={() => {}}
+      />
 
-      {/* 7. 5 Reasons to Choose Teennie ("5 lý do nên chọn niềng răng tại Teennie") */}
-      <WhyTeennie />
+      {/* 7. Health Checkup Packages & Transparent Pricing */}
+      <Pricing onSelectPackage={handleSelectPackage} />
 
-      {/* 8. Doctor Specialist Team ("Đội ngũ bác sĩ chỉnh nha Teennie Clinic") */}
-      <TeennieDoctors onOpenBooking={scrollToBooking} />
+      {/* 8. Diagnostic Equipment Showcase (Siemens, GE, Roche) */}
+      <EquipmentSection />
 
-      {/* 9. Free 10-Step Consultation Booking ("Đăng ký thăm khám 0đ & Nhận voucher 5 triệu") */}
-      <TeennieBooking bookingDraft={bookingDraft} />
+      {/* 9. 4-Step Standard Examination Process */}
+      <Process />
 
-      {/* 10. FAQs ("Ba mẹ và các bạn hay hỏi") */}
-      <TeennieFaq />
+      {/* 10. Patient Testimonials */}
+      <Testimonials />
 
-      {/* 11. Footer */}
-      <TeennieFooter />
+      {/* 11. Frequently Asked Questions (BHYT, Preparation) */}
+      <FaqSection />
 
-      {/* 12. Floating Action Speed Dial */}
-      <TeennieFloating onOpenBooking={scrollToBooking} />
+      {/* 12. Medical Knowledge & Family Health News */}
+      <HealthNews />
+
+      {/* 13. Contact & Direct Consultation Form */}
+      <ContactSection />
+
+      {/* 14. Standard Hospital Footer */}
+      <Footer />
+
+      {/* 15. Emergency & Booking Floating Action Cockpit */}
+      <FloatingActions onOpenBooking={scrollToBooking} />
+
+      {/* 16. Appointment Lookup Modal */}
+      <LookupModal 
+        isOpen={lookupOpen} 
+        onClose={() => setLookupOpen(false)} 
+      />
     </div>
   );
 }

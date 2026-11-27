@@ -1,45 +1,45 @@
 import React from 'react';
-import { Star, MessageSquareQuote, CheckCircle2 } from 'lucide-react';
+import { Star, CheckCircle2, HeartHandshake } from 'lucide-react';
 import { TESTIMONIALS } from '../data/clinicData';
 
 export default function Testimonials() {
   return (
-    <section className="section-wrap" style={{ backgroundColor: '#ffffff' }}>
+    <section className="hospital-section" style={{ backgroundColor: '#ffffff' }}>
       <div className="container">
-        <div className="section-header-centered">
-          <div className="pill-badge">
-            <span className="dot"></span>
+        <div className="section-head-wrap">
+          <div className="hospital-badge-tag">
+            <HeartHandshake size={14} />
             <span>Niềm Tin Người Bệnh</span>
           </div>
-          <h2 className="section-headline">Cảm Nhận Thực Tế Từ Bệnh Nhân & Thân Nhân</h2>
-          <p className="section-subtitle">
-            Hạnh phúc của người bệnh khi hồi phục sức khỏe chính là phần thưởng và động lực 
-            lớn nhất cho toàn thể cán bộ nhân viên y tế tại MediCare Plus.
+          <h2 className="hospital-heading-h2">Cảm Nhận Thực Tế Từ Bệnh Nhân & Thân Nhân</h2>
+          <p className="hospital-lead-desc">
+            Sức khỏe và sự an tâm của người bệnh khi hồi phục chính là phần thưởng cao quý 
+            và động lực lớn nhất của toàn thể đội ngũ y bác sĩ MediCare Plus.
           </p>
         </div>
 
-        <div className="testimonials-row">
+        <div className="hosp-testimonials-row">
           {TESTIMONIALS.map((item) => (
-            <div key={item.id} className="testimonial-quote-card">
+            <div key={item.id} className="hosp-quote-card">
               <div>
-                <div className="quote-stars">
+                <div className="hosp-quote-stars">
                   {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} size={18} fill="#f59e0b" color="#f59e0b" />
+                    <Star key={i} size={16} fill="#f59e0b" color="#f59e0b" />
                   ))}
                 </div>
-                <p className="quote-body">
+                <p className="hosp-quote-body">
                   "{item.comment}"
                 </p>
               </div>
 
-              <div className="quote-author">
+              <div className="hosp-quote-author">
                 <div>
                   <strong>{item.name} ({item.age} tuổi)</strong>
                   <span>{item.address} • Khám cùng {item.doctor}</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#16a34a', fontSize: '0.8rem', fontWeight: 700 }}>
-                  <CheckCircle2 size={16} />
-                  <span>Xác thực</span>
+                <div className="hosp-quote-verified">
+                  <CheckCircle2 size={15} />
+                  <span>Đã khám</span>
                 </div>
               </div>
             </div>

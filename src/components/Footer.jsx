@@ -1,111 +1,128 @@
 import React from 'react';
-import { HeartPulse, Phone, Mail, MapPin, ShieldCheck, Award } from 'lucide-react';
+import { HeartPulse, Phone, Mail, MapPin, Award } from 'lucide-react';
 import { CLINIC_INFO } from '../data/clinicData';
 
 export default function Footer() {
   return (
-    <footer className="luxury-footer">
+    <footer className="hosp-footer">
       <div className="container">
-        <div className="footer-columns-grid">
+        <div className="hosp-footer-grid">
           {/* Brand Info */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '18px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
               <div style={{
-                width: '42px',
-                height: '42px',
-                borderRadius: '10px',
-                backgroundColor: 'var(--primary)',
+                width: '36px',
+                height: '36px',
+                borderRadius: '8px',
+                backgroundColor: 'var(--hospital-blue)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: '#ffffff'
               }}>
-                <HeartPulse size={24} />
+                <HeartPulse size={20} strokeWidth={2.5} />
               </div>
               <div>
-                <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: '#ffffff', lineHeight: 1.1 }}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ffffff', lineHeight: 1.1 }}>
                   MediCare <span style={{ color: '#38bdf8' }}>Plus</span>
                 </h3>
-                <p style={{ fontSize: '0.72rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <p style={{ fontSize: '0.68rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Bệnh Viện Đa Khoa Quốc Tế
                 </p>
               </div>
             </div>
 
-            <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '22px' }}>
-              Cung cấp giải pháp chăm sóc sức khỏe chuẩn mực Hoa Kỳ, cam kết bảo mật hồ sơ 
-              và tối ưu hóa phác đồ điều trị cho từng cá nhân và gia đình.
+            <p style={{ color: '#94a3b8', fontSize: '0.84rem', lineHeight: '1.6', marginBottom: '16px' }}>
+              Cung cấp giải pháp chăm sóc sức khỏe chuẩn mực quốc tế, tối ưu hóa phác đồ điều trị 
+              cho từng người bệnh với tinh thần y đức và sự tận tâm cao nhất.
             </p>
 
             <div style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
+              gap: '6px',
               backgroundColor: 'rgba(255, 255, 255, 0.06)',
-              padding: '8px 14px',
-              borderRadius: '8px',
-              fontSize: '0.8rem',
+              padding: '6px 12px',
+              borderRadius: '6px',
+              fontSize: '0.76rem',
               color: '#38bdf8',
               border: '1px solid rgba(255, 255, 255, 0.1)'
             }}>
-              <Award size={16} />
+              <Award size={14} />
               <span>{CLINIC_INFO.accreditation}</span>
             </div>
           </div>
 
           {/* Specialties links */}
           <div>
-            <h4 className="footer-col-title">Chuyên Khoa</h4>
-            <ul className="footer-nav-list">
-              <li><a href="#specialties" className="footer-nav-link">Khoa Nội Tổng Quát</a></li>
-              <li><a href="#specialties" className="footer-nav-link">Khoa Tim Mạch Can Thiệp</a></li>
-              <li><a href="#specialties" className="footer-nav-link">Khoa Sản Phụ Khoa</a></li>
-              <li><a href="#specialties" className="footer-nav-link">Khoa Nhi & Tiêm Chủng</a></li>
-              <li><a href="#specialties" className="footer-nav-link">Khoa Tai Mũi Họng</a></li>
-              <li><a href="#specialties" className="footer-nav-link">Khoa Răng Hàm Mặt</a></li>
+            <h5 className="hosp-footer-h5">Chuyên Khoa Khám</h5>
+            <ul className="hosp-footer-list">
+              <li><a href="#specialties">Khoa Nội Tổng Quát</a></li>
+              <li><a href="#specialties">Khoa Tim Mạch Can Thiệp</a></li>
+              <li><a href="#specialties">Khoa Sản Phụ Khoa</a></li>
+              <li><a href="#specialties">Khoa Nhi & Tiêm Chủng</a></li>
+              <li><a href="#specialties">Khoa Cơ Xương Khớp</a></li>
+              <li><a href="#specialties">Khoa Tiêu Hóa - Gan Mật</a></li>
             </ul>
           </div>
 
           {/* Service Links */}
           <div>
-            <h4 className="footer-col-title">Dịch Vụ & Hỗ Trợ</h4>
-            <ul className="footer-nav-list">
-              <li><a href="#booking" className="footer-nav-link">Đặt lịch khám online</a></li>
-              <li><a href="#pricing" className="footer-nav-link">Bảng giá gói khám tổng quát</a></li>
-              <li><a href="#doctors" className="footer-nav-link">Danh sách Bác sĩ chuyên khoa</a></li>
-              <li><a href="#facilities" className="footer-nav-link">Trang thiết bị công nghệ</a></li>
-              <li><a href="#faqs" className="footer-nav-link">Chính sách thanh toán BHYT</a></li>
-              <li><a href="#contact" className="footer-nav-link">Bảo mật thông tin người bệnh</a></li>
+            <h5 className="hosp-footer-h5">Dịch Vụ & Tiện Ích</h5>
+            <ul className="hosp-footer-list">
+              <li><a href="#booking">Đặt lịch khám online</a></li>
+              <li><a href="#pricing">Bảng giá gói khám tổng quát</a></li>
+              <li><a href="#doctors">Danh sách Bác sĩ chuyên khoa</a></li>
+              <li><a href="#facilities">Trang thiết bị chẩn đoán</a></li>
+              <li><a href="#faqs">Chính sách thanh toán BHYT</a></li>
+              <li><a href="#contact">Đăng ký tư vấn y khoa</a></li>
             </ul>
           </div>
 
-          {/* Emergency & Address */}
+          {/* Contact Details */}
           <div>
-            <h4 className="footer-col-title">Đường Dây Nóng</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '0.9rem' }}>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <MapPin size={18} color="#38bdf8" style={{ flexShrink: 0, marginTop: '2px' }} />
+            <h5 className="hosp-footer-h5">Trực Cấp Cứu & Liên Hệ</h5>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.84rem' }}>
+              <div style={{ display: 'flex', gap: '8px', color: '#cbd5e1' }}>
+                <MapPin size={16} color="#38bdf8" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span>{CLINIC_INFO.address}</span>
               </div>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <Phone size={18} color="#38bdf8" style={{ flexShrink: 0 }} />
-                <span>CSKH: <strong>{CLINIC_INFO.hotline}</strong></span>
+              <div style={{ display: 'flex', gap: '8px', color: '#cbd5e1' }}>
+                <Phone size={16} color="#38bdf8" style={{ flexShrink: 0 }} />
+                <span>Tổng đài: <strong>{CLINIC_INFO.hotline}</strong></span>
               </div>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <Phone size={18} color="#ef4444" style={{ flexShrink: 0 }} />
-                <span style={{ color: '#fca5a5' }}>Cấp cứu: <strong>{CLINIC_INFO.emergencyPhone}</strong></span>
+              <div style={{ display: 'flex', gap: '8px', color: '#cbd5e1' }}>
+                <Phone size={16} color="#ef4444" style={{ flexShrink: 0 }} />
+                <span>Cấp cứu 24/7: <strong style={{ color: '#f87171' }}>{CLINIC_INFO.emergencyPhone}</strong></span>
               </div>
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <Mail size={18} color="#38bdf8" style={{ flexShrink: 0 }} />
+              <div style={{ display: 'flex', gap: '8px', color: '#cbd5e1' }}>
+                <Mail size={16} color="#38bdf8" style={{ flexShrink: 0 }} />
                 <span>{CLINIC_INFO.email}</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="footer-bottom-bar">
-          <p>© {new Date().getFullYear()} {CLINIC_INFO.name}. {CLINIC_INFO.license}.</p>
-          <p>Tuân thủ nghiêm ngặt Luật Khám bệnh, chữa bệnh Việt Nam và Tiêu chuẩn JCI.</p>
+        {/* Bottom copyright */}
+        <div style={{
+          borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+          paddingTop: '20px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '12px',
+          fontSize: '0.78rem',
+          color: '#64748b'
+        }}>
+          <div>
+            © {new Date().getFullYear()} {CLINIC_INFO.name}. Giấy phép hoạt động khám chữa bệnh số 1428/BYT-GPHĐ.
+          </div>
+          <div style={{ display: 'flex', gap: '16px' }}>
+            <a href="#faqs" style={{ color: '#94a3b8' }}>Chính sách bảo mật</a>
+            <a href="#faqs" style={{ color: '#94a3b8' }}>Quy định khám chữa bệnh</a>
+            <a href="#faqs" style={{ color: '#94a3b8' }}>Quyền lợi BHYT</a>
+          </div>
         </div>
       </div>
     </footer>

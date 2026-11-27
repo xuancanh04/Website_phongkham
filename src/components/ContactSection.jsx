@@ -17,32 +17,32 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="section-wrap" style={{ backgroundColor: '#ffffff' }} id="contact">
+    <section className="hospital-section" style={{ backgroundColor: 'var(--bg-page)' }} id="contact">
       <div className="container">
-        <div className="section-header-centered">
-          <div className="pill-badge">
-            <span className="dot"></span>
-            <span>Kết Nối Trực Tiếp</span>
+        <div className="section-head-wrap">
+          <div className="hospital-badge-tag">
+            <MapPin size={14} />
+            <span>Liên Hệ Trực Tiếp</span>
           </div>
-          <h2 className="section-headline">Thông Tin Liên Hệ & Vị Trí Bệnh Viện</h2>
-          <p className="section-subtitle">
+          <h2 className="hospital-heading-h2">Thông Tin Liên Hệ & Vị Trí Bệnh Viện</h2>
+          <p className="hospital-lead-desc">
             Hệ thống đường dây nóng tư vấn y khoa và tiếp nhận phản hồi luôn hoạt động 24/7. 
             Quý khách có thể gửi câu hỏi hoặc liên hệ trực tiếp qua số hotline.
           </p>
         </div>
 
-        <div className="contact-split-grid">
-          {/* Left: Contact Info Tiles & Map link */}
+        <div className="hosp-contact-grid">
+          {/* Left: Contact Info Tiles */}
           <div>
-            <div className="contact-cards-quad">
-              <div className="contact-tile">
-                <MapPin size={24} />
+            <div className="hosp-contact-tiles">
+              <div className="hosp-tile">
+                <MapPin size={22} />
                 <h5>Địa chỉ bệnh viện</h5>
                 <p>{CLINIC_INFO.address}</p>
               </div>
 
-              <div className="contact-tile">
-                <Phone size={24} />
+              <div className="hosp-tile">
+                <Phone size={22} />
                 <h5>Tổng đài CSKH</h5>
                 <p>
                   Đặt lịch: <strong>{CLINIC_INFO.hotline}</strong><br />
@@ -50,8 +50,8 @@ export default function ContactSection() {
                 </p>
               </div>
 
-              <div className="contact-tile">
-                <Clock size={24} />
+              <div className="hosp-tile">
+                <Clock size={22} />
                 <h5>Thời gian làm việc</h5>
                 <p>
                   {CLINIC_INFO.operatingHours.weekdays}<br />
@@ -59,60 +59,58 @@ export default function ContactSection() {
                 </p>
               </div>
 
-              <div className="contact-tile">
-                <Mail size={24} />
-                <h5>Email & Hợp tác</h5>
+              <div className="hosp-tile">
+                <Mail size={22} />
+                <h5>Email & Tiếp nhận</h5>
                 <p>
                   {CLINIC_INFO.email}<br />
-                  Phục vụ khám đoàn & cá nhân
+                  Khám sức khỏe đoàn thể & cá nhân
                 </p>
               </div>
             </div>
 
-            {/* Google Maps Banner */}
+            {/* Google Maps Location Preview Card */}
             <div style={{
-              borderRadius: 'var(--radius-lg)',
+              borderRadius: 'var(--radius-md)',
               overflow: 'hidden',
-              height: '240px',
-              backgroundColor: '#e2e8f0',
-              border: '1px solid var(--border-subtle)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              backgroundColor: '#ffffff',
+              border: '1px solid var(--border-color)',
+              padding: '22px',
               textAlign: 'center',
-              padding: '24px'
+              boxShadow: 'var(--shadow-sm)'
             }}>
-              <div>
-                <MapPin size={36} color="#0284c7" style={{ margin: '0 auto 10px auto' }} />
-                <h4 style={{ color: 'var(--brand-navy)', marginBottom: '6px' }}>Bản Đồ Chỉ Đường Đến MediCare Plus</h4>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '14px' }}>
-                  {CLINIC_INFO.address} (Đối diện cổng BV Đại học Y Dược TP.HCM)
-                </p>
-                <a 
-                  href="https://maps.google.com" 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="btn-core btn-secondary-white"
-                  style={{ fontSize: '0.85rem', padding: '8px 18px' }}
-                >
-                  Xem vị trí trên Google Maps
-                </a>
-              </div>
+              <MapPin size={32} color="var(--hospital-blue)" style={{ margin: '0 auto 8px auto' }} />
+              <h4 style={{ color: 'var(--hospital-navy)', fontSize: '1rem', fontWeight: 700, marginBottom: '6px' }}>
+                Vị Trí Trung Tâm Bệnh Viện MediCare Plus
+              </h4>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.84rem', marginBottom: '14px' }}>
+                {CLINIC_INFO.address} (Có bãi đỗ xe ô tô, xe máy rộng rãi, bảo vệ 24/7)
+              </p>
+              <a 
+                href="https://maps.google.com" 
+                target="_blank" 
+                rel="noreferrer"
+                className="btn-hosp btn-hosp-sm btn-hosp-secondary"
+                style={{ display: 'inline-flex', margin: '0 auto' }}
+              >
+                Mở chỉ đường trên Google Maps
+              </a>
             </div>
           </div>
 
-          {/* Right: Direct Doctor Consultation Callback */}
+          {/* Right: Direct Doctor Consultation Request */}
           <div style={{
-            backgroundColor: 'var(--bg-page)',
-            border: '1px solid var(--border-subtle)',
-            borderRadius: 'var(--radius-xl)',
-            padding: '40px'
+            backgroundColor: '#ffffff',
+            border: '1px solid var(--border-color)',
+            borderRadius: 'var(--radius-lg)',
+            padding: '32px',
+            boxShadow: 'var(--shadow-sm)'
           }}>
-            <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--brand-navy)', marginBottom: '6px' }}>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--hospital-navy)', marginBottom: '6px' }}>
               Đăng Ký Tư Vấn Y Khoa Miễn Phí
             </h3>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '24px' }}>
-              Để lại thông tin và triệu chứng của bạn, Bác sĩ trực chuyên khoa sẽ liên hệ giải đáp miễn phí trong vòng 15 phút.
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.86rem', marginBottom: '20px' }}>
+              Để lại thông tin và triệu chứng của bạn, Điều dưỡng trực chuyên khoa sẽ liên hệ hỗ trợ giải đáp chu đáo trong 15 phút.
             </p>
 
             {sent ? (
@@ -120,25 +118,25 @@ export default function ContactSection() {
                 backgroundColor: '#dcfce7',
                 border: '1px solid #bbf7d0',
                 color: '#166534',
-                padding: '24px',
-                borderRadius: '12px',
+                padding: '20px',
+                borderRadius: '8px',
                 textAlign: 'center'
               }}>
-                <CheckCircle2 size={36} color="#16a34a" style={{ margin: '0 auto 10px auto' }} />
+                <CheckCircle2 size={32} color="#16a34a" style={{ margin: '0 auto 8px auto' }} />
                 <strong>Yêu cầu tư vấn đã được gửi thành công!</strong>
-                <p style={{ fontSize: '0.88rem', marginTop: '6px' }}>
-                  Bác sĩ trực sẽ gọi vào số điện thoại {formState.phone} trong ít phút.
+                <p style={{ fontSize: '0.84rem', marginTop: '6px' }}>
+                  Điều dưỡng trực sẽ liên hệ số điện thoại {formState.phone} trong ít phút.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--brand-navy)', marginBottom: '6px' }}>
+                  <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--hospital-navy)', marginBottom: '5px' }}>
                     Họ và tên của bạn *
                   </label>
                   <input 
                     type="text" 
-                    className="panel-input-box"
+                    className="hosp-input"
                     style={{ width: '100%' }}
                     placeholder="Nguyễn Văn A"
                     required
@@ -148,12 +146,12 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--brand-navy)', marginBottom: '6px' }}>
+                  <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--hospital-navy)', marginBottom: '5px' }}>
                     Số điện thoại nhận tư vấn *
                   </label>
                   <input 
                     type="tel" 
-                    className="panel-input-box"
+                    className="hosp-input"
                     style={{ width: '100%' }}
                     placeholder="0912 345 678"
                     required
@@ -163,20 +161,20 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--brand-navy)', marginBottom: '6px' }}>
+                  <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--hospital-navy)', marginBottom: '5px' }}>
                     Nội dung câu hỏi / Tình trạng sức khỏe
                   </label>
                   <textarea 
-                    className="panel-input-box"
-                    style={{ width: '100%', height: '100px', resize: 'vertical' }}
-                    placeholder="Mô tả triệu chứng hoặc thắc mắc về gói khám, chi phí bảo hiểm..."
+                    className="hosp-input"
+                    style={{ width: '100%', height: '88px', resize: 'vertical' }}
+                    placeholder="Mô tả triệu chứng hoặc thắc mắc về gói khám, chi phí bảo hiểm BHYT..."
                     value={formState.question}
                     onChange={(e) => setFormState({ ...formState, question: e.target.value })}
                   />
                 </div>
 
-                <button type="submit" className="btn-core btn-primary-glow" style={{ padding: '14px', marginTop: '6px', fontSize: '1rem' }}>
-                  <Send size={18} />
+                <button type="submit" className="btn-hosp btn-hosp-md btn-hosp-primary" style={{ width: '100%', marginTop: '4px' }}>
+                  <Send size={15} />
                   <span>Gửi Yêu Cầu Tư Vấn Ngay</span>
                 </button>
               </form>

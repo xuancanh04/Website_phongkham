@@ -110,15 +110,15 @@ export const SPECIALTIES = [
     procedures: ["Tiêm PRP thoái hóa khớp gối", "Kéo giãn cột sống kỹ thuật số", "Sóng xung kích Shockwave", "Phục hồi chức năng sau mổ"]
   },
   {
-    id: "rang-ham-mat",
-    name: "Khoa Răng Hàm Mặt",
-    lead: "ThS. BS. Nguyễn Thanh Tùng",
-    desc: "Cấy ghép Implant kỹ thuật số không đau, niềng răng trong suốt Invisalign, nhổ răng khôn bằng sóng siêu âm Piezotome và răng sứ thẩm mỹ.",
-    icon: "Smile",
-    tag: "Công nghệ Thụy Sĩ",
-    doctorCount: 5,
-    patientsAnnual: "8.900+",
-    procedures: ["Cấy ghép Implant Straumann", "Nhổ răng khôn siêu âm Piezotome", "Tẩy trắng răng laser Zoom", "Niềng răng máng trong suốt"]
+    id: "tieu-hoa-gan-mat",
+    name: "Khoa Tiêu Hóa - Gan Mật",
+    lead: "TS. BS. Nguyễn Thanh Tùng",
+    desc: "Nội soi tiêu hóa không đau với dải tần ánh sáng hẹp NBI thế hệ mới Olympus (Nhật Bản), tầm soát sớm ung thư dạ dày - đại tràng và điều trị viêm gan virus.",
+    icon: "Activity",
+    tag: "Nội soi NBI Nhật Bản",
+    doctorCount: 6,
+    patientsAnnual: "13.200+",
+    procedures: ["Nội soi dạ dày tiền mê không đau", "Nội soi đại tràng cắt polyp", "Đo độ đàn hồi mô gan FibroScan", "Test vi khuẩn HP qua hơi thở C13/C14"]
   },
   {
     id: "chan-doan-hinh-anh",

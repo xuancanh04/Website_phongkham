@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, PhoneCall, ShieldCheck, Award, Users, Star, Search, Stethoscope, CheckCircle2 } from 'lucide-react';
+import { Calendar, PhoneCall, ShieldCheck, Award, Users, Star, Search, Stethoscope } from 'lucide-react';
 import { CLINIC_INFO, SPECIALTIES, DOCTORS } from '../data/clinicData';
 
 export default function Hero({ onQuickSelectBooking }) {
@@ -21,104 +21,103 @@ export default function Hero({ onQuickSelectBooking }) {
   };
 
   return (
-    <section className="hero-wrapper" id="about">
+    <section className="hosp-hero-wrap" id="about">
       <div className="container">
-        <div className="hero-layout-grid">
-          {/* Left Text Presentation */}
+        <div className="hosp-hero-grid">
+          {/* Left Text */}
           <div>
-            <div className="pill-badge">
-              <span className="dot"></span>
-              <span>Bệnh Viện Đạt Chuẩn JCI Hoa Kỳ</span>
+            <div className="hospital-badge-tag">
+              <ShieldCheck size={15} />
+              <span>Bệnh Viện Đạt Chuẩn JCI Hoa Kỳ & Giấy Phép Bộ Y Tế</span>
             </div>
 
-            <h1 className="hero-main-title">
-              Chuẩn Mực Y Khoa Quốc Tế, <br />
-              <span className="gradient-word">Tận Tâm Vì Sức Khỏe</span> Gia Đình
+            <h1 className="hosp-hero-h1">
+              Chăm Sóc Y Khoa <span className="blue">Chuẩn Quốc Tế</span>, <br />
+              Tận Tâm Vì Sức Khỏe Gia Đình
             </h1>
 
-            <p className="hero-lead-text">
-              Quy tụ đội ngũ Phó Giáo sư, Tiến sĩ, Bác sĩ Chuyên khoa cấp cao từng công tác 
-              tại BV Chợ Rẫy, Từ Dũ, Viện Tim TP.HCM. Ứng dụng hệ thống chẩn đoán hình ảnh và xét nghiệm 
-              tự động thế hệ mới nhất từ Đức & Thụy Sĩ, đảm bảo phác đồ điều trị an toàn, chính xác và hiệu quả.
+            <p className="hosp-hero-lead">
+              Bệnh viện Đa khoa Quốc tế MediCare Plus quy tụ đội ngũ Phó Giáo sư, Tiến sĩ, Bác sĩ Chuyên khoa cấp cao 
+              từng công tác tại BV Chợ Rẫy, Từ Dũ, Viện Tim TP.HCM. Hệ thống trang thiết bị chẩn đoán hình ảnh và xét nghiệm 
+              tự động thế hệ mới từ Đức & Thụy Sĩ, đảm bảo chẩn đoán chính xác và phác đồ điều trị an toàn, tối ưu.
             </p>
 
-            <div className="hero-btn-row">
-              <a href="#booking" className="btn-core btn-primary-glow" style={{ padding: '14px 30px', fontSize: '1.02rem' }}>
-                <Calendar size={19} />
+            <div className="hosp-hero-btns">
+              <a href="#booking" className="btn-hosp btn-hosp-lg btn-hosp-primary btn-hosp-pill">
+                <Calendar size={18} />
                 <span>Đặt lịch khám trực tuyến</span>
               </a>
-              <a href={`tel:${CLINIC_INFO.hotline}`} className="btn-core btn-secondary-white" style={{ padding: '14px 26px' }}>
-                <PhoneCall size={18} color="#0284c7" />
+
+              <a href={`tel:${CLINIC_INFO.hotline}`} className="btn-hosp btn-hosp-lg btn-hosp-secondary btn-hosp-pill">
+                <PhoneCall size={17} color="#0284c7" />
                 <span>Tổng đài CSKH: {CLINIC_INFO.hotline}</span>
               </a>
             </div>
 
-            {/* Trust Metrics */}
-            <div className="hero-trust-bar">
-              <div className="trust-metric">
+            {/* Metrics Bar */}
+            <div className="hosp-stats-bar">
+              <div className="hosp-stat-col">
                 <h4>15<span>+</span></h4>
                 <p>Năm đồng hành y tế</p>
               </div>
-              <div className="trust-metric">
+              <div className="hosp-stat-col">
                 <h4>50<span>+</span></h4>
-                <p>Chuyên gia đầu ngành</p>
+                <p>Bác sĩ chuyên khoa</p>
               </div>
-              <div className="trust-metric">
+              <div className="hosp-stat-col">
                 <h4>100k<span>+</span></h4>
-                <p>Bệnh nhân tin cậy</p>
+                <p>Lượt khám mỗi năm</p>
               </div>
-              <div className="trust-metric">
+              <div className="hosp-stat-col">
                 <h4>99.6<span>%</span></h4>
-                <p>Tỷ lệ hài lòng</p>
+                <p>Bệnh nhân hài lòng</p>
               </div>
             </div>
           </div>
 
-          {/* Right Visual Frame & Floating Badges */}
-          <div className="hero-visual-frame">
-            <div className="hero-image-container">
+          {/* Right Image Frame */}
+          <div className="hosp-hero-visual">
+            <div className="hosp-hero-img-box">
               <img 
                 src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=900" 
-                alt="Đội ngũ bác sĩ và phòng khám hiện đại MediCare Plus" 
+                alt="Bác sĩ thăm khám bệnh nhân tại Bệnh viện MediCare Plus" 
               />
             </div>
 
-            {/* Floating Credibility Card Top */}
-            <div className="card-float card-float-top">
-              <div className="float-content">
-                <div className="float-icon teal">
-                  <Award size={24} />
-                </div>
-                <div className="float-text">
-                  <strong>100% Bác Sĩ Cấp Cao</strong>
-                  <span>Phó Giáo sư, Tiến sĩ, Bác sĩ CKII</span>
-                </div>
+            <div className="hosp-hero-badge-float">
+              <div style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '8px',
+                backgroundColor: 'var(--hospital-blue-light)',
+                color: 'var(--hospital-blue)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0
+              }}>
+                <Award size={22} />
               </div>
-            </div>
-
-            {/* Floating Review Card Bottom */}
-            <div className="card-float card-float-bottom">
-              <div className="float-content">
-                <div className="float-icon blue">
-                  <Star size={24} fill="#f59e0b" color="#f59e0b" />
-                </div>
-                <div className="float-text">
-                  <strong>Đánh Giá 4.9 / 5.0</strong>
-                  <span>Hơn 14.000+ bệnh nhân đã khám</span>
-                </div>
+              <div>
+                <strong style={{ fontSize: '0.9rem', color: 'var(--hospital-navy)', display: 'block' }}>
+                  100% Bác Sĩ Cấp Cao
+                </strong>
+                <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                  Nguyên Trưởng/Phó khoa BV Chợ Rẫy, Từ Dũ
+                </span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Quick Booking Widget */}
-        <div className="quick-booking-panel">
-          <form className="booking-panel-card" onSubmit={handleQuickSubmit}>
-            <div className="booking-panel-grid">
-              <div className="panel-input-group">
+        {/* Quick Booking Bar */}
+        <div className="hosp-quickbar-wrap">
+          <form className="hosp-quickbar-card" onSubmit={handleQuickSubmit}>
+            <div className="hosp-quickbar-grid">
+              <div className="hosp-quick-field">
                 <label>Chuyên khoa cần khám</label>
-                <div className="panel-input-box">
-                  <Stethoscope size={18} color="#0284c7" />
+                <div className="hosp-quick-input">
+                  <Stethoscope size={16} color="#0284c7" />
                   <select 
                     value={selectedSpecialty}
                     onChange={(e) => {
@@ -134,10 +133,10 @@ export default function Hero({ onQuickSelectBooking }) {
                 </div>
               </div>
 
-              <div className="panel-input-group">
+              <div className="hosp-quick-field">
                 <label>Bác sĩ phụ trách</label>
-                <div className="panel-input-box">
-                  <Users size={18} color="#0284c7" />
+                <div className="hosp-quick-input">
+                  <Users size={16} color="#0284c7" />
                   <select 
                     value={selectedDoctor}
                     onChange={(e) => setSelectedDoctor(e.target.value)}
@@ -150,10 +149,10 @@ export default function Hero({ onQuickSelectBooking }) {
                 </div>
               </div>
 
-              <div className="panel-input-group">
+              <div className="hosp-quick-field">
                 <label>Ngày dự kiến khám</label>
-                <div className="panel-input-box">
-                  <Calendar size={18} color="#0284c7" />
+                <div className="hosp-quick-input">
+                  <Calendar size={16} color="#0284c7" />
                   <input 
                     type="date" 
                     value={selectedDate}
@@ -164,8 +163,8 @@ export default function Hero({ onQuickSelectBooking }) {
               </div>
 
               <div>
-                <button type="submit" className="btn-core btn-primary-glow" style={{ width: '100%', height: '48px' }}>
-                  <Search size={18} />
+                <button type="submit" className="btn-hosp btn-hosp-md btn-hosp-primary" style={{ width: '100%', height: '42px' }}>
+                  <Search size={16} />
                   <span>Tìm & Đặt khám</span>
                 </button>
               </div>

@@ -1,47 +1,55 @@
 /* ==========================================================================
-   TEENNIE DENTAL CLINIC - GLOBAL RESET & DESIGN TOKENS
-   Standardized UI/UX Pro Max Typography & Sizing Scale
+   BỆNH VIỆN ĐA KHOA QUỐC TẾ MEDICARE PLUS
+   International General Hospital Design System
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap');
 
 :root {
-  /* Color Tokens */
-  --teennie-blue: #009efd;
-  --teennie-blue-dark: #0f3d63;
-  --teennie-blue-deep: #082640;
-  --teennie-blue-soft: #f0f7fc;
-  --teennie-blue-tint: #e0f0fe;
-  
-  --teennie-coral: #ff476e;
-  --teennie-coral-hover: #e03257;
-  --teennie-coral-soft: #fff0f3;
-  --teennie-orange: #ff7a59;
-  
-  --teennie-yellow: #f59e0b;
-  --teennie-yellow-soft: #fefce8;
+  /* Hospital Brand Colors */
+  --hospital-navy: #092540;
+  --hospital-navy-dark: #051626;
+  --hospital-blue: #0284c7;
+  --hospital-blue-hover: #0369a1;
+  --hospital-blue-light: #f0f9ff;
+  --hospital-blue-border: #bae6fd;
 
-  --teennie-text: #1e293b;
-  --teennie-secondary: #475569;
-  --teennie-muted: #64748b;
-  --teennie-border: #e2e8f0;
-  --teennie-bg-soft: #fbfdff;
-  --teennie-card-bg: #ffffff;
+  --hospital-teal: #0d9488;
+  --hospital-teal-light: #f0fdfa;
+  
+  --hospital-green: #10b981;
+  --hospital-green-light: #ecfdf5;
+
+  --hospital-red: #dc2626;
+  --hospital-red-light: #fef2f2;
+  --hospital-red-border: #fecaca;
+
+  --hospital-amber: #d97706;
+  --hospital-amber-light: #fffbeb;
+
+  /* Neutrals */
+  --text-main: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --border-light: #f1f5f9;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
 
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(15, 61, 99, 0.06), 0 1px 2px rgba(15, 61, 99, 0.04);
-  --shadow-md: 0 4px 14px rgba(15, 61, 99, 0.08);
-  --shadow-lg: 0 10px 25px rgba(15, 61, 99, 0.1);
-  --shadow-coral: 0 4px 14px rgba(255, 71, 110, 0.3);
+  --shadow-sm: 0 1px 3px rgba(9, 37, 64, 0.05);
+  --shadow-md: 0 4px 14px rgba(9, 37, 64, 0.08);
+  --shadow-lg: 0 12px 28px rgba(9, 37, 64, 0.1);
+  --shadow-glow: 0 4px 16px rgba(2, 132, 199, 0.3);
 
-  /* Radius */
+  /* Radii */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
-  --radius-xl: 22px;
+  --radius-xl: 24px;
   --radius-pill: 9999px;
 
-  /* Fonts */
+  /* Typography */
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -54,12 +62,12 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 15px; /* balanced root size */
+  font-size: 15px;
 }
 
 body {
   font-family: var(--font-body);
-  color: var(--teennie-text);
+  color: var(--text-main);
   background-color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
@@ -68,9 +76,9 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: var(--teennie-blue-dark);
+  color: var(--hospital-navy);
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 a {
@@ -86,74 +94,75 @@ button, input, select, textarea {
 
 .container {
   width: 100%;
-  max-width: 1220px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.teennie-section {
-  padding: 72px 0;
+.hospital-section {
+  padding: 76px 0;
   position: relative;
 }
 
 @media (max-width: 768px) {
-  .teennie-section {
+  .hospital-section {
     padding: 48px 0;
   }
 }
 
-.section-title-wrap {
+.section-head-wrap {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 44px auto;
+  max-width: 720px;
+  margin: 0 auto 46px auto;
 }
 
-.teennie-tag {
+.hospital-badge-tag {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: var(--teennie-coral-soft);
-  color: var(--teennie-coral);
+  background-color: var(--hospital-blue-light);
+  color: var(--hospital-blue);
+  border: 1px solid var(--hospital-blue-border);
   font-size: 0.8rem;
   font-weight: 700;
-  padding: 5px 14px;
+  padding: 4px 14px;
   border-radius: var(--radius-pill);
   margin-bottom: 12px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
-.teennie-title {
-  font-size: 2.15rem;
+.hospital-heading-h2 {
+  font-size: 2.2rem;
   font-weight: 800;
-  color: var(--teennie-blue-dark);
+  color: var(--hospital-navy);
   margin-bottom: 12px;
   letter-spacing: -0.015em;
 }
 
 @media (max-width: 768px) {
-  .teennie-title {
+  .hospital-heading-h2 {
     font-size: 1.7rem;
   }
 }
 
-.teennie-desc {
-  font-size: 0.96rem;
-  color: var(--teennie-muted);
+.hospital-lead-desc {
+  font-size: 0.98rem;
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
 /* ==========================================================================
-   STANDARDIZED BUTTON SIZING SYSTEM (TỈ LỆ NÚT CHUẨN)
+   STANDARDIZED BUTTON SCALE
    ========================================================================== */
-.btn-teennie {
+.btn-hosp {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   white-space: nowrap;
   font-weight: 700;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-md);
   border: 1.5px solid transparent;
   cursor: pointer;
   line-height: 1;
@@ -162,54 +171,64 @@ button, input, select, textarea {
   text-align: center;
 }
 
-/* Size: Small (34px) - for header badges / compact */
-.btn-sm {
+.btn-hosp-pill {
+  border-radius: var(--radius-pill);
+}
+
+/* Heights: 34px, 40px, 46px */
+.btn-hosp-sm {
   height: 34px;
   padding: 0 14px;
   font-size: 0.82rem;
 }
 
-/* Size: Medium (40px) - for Navbar and standard CTAs */
-.btn-md {
+.btn-hosp-md {
   height: 40px;
   padding: 0 18px;
   font-size: 0.88rem;
 }
 
-/* Size: Large (46px) - for Hero and Main Forms */
-.btn-lg {
+.btn-hosp-lg {
   height: 46px;
   padding: 0 24px;
   font-size: 0.94rem;
 }
 
-/* Coral Glow Gradient */
-.btn-coral-glow {
-  background: linear-gradient(135deg, var(--teennie-coral) 0%, var(--teennie-orange) 100%);
+/* Blue Primary */
+.btn-hosp-primary {
+  background: linear-gradient(135deg, var(--hospital-blue) 0%, #0369a1 100%);
   color: #ffffff;
-  box-shadow: var(--shadow-coral);
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);
 }
 
-.btn-coral-glow:hover {
-  background: linear-gradient(135deg, var(--teennie-coral-hover) 0%, var(--teennie-coral) 100%);
+.btn-hosp-primary:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
   transform: translateY(-1.5px);
-  box-shadow: 0 6px 18px rgba(255, 71, 110, 0.4);
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.35);
 }
 
-.btn-coral-glow:active {
-  transform: translateY(0);
-}
-
-/* Blue Outline */
-.btn-blue-outline {
+/* Secondary White */
+.btn-hosp-secondary {
   background: #ffffff;
-  color: var(--teennie-blue-dark);
-  border-color: #cbd5e1;
+  color: var(--hospital-navy);
+  border-color: var(--border-color);
+  box-shadow: var(--shadow-sm);
 }
 
-.btn-blue-outline:hover {
-  background-color: var(--teennie-blue-soft);
-  border-color: var(--teennie-blue);
-  color: var(--teennie-blue);
+.btn-hosp-secondary:hover {
+  background-color: var(--hospital-blue-light);
+  border-color: var(--hospital-blue);
+  color: var(--hospital-blue);
+  transform: translateY(-1.5px);
+}
+
+/* Red Emergency */
+.btn-hosp-danger {
+  background-color: var(--hospital-red);
+  color: #ffffff;
+}
+
+.btn-hosp-danger:hover {
+  background-color: #b91c1c;
   transform: translateY(-1.5px);
 }

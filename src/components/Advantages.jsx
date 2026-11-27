@@ -11,27 +11,27 @@ const ICON_MAP = {
 
 export default function Advantages() {
   return (
-    <section className="section-wrap" style={{ backgroundColor: '#ffffff' }}>
+    <section className="hospital-section" style={{ backgroundColor: '#ffffff' }}>
       <div className="container">
-        <div className="section-header-centered">
-          <div className="pill-badge">
-            <span className="dot"></span>
-            <span>Giá Trị Vượt Trội</span>
+        <div className="section-head-wrap">
+          <div className="hospital-badge-tag">
+            <ShieldCheck size={14} />
+            <span>Giá Trị Y Khoa Vượt Trội</span>
           </div>
-          <h2 className="section-headline">Vì Sao Hơn 100.000 Bệnh Nhân Tin Chọn MediCare Plus?</h2>
-          <p className="section-subtitle">
-            Chúng tôi định nghĩa lại trải nghiệm y tế: An toàn y khoa chuẩn quốc tế, 
-            không gian vô trùng tiện nghi và sự thấu hiểu đồng hành cùng người bệnh.
+          <h2 className="hospital-heading-h2">Vì Sao Hơn 100.000 Bệnh Nhân Tin Chọn MediCare Plus?</h2>
+          <p className="hospital-lead-desc">
+            Chúng tôi định chuẩn trải nghiệm y tế hiện đại: An toàn tuyệt đối, phác đồ điều trị 
+            chuẩn quốc tế, chi phí minh bạch và sự đồng hành chu đáo cùng sức khỏe người bệnh.
           </p>
         </div>
 
-        <div className="advantages-grid">
+        <div className="hosp-advantages-grid">
           {CLINIC_ADVANTAGES.map((item) => {
             const Icon = ICON_MAP[item.icon] || Award;
             return (
-              <div key={item.id} className="advantage-card">
-                <div className="advantage-icon-box">
-                  <Icon size={28} />
+              <div key={item.id} className="hosp-adv-card">
+                <div className="hosp-adv-icon">
+                  <Icon size={26} />
                 </div>
                 <h4>{item.title}</h4>
                 <p>{item.desc}</p>

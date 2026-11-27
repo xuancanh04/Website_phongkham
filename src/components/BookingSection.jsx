@@ -11,7 +11,6 @@ import {
   AlertCircle,
   QrCode,
   Printer,
-  Sparkles,
   Check
 } from 'lucide-react';
 import { SPECIALTIES, DOCTORS, TIME_SLOTS, CLINIC_INFO } from '../data/clinicData';
@@ -22,7 +21,7 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
     phone: '',
     email: '',
     gender: 'Nam',
-    birthYear: '1992',
+    birthYear: '1990',
     specialtyId: '',
     doctorId: '',
     appointmentDate: '',
@@ -34,7 +33,6 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
   const [errors, setErrors] = useState({});
   const [confirmedBooking, setConfirmedBooking] = useState(null);
 
-  // Sync draft from external selection (Hero, Doctors, Specialties, Pricing)
   useEffect(() => {
     if (bookingDraft) {
       setFormData(prev => ({
@@ -63,7 +61,7 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
     }
     if (!formData.specialtyId) err.specialtyId = 'Vui lòng chọn chuyên khoa khám';
     if (!formData.appointmentDate) err.appointmentDate = 'Vui lòng chọn ngày đến khám';
-    if (!formData.timeSlot) err.timeSlot = 'Vui lòng chọn một khung giờ khám';
+    if (!formData.timeSlot) err.timeSlot = 'Vui lòng chọn khung giờ khám';
 
     setErrors(err);
     return Object.keys(err).length === 0;
@@ -101,7 +99,7 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
       phone: '',
       email: '',
       gender: 'Nam',
-      birthYear: '1992',
+      birthYear: '1990',
       specialtyId: '',
       doctorId: '',
       appointmentDate: '',
@@ -113,80 +111,78 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
   };
 
   return (
-    <section className="section-wrap booking-console-wrapper" id="booking">
+    <section className="hospital-section hosp-booking-wrap" id="booking">
       <div className="container">
-        <div className="section-header-centered">
-          <div className="pill-badge">
-            <span className="dot"></span>
-            <span>Chủ Động Thời Gian</span>
+        <div className="section-head-wrap">
+          <div className="hospital-badge-tag">
+            <Calendar size={14} />
+            <span>Tiết Kiệm Thời Gian</span>
           </div>
-          <h2 className="section-headline">Đặt Lịch Khám Trực Tuyến - Không Cần Chờ Đợi</h2>
-          <p className="section-subtitle">
-            Hệ thống phân bổ lịch khám thông minh giúp quý khách vào thẳng phòng bác sĩ đúng giờ hẹn, 
-            tiết kiệm trung bình 90 phút so với việc lấy số trực tiếp tại bệnh viện.
+          <h2 className="hospital-heading-h2">Đặt Lịch Khám Bệnh Trực Tuyến</h2>
+          <p className="hospital-lead-desc">
+            Chủ động chọn chuyên khoa, bác sĩ và khung giờ mong muốn mà không cần xếp hàng lấy số. 
+            Hệ thống cấp mã phiếu khám và tin nhắn xác nhận tức thì.
           </p>
         </div>
 
-        <div className="booking-console-card">
+        <div className="hosp-booking-box">
           {/* Left Form Area */}
-          <div className="booking-form-pane">
+          <div className="hosp-form-pane">
             {confirmedBooking ? (
-              <div style={{ textAlign: 'center', padding: '16px 0' }}>
+              <div style={{ textAlign: 'center', padding: '14px 0' }}>
                 <div style={{
-                  width: '74px',
-                  height: '74px',
+                  width: '64px',
+                  height: '64px',
                   borderRadius: '50%',
                   backgroundColor: '#dcfce7',
                   color: '#16a34a',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  margin: '0 auto 20px auto'
+                  margin: '0 auto 16px auto'
                 }}>
-                  <Check size={40} strokeWidth={3} />
+                  <Check size={36} strokeWidth={3} />
                 </div>
 
-                <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--brand-navy)', marginBottom: '8px' }}>
+                <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--hospital-navy)', marginBottom: '6px' }}>
                   Đăng Ký Khám Thành Công!
                 </h3>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>
-                  Thông tin lịch hẹn đã được lưu trên hệ thống và gửi xác nhận qua SMS đến số <strong>{confirmedBooking.phone}</strong>.
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '20px' }}>
+                  Thông tin lịch hẹn đã được gửi đến số điện thoại <strong>{confirmedBooking.phone}</strong>.
                 </p>
 
-                {/* Digital Hospital Pass Presentation */}
+                {/* Digital Hospital Pass */}
                 <div style={{
                   background: 'linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%)',
-                  border: '2px dashed var(--primary)',
-                  borderRadius: '16px',
-                  padding: '24px',
-                  maxWidth: '500px',
-                  margin: '0 auto 28px auto',
-                  textAlign: 'left',
-                  boxShadow: 'var(--shadow-md)'
+                  border: '2px dashed var(--hospital-blue)',
+                  borderRadius: '14px',
+                  padding: '20px',
+                  maxWidth: '460px',
+                  margin: '0 auto 22px auto',
+                  textAlign: 'left'
                 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', borderBottom: '1px solid #cbd5e1', paddingBottom: '12px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px solid #cbd5e1', paddingBottom: '10px' }}>
                     <div>
-                      <strong style={{ fontSize: '1.1rem', color: 'var(--brand-navy)' }}>{CLINIC_INFO.shortName}</strong>
-                      <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>PHIẾU KHÁM BỆNH ĐIỆN TỬ</p>
+                      <strong style={{ fontSize: '1.05rem', color: 'var(--hospital-navy)' }}>{CLINIC_INFO.shortName}</strong>
+                      <p style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>PHIẾU KHÁM BỆNH ĐIỆN TỬ</p>
                     </div>
                     <span style={{
-                      backgroundColor: 'var(--primary)',
+                      backgroundColor: 'var(--hospital-blue)',
                       color: '#ffffff',
                       fontWeight: 800,
-                      padding: '4px 12px',
+                      padding: '4px 10px',
                       borderRadius: '6px',
-                      fontSize: '1rem',
-                      letterSpacing: '0.05em'
+                      fontSize: '0.95rem'
                     }}>
                       {confirmedBooking.bookingCode}
                     </span>
                   </div>
 
-                  <div style={{ fontSize: '0.92rem', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <div style={{ fontSize: '0.88rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
                     <div><strong>Bệnh nhân:</strong> {confirmedBooking.fullName} ({confirmedBooking.gender}, {confirmedBooking.birthYear})</div>
                     <div><strong>Chuyên khoa:</strong> {confirmedBooking.specialtyName}</div>
                     <div><strong>Bác sĩ khám:</strong> {confirmedBooking.doctorName}</div>
-                    <div><strong>Thời gian:</strong> <span style={{ color: 'var(--primary)', fontWeight: 700 }}>{confirmedBooking.appointmentDate} • Khung giờ {confirmedBooking.timeSlot}</span></div>
+                    <div><strong>Thời gian:</strong> <span style={{ color: 'var(--hospital-blue)', fontWeight: 700 }}>{confirmedBooking.appointmentDate} • {confirmedBooking.timeSlot}</span></div>
                     <div><strong>Địa điểm:</strong> {CLINIC_INFO.address}</div>
                   </div>
                 </div>
@@ -195,77 +191,76 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
                   backgroundColor: '#fffbeb',
                   border: '1px solid #fef3c7',
                   color: '#92400e',
-                  padding: '14px 20px',
-                  borderRadius: '10px',
-                  fontSize: '0.88rem',
+                  padding: '12px 16px',
+                  borderRadius: '8px',
+                  fontSize: '0.84rem',
                   textAlign: 'left',
-                  marginBottom: '28px',
-                  lineHeight: '1.6'
+                  marginBottom: '22px'
                 }}>
-                  <strong>Lưu ý trước khi đi khám:</strong> Quý khách vui lòng đến trước giờ hẹn 10 phút tại Quầy Lễ Tân (Tầng 1), xuất trình mã hẹn <strong>{confirmedBooking.bookingCode}</strong> để được hướng dẫn ưu tiên vào buồng khám.
+                  <strong>Lưu ý:</strong> Quý khách vui lòng đến trước 10 phút tại Quầy Lễ Tân (Tầng 1) và xuất trình mã <strong>{confirmedBooking.bookingCode}</strong> để được tiếp đón ưu tiên.
                 </div>
 
-                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
                   <button 
                     type="button" 
-                    className="btn-core btn-secondary-white"
+                    className="btn-hosp btn-hosp-md btn-hosp-secondary"
                     onClick={() => window.print()}
                   >
-                    <Printer size={16} />
+                    <Printer size={15} />
                     <span>In phiếu hẹn</span>
                   </button>
                   <button 
                     type="button" 
-                    className="btn-core btn-primary-glow"
+                    className="btn-hosp btn-hosp-md btn-hosp-primary"
                     onClick={handleReset}
                   >
-                    <span>Đặt lịch khám khác</span>
+                    <span>Đặt thêm lịch khám khác</span>
                   </button>
                 </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                   {/* Full Name */}
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--brand-navy)', marginBottom: '6px' }}>
+                    <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--hospital-navy)', marginBottom: '5px' }}>
                       Họ và tên bệnh nhân <span style={{ color: '#ef4444' }}>*</span>
                     </label>
                     <input 
                       type="text"
-                      className="panel-input-box"
+                      className="hosp-quick-input"
                       style={{ width: '100%' }}
                       placeholder="Nguyễn Văn A"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     />
-                    {errors.fullName && <span style={{ color: '#ef4444', fontSize: '0.8rem', marginTop: '4px', display: 'block' }}>{errors.fullName}</span>}
+                    {errors.fullName && <span style={{ color: '#ef4444', fontSize: '0.78rem', marginTop: '3px', display: 'block' }}>{errors.fullName}</span>}
                   </div>
 
                   {/* Phone */}
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--brand-navy)', marginBottom: '6px' }}>
+                    <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--hospital-navy)', marginBottom: '5px' }}>
                       Số điện thoại nhận tin SMS <span style={{ color: '#ef4444' }}>*</span>
                     </label>
                     <input 
                       type="tel"
-                      className="panel-input-box"
+                      className="hosp-quick-input"
                       style={{ width: '100%' }}
                       placeholder="0912 345 678"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     />
-                    {errors.phone && <span style={{ color: '#ef4444', fontSize: '0.8rem', marginTop: '4px', display: 'block' }}>{errors.phone}</span>}
+                    {errors.phone && <span style={{ color: '#ef4444', fontSize: '0.78rem', marginTop: '3px', display: 'block' }}>{errors.phone}</span>}
                   </div>
 
                   {/* Gender & Birth Year */}
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--brand-navy)', marginBottom: '6px' }}>
+                    <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--hospital-navy)', marginBottom: '5px' }}>
                       Giới tính & Năm sinh
                     </label>
-                    <div style={{ display: 'flex', gap: '10px' }}>
+                    <div style={{ display: 'flex', gap: '8px' }}>
                       <select 
-                        className="panel-input-box"
+                        className="hosp-quick-input"
                         style={{ width: '45%' }}
                         value={formData.gender}
                         onChange={(e) => setFormData({ ...formData, gender: e.target.value })}
@@ -276,7 +271,7 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
                       </select>
                       <input 
                         type="number"
-                        className="panel-input-box"
+                        className="hosp-quick-input"
                         style={{ width: '55%' }}
                         placeholder="Năm sinh"
                         value={formData.birthYear}
@@ -287,12 +282,12 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
 
                   {/* Email */}
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--brand-navy)', marginBottom: '6px' }}>
+                    <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--hospital-navy)', marginBottom: '5px' }}>
                       Email nhận kết quả xét nghiệm
                     </label>
                     <input 
                       type="email"
-                      className="panel-input-box"
+                      className="hosp-quick-input"
                       style={{ width: '100%' }}
                       placeholder="nguyenvana@gmail.com"
                       value={formData.email}
@@ -302,11 +297,11 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
 
                   {/* Specialty */}
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--brand-navy)', marginBottom: '6px' }}>
+                    <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--hospital-navy)', marginBottom: '5px' }}>
                       Chuyên khoa khám <span style={{ color: '#ef4444' }}>*</span>
                     </label>
                     <select 
-                      className="panel-input-box"
+                      className="hosp-quick-input"
                       style={{ width: '100%' }}
                       value={formData.specialtyId}
                       onChange={(e) => setFormData({ ...formData, specialtyId: e.target.value, doctorId: '' })}
@@ -316,21 +311,21 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
                         <option key={s.id} value={s.id}>{s.name}</option>
                       ))}
                     </select>
-                    {errors.specialtyId && <span style={{ color: '#ef4444', fontSize: '0.8rem', marginTop: '4px', display: 'block' }}>{errors.specialtyId}</span>}
+                    {errors.specialtyId && <span style={{ color: '#ef4444', fontSize: '0.78rem', marginTop: '3px', display: 'block' }}>{errors.specialtyId}</span>}
                   </div>
 
                   {/* Doctor */}
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--brand-navy)', marginBottom: '6px' }}>
+                    <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--hospital-navy)', marginBottom: '5px' }}>
                       Bác sĩ chỉ định
                     </label>
                     <select 
-                      className="panel-input-box"
+                      className="hosp-quick-input"
                       style={{ width: '100%' }}
                       value={formData.doctorId}
                       onChange={(e) => setFormData({ ...formData, doctorId: e.target.value })}
                     >
-                      <option value="">-- Phân bổ bác sĩ chuyên môn phù hợp --</option>
+                      <option value="">-- Bệnh viện tự phân bổ bác sĩ tốt nhất --</option>
                       {filteredDoctors.map(d => (
                         <option key={d.id} value={d.id}>{d.name} ({d.specialtyName})</option>
                       ))}
@@ -339,49 +334,49 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
 
                   {/* Date */}
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--brand-navy)', marginBottom: '6px' }}>
+                    <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--hospital-navy)', marginBottom: '5px' }}>
                       Ngày đến khám <span style={{ color: '#ef4444' }}>*</span>
                     </label>
                     <input 
                       type="date"
-                      className="panel-input-box"
+                      className="hosp-quick-input"
                       style={{ width: '100%' }}
                       min={new Date().toISOString().split('T')[0]}
                       value={formData.appointmentDate}
                       onChange={(e) => setFormData({ ...formData, appointmentDate: e.target.value })}
                     />
-                    {errors.appointmentDate && <span style={{ color: '#ef4444', fontSize: '0.8rem', marginTop: '4px', display: 'block' }}>{errors.appointmentDate}</span>}
+                    {errors.appointmentDate && <span style={{ color: '#ef4444', fontSize: '0.78rem', marginTop: '3px', display: 'block' }}>{errors.appointmentDate}</span>}
                   </div>
 
-                  {/* Insurance Option */}
+                  {/* Insurance */}
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--brand-navy)', marginBottom: '6px' }}>
+                    <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--hospital-navy)', marginBottom: '5px' }}>
                       Hình thức bảo hiểm
                     </label>
                     <select 
-                      className="panel-input-box"
+                      className="hosp-quick-input"
                       style={{ width: '100%' }}
                       value={formData.insuranceType}
                       onChange={(e) => setFormData({ ...formData, insuranceType: e.target.value })}
                     >
-                      <option value="none">Tự túc (Không dùng bảo hiểm)</option>
+                      <option value="none">Tự túc (Không bảo hiểm)</option>
                       <option value="bhyt">Bảo hiểm Y tế nhà nước (BHYT)</option>
                       <option value="private">Bảo lãnh viện phí tư nhân (PVI, Bảo Việt, Manulife...)</option>
                     </select>
                   </div>
 
-                  {/* Interactive Time Slots */}
+                  {/* Time slots */}
                   <div style={{ gridColumn: '1 / -1' }}>
-                    <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--brand-navy)', marginBottom: '6px' }}>
+                    <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--hospital-navy)', marginBottom: '4px' }}>
                       Khung giờ khám dự kiến <span style={{ color: '#ef4444' }}>*</span>
                     </label>
 
-                    <div className="slot-category-title">Buổi sáng (07:30 - 11:30)</div>
-                    <div className="slot-grid-chips">
+                    <div className="hosp-slot-title">Buổi sáng (07:30 - 11:30)</div>
+                    <div className="hosp-slots-grid">
                       {TIME_SLOTS.morning.map(slot => (
                         <div 
                           key={slot}
-                          className={`slot-chip-btn ${formData.timeSlot === slot ? 'active' : ''}`}
+                          className={`hosp-slot-btn ${formData.timeSlot === slot ? 'active' : ''}`}
                           onClick={() => setFormData({ ...formData, timeSlot: slot })}
                         >
                           {slot}
@@ -389,12 +384,12 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
                       ))}
                     </div>
 
-                    <div className="slot-category-title">Buổi chiều (13:30 - 17:15)</div>
-                    <div className="slot-grid-chips">
+                    <div className="hosp-slot-title">Buổi chiều (13:30 - 17:15)</div>
+                    <div className="hosp-slots-grid">
                       {TIME_SLOTS.afternoon.map(slot => (
                         <div 
                           key={slot}
-                          className={`slot-chip-btn ${formData.timeSlot === slot ? 'active' : ''}`}
+                          className={`hosp-slot-btn ${formData.timeSlot === slot ? 'active' : ''}`}
                           onClick={() => setFormData({ ...formData, timeSlot: slot })}
                         >
                           {slot}
@@ -402,40 +397,40 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
                       ))}
                     </div>
 
-                    <div className="slot-category-title">Buổi tối (17:30 - 19:45)</div>
-                    <div className="slot-grid-chips">
+                    <div className="hosp-slot-title">Buổi tối (17:30 - 19:45)</div>
+                    <div className="hosp-slots-grid">
                       {TIME_SLOTS.evening.map(slot => (
                         <div 
                           key={slot}
-                          className={`slot-chip-btn ${formData.timeSlot === slot ? 'active' : ''}`}
+                          className={`hosp-slot-btn ${formData.timeSlot === slot ? 'active' : ''}`}
                           onClick={() => setFormData({ ...formData, timeSlot: slot })}
                         >
                           {slot}
                         </div>
                       ))}
                     </div>
-                    {errors.timeSlot && <span style={{ color: '#ef4444', fontSize: '0.8rem', marginTop: '6px', display: 'block' }}>{errors.timeSlot}</span>}
+                    {errors.timeSlot && <span style={{ color: '#ef4444', fontSize: '0.78rem', marginTop: '4px', display: 'block' }}>{errors.timeSlot}</span>}
                   </div>
 
-                  {/* Symptoms description */}
+                  {/* Symptoms */}
                   <div style={{ gridColumn: '1 / -1' }}>
-                    <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--brand-navy)', marginBottom: '6px' }}>
-                      Triệu chứng bệnh hoặc ghi chú cho bác sĩ
+                    <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--hospital-navy)', marginBottom: '4px' }}>
+                      Mô tả triệu chứng hoặc lý do khám
                     </label>
                     <textarea 
-                      className="panel-input-box"
-                      style={{ width: '100%', height: '80px', resize: 'vertical' }}
-                      placeholder="Mô tả triệu chứng (vd: đau ngực khi vận động, ho khan 3 ngày nay, muốn xét nghiệm mỡ máu...)"
+                      className="hosp-quick-input"
+                      style={{ width: '100%', height: '68px', padding: '10px 14px', resize: 'vertical' }}
+                      placeholder="Ví dụ: Đau ngực khi gắng sức, sốt ho 2 ngày nay..."
                       value={formData.symptoms}
                       onChange={(e) => setFormData({ ...formData, symptoms: e.target.value })}
                     />
                   </div>
 
-                  {/* Submit Action */}
-                  <div style={{ gridColumn: '1 / -1', marginTop: '10px' }}>
-                    <button type="submit" className="btn-core btn-primary-glow" style={{ width: '100%', padding: '15px', fontSize: '1.05rem' }}>
-                      <Calendar size={20} />
-                      <span>Xác Nhận Đặt Phiếu Khám Ngay</span>
+                  {/* Submit Button */}
+                  <div style={{ gridColumn: '1 / -1', marginTop: '6px' }}>
+                    <button type="submit" className="btn-hosp btn-hosp-lg btn-hosp-primary" style={{ width: '100%' }}>
+                      <Calendar size={18} />
+                      <span>Xác Nhận Đặt Lịch Khám Bệnh</span>
                     </button>
                   </div>
                 </div>
@@ -443,67 +438,63 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
             )}
           </div>
 
-          {/* Right Live Ticket Preview Pane */}
-          <div className="booking-summary-pane">
+          {/* Right Summary Area */}
+          <div className="hosp-summary-pane">
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#38bdf8', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '10px' }}>
-                <Sparkles size={16} />
-                <span>Xem Trước Phiếu Hẹn Trực Tuyến</span>
+              <div style={{ color: '#38bdf8', fontSize: '0.82rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '8px' }}>
+                Hệ Thống Tiếp Đón Trực Tuyến
               </div>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#ffffff', marginBottom: '8px' }}>
-                Thông Tin Lịch Khám
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#ffffff', marginBottom: '8px' }}>
+                Thông Tin Phiếu Hẹn
               </h3>
-              <p style={{ color: '#94a3b8', fontSize: '0.88rem', lineHeight: '1.6' }}>
-                Hệ thống tự động cập nhật thời gian thực theo từng thông tin bạn lựa chọn trên biểu mẫu.
+              <p style={{ color: '#94a3b8', fontSize: '0.86rem', lineHeight: '1.6' }}>
+                Thông tin được cập nhật trực tiếp theo từng lựa chọn của quý khách trên biểu mẫu đăng ký.
               </p>
 
-              {/* Live Ticket Card */}
-              <div className="digital-ticket">
-                <div className="ticket-header">
+              <div className="hosp-digital-ticket">
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '10px' }}>
                   <div>
-                    <strong style={{ display: 'block', fontSize: '1.05rem' }}>{CLINIC_INFO.shortName}</strong>
-                    <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>MÃ DỰ KIẾN: MCP-PREVIEW</span>
+                    <strong style={{ fontSize: '1rem' }}>{CLINIC_INFO.shortName}</strong>
+                    <p style={{ fontSize: '0.72rem', color: '#94a3b8' }}>MÃ DỰ KIẾN: MCP-ONLINE</p>
                   </div>
-                  <div style={{ width: '36px', height: '36px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <QrCode size={22} color="#38bdf8" />
-                  </div>
+                  <QrCode size={24} color="#38bdf8" />
                 </div>
 
-                <div className="ticket-row">
-                  <span>Họ tên bệnh nhân:</span>
+                <div className="hosp-ticket-line">
+                  <span>Bệnh nhân:</span>
                   <strong>{formData.fullName || 'Chưa nhập'}</strong>
                 </div>
-                <div className="ticket-row">
+                <div className="hosp-ticket-line">
                   <span>Số điện thoại:</span>
                   <strong>{formData.phone || 'Chưa nhập'}</strong>
                 </div>
-                <div className="ticket-row">
+                <div className="hosp-ticket-line">
                   <span>Chuyên khoa:</span>
                   <strong style={{ color: '#38bdf8' }}>{selectedSpecialtyObj ? selectedSpecialtyObj.name : 'Chưa chọn'}</strong>
                 </div>
-                <div className="ticket-row">
-                  <span>Bác sĩ chỉ định:</span>
+                <div className="hosp-ticket-line">
+                  <span>Bác sĩ khám:</span>
                   <strong>{selectedDoctorObj ? selectedDoctorObj.name : 'Phân bổ tự động'}</strong>
                 </div>
-                <div className="ticket-row">
-                  <span>Ngày khám:</span>
-                  <strong>{formData.appointmentDate || 'Chưa chọn ngày'}</strong>
+                <div className="hosp-ticket-line">
+                  <span>Ngày hẹn:</span>
+                  <strong>{formData.appointmentDate || 'Chưa chọn'}</strong>
                 </div>
-                <div className="ticket-row">
-                  <span>Khung giờ hẹn:</span>
-                  <strong style={{ color: '#34d399' }}>{formData.timeSlot || 'Chưa chọn giờ'}</strong>
+                <div className="hosp-ticket-line">
+                  <span>Khung giờ:</span>
+                  <strong style={{ color: '#34d399' }}>{formData.timeSlot || 'Chưa chọn'}</strong>
                 </div>
-                <div className="ticket-row">
+                <div className="hosp-ticket-line">
                   <span>Bảo hiểm:</span>
                   <strong>{formData.insuranceType === 'bhyt' ? 'Áp dụng BHYT' : formData.insuranceType === 'private' ? 'Bảo lãnh tư nhân' : 'Tự túc'}</strong>
                 </div>
               </div>
             </div>
 
-            <div style={{ marginTop: '30px', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#94a3b8', fontSize: '0.82rem' }}>
+            <div style={{ marginTop: '24px', paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#94a3b8', fontSize: '0.8rem' }}>
                 <ShieldCheck size={16} color="#38bdf8" />
-                <span>Cam kết bảo mật 100% hồ sơ bệnh án theo tiêu chuẩn HIPAA y khoa.</span>
+                <span>Bảo mật 100% hồ sơ bệnh án theo tiêu chuẩn Luật Khám chữa bệnh.</span>
               </div>
             </div>
           </div>

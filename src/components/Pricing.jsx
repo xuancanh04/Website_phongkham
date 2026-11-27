@@ -1,93 +1,91 @@
 import React from 'react';
-import { Check, Award, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Check, ArrowRight, ShieldCheck } from 'lucide-react';
 import { PRICING_PACKAGES } from '../data/clinicData';
 
 export default function Pricing({ onSelectPackage }) {
   return (
-    <section className="section-wrap" style={{ backgroundColor: 'var(--bg-page)' }} id="pricing">
+    <section className="hospital-section" style={{ backgroundColor: 'var(--bg-page)' }} id="pricing">
       <div className="container">
-        <div className="section-header-centered">
-          <div className="pill-badge">
-            <span className="dot"></span>
-            <span>Minh Bạch - Công Khai</span>
+        <div className="section-head-wrap">
+          <div className="hospital-badge-tag">
+            <ShieldCheck size={14} />
+            <span>Minh Bạch - Niêm Yết Công Khai</span>
           </div>
-          <h2 className="section-headline">Bảng Giá Các Gói Khám Sức Khỏe Toàn Diện</h2>
-          <p className="section-subtitle">
-            Chi phí được niêm yết theo quy định Sở Y Tế, không phát sinh phụ phí ẩn. 
+          <h2 className="hospital-heading-h2">Bảng Giá Các Gói Khám Sức Khỏe Toàn Diện</h2>
+          <p className="hospital-lead-desc">
+            Chi phí được niêm yết rõ ràng theo quy định ngành y tế, tuyệt đối không phát sinh phụ phí ẩn. 
             Tất cả các gói khám đều được tư vấn chuyên sâu cùng Bác sĩ Chuyên khoa cấp cao.
           </p>
         </div>
 
-        <div className="pricing-deck">
+        <div className="hosp-pricing-deck">
           {PRICING_PACKAGES.map((pkg) => (
             <div 
               key={pkg.id} 
-              className={`pricing-plan-card ${pkg.isPopular ? 'featured' : ''}`}
+              className={`hosp-plan-card ${pkg.isPopular ? 'featured' : ''}`}
             >
               {pkg.isPopular && (
-                <div className="featured-ribbon">
+                <div className="hosp-featured-ribbon">
                   Khuyên Dùng Nhiều Nhất
                 </div>
               )}
 
-              <div className="plan-head">
+              <span style={{
+                display: 'inline-block',
+                fontSize: '0.74rem',
+                fontWeight: 800,
+                textTransform: 'uppercase',
+                color: pkg.isPopular ? 'var(--hospital-blue)' : 'var(--text-muted)',
+                marginBottom: '6px'
+              }}>
+                {pkg.badge}
+              </span>
+              <h3 className="hosp-plan-name">{pkg.name}</h3>
+              <p className="hosp-plan-sub">{pkg.subtitle}</p>
+
+              <div className="hosp-price-row">
+                <span className="hosp-price-current">{pkg.price}</span>
+                <span className="hosp-price-old">{pkg.originalPrice}</span>
                 <span style={{
-                  display: 'inline-block',
                   fontSize: '0.75rem',
                   fontWeight: 800,
-                  textTransform: 'uppercase',
-                  color: pkg.isPopular ? 'var(--primary)' : 'var(--text-muted)',
-                  marginBottom: '6px'
+                  backgroundColor: '#fee2e2',
+                  color: 'var(--hospital-red)',
+                  padding: '2px 8px',
+                  borderRadius: '4px'
                 }}>
-                  {pkg.badge}
+                  {pkg.discount}
                 </span>
-                <h3 className="plan-name">{pkg.name}</h3>
-                <p className="plan-subtitle">{pkg.subtitle}</p>
-
-                <div className="plan-price-wrap">
-                  <span className="price-main">{pkg.price}</span>
-                  <span className="price-strike">{pkg.originalPrice}</span>
-                  <span style={{
-                    fontSize: '0.75rem',
-                    fontWeight: 800,
-                    backgroundColor: 'var(--emergency-soft)',
-                    color: 'var(--emergency-red)',
-                    padding: '2px 8px',
-                    borderRadius: '4px'
-                  }}>
-                    {pkg.discount}
-                  </span>
-                </div>
               </div>
 
-              {/* Checklist */}
-              <ul className="plan-feature-list">
+              {/* Danh sách danh mục xét nghiệm & chẩn đoán */}
+              <ul className="hosp-feature-list">
                 {pkg.features.map((feat, idx) => (
-                  <li key={idx} className="plan-feature-item">
-                    <Check size={18} />
+                  <li key={idx} className="hosp-feature-item">
+                    <Check size={16} />
                     <span>{feat}</span>
                   </li>
                 ))}
               </ul>
 
-              <div style={{ marginTop: 'auto' }}>
+              <div style={{ marginTop: 'auto', paddingTop: '16px' }}>
                 <p style={{
                   fontSize: '0.82rem',
                   color: 'var(--text-muted)',
                   fontStyle: 'italic',
-                  marginBottom: '18px',
-                  lineHeight: '1.5'
+                  marginBottom: '16px',
+                  lineHeight: '1.45'
                 }}>
-                  <strong>Khuyên dùng:</strong> {pkg.recommendedFor}
+                  <strong>Phù hợp:</strong> {pkg.recommendedFor}
                 </p>
                 <button 
                   type="button" 
-                  className={`btn-core ${pkg.isPopular ? 'btn-primary-glow' : 'btn-secondary-white'}`}
-                  style={{ width: '100%', padding: '13px' }}
+                  className={`btn-hosp btn-hosp-md ${pkg.isPopular ? 'btn-hosp-primary' : 'btn-hosp-secondary'}`}
+                  style={{ width: '100%' }}
                   onClick={() => onSelectPackage(pkg)}
                 >
                   <span>Đăng ký gói khám này</span>
-                  <ArrowRight size={16} />
+                  <ArrowRight size={15} />
                 </button>
               </div>
             </div>

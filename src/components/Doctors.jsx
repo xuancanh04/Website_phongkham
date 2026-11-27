@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, Clock, Calendar, Award, UserCheck, DollarSign } from 'lucide-react';
+import { Star, Clock, Calendar, Award, UserCheck } from 'lucide-react';
 import { DOCTORS, SPECIALTIES } from '../data/clinicData';
 
 export default function Doctors({ onSelectDoctor }) {
@@ -10,25 +10,25 @@ export default function Doctors({ onSelectDoctor }) {
     : DOCTORS.filter(doc => doc.specialtyId === activeSpecialty);
 
   return (
-    <section className="section-wrap" style={{ backgroundColor: '#ffffff' }} id="doctors">
+    <section className="hospital-section" style={{ backgroundColor: '#ffffff' }} id="doctors">
       <div className="container">
-        <div className="section-header-centered">
-          <div className="pill-badge">
-            <span className="dot"></span>
-            <span>Hội Đồng Y Khoa</span>
+        <div className="section-head-wrap">
+          <div className="hospital-badge-tag">
+            <UserCheck size={14} />
+            <span>Hội Đồng Bác Sĩ</span>
           </div>
-          <h2 className="section-headline">Đội Ngũ Chuyên Gia & Bác Sĩ Đầu Ngành</h2>
-          <p className="section-subtitle">
-            Hội tụ các Phó Giáo sư, Tiến sĩ, Bác sĩ Chuyên khoa II giàu y đức và kinh nghiệm 
-            từng giữ cương vị chủ nhiệm bộ môn, trưởng phó khoa tại các bệnh viện trung ương.
+          <h2 className="hospital-heading-h2">Đội Ngũ Chuyên Gia & Bác Sĩ Đầu Ngành</h2>
+          <p className="hospital-lead-desc">
+            Quy tụ các Phó Giáo sư, Tiến sĩ, Bác sĩ Chuyên khoa cấp cao từng giữ cương vị 
+            trưởng phó khoa tại BV Chợ Rẫy, BV Từ Dũ, Viện Tim TP.HCM.
           </p>
         </div>
 
         {/* Filter buttons */}
-        <div className="doctor-filter-bar">
+        <div className="hosp-doc-filter-row">
           <button 
             type="button" 
-            className={`doc-tab-btn ${activeSpecialty === 'all' ? 'active' : ''}`}
+            className={`hosp-filter-chip ${activeSpecialty === 'all' ? 'active' : ''}`}
             onClick={() => setActiveSpecialty('all')}
           >
             Tất cả bác sĩ ({DOCTORS.length})
@@ -37,7 +37,7 @@ export default function Doctors({ onSelectDoctor }) {
             <button 
               key={spec.id}
               type="button" 
-              className={`doc-tab-btn ${activeSpecialty === spec.id ? 'active' : ''}`}
+              className={`hosp-filter-chip ${activeSpecialty === spec.id ? 'active' : ''}`}
               onClick={() => setActiveSpecialty(spec.id)}
             >
               {spec.name}
@@ -46,29 +46,25 @@ export default function Doctors({ onSelectDoctor }) {
         </div>
 
         {/* Doctor Cards */}
-        <div className="doctor-profile-grid">
+        <div className="hosp-doctors-grid">
           {filteredDoctors.map(doctor => (
-            <div key={doctor.id} className="doctor-profile-card">
-              <div className="doctor-photo-wrap">
+            <div key={doctor.id} className="hosp-doc-card">
+              <div className="hosp-doc-photo">
                 <img src={doctor.avatar} alt={doctor.name} />
-                <span className="doctor-exp-tag">
+                <span className="hosp-doc-exp">
                   {doctor.expYears} năm kinh nghiệm
-                </span>
-                <span className="doctor-rating-tag">
-                  <Star size={14} fill="#f59e0b" color="#f59e0b" />
-                  {doctor.rating} ({doctor.reviewCount})
                 </span>
               </div>
 
-              <div className="doctor-content-box">
-                <span className="doc-specialty-title">{doctor.specialtyName}</span>
-                <h3 className="doc-name">{doctor.name}</h3>
-                <p className="doc-degree">{doctor.degree}</p>
-                <p className="doc-history">{doctor.workHistory}</p>
+              <div className="hosp-doc-body">
+                <span className="hosp-doc-spec-name">{doctor.specialtyName}</span>
+                <h3 className="hosp-doc-name">{doctor.name}</h3>
+                <p className="hosp-doc-deg">{doctor.degree}</p>
+                <p className="hosp-doc-history">{doctor.workHistory}</p>
 
-                <div className="doc-schedule-card">
+                <div className="hosp-doc-sched">
                   <div>
-                    <Clock size={15} color="#0284c7" style={{ verticalAlign: 'middle', marginRight: '6px' }} />
+                    <Clock size={14} color="#0284c7" style={{ verticalAlign: 'middle', marginRight: '5px' }} />
                     <span>{doctor.schedule}</span>
                   </div>
                   <div>
@@ -78,11 +74,11 @@ export default function Doctors({ onSelectDoctor }) {
 
                 <button 
                   type="button" 
-                  className="btn-core btn-primary-glow"
+                  className="btn-hosp btn-hosp-md btn-hosp-primary"
                   style={{ width: '100%', marginTop: 'auto' }}
                   onClick={() => onSelectDoctor(doctor)}
                 >
-                  <Calendar size={17} />
+                  <Calendar size={16} />
                   <span>Đặt khám cùng Bác sĩ</span>
                 </button>
               </div>
