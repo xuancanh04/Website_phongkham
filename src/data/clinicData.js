@@ -417,10 +417,18 @@ export const HEALTH_ARTICLES = [
   }
 ];
 
-export const TIME_SLOTS = [
-  { id: "slot-1", time: "07:00 - 08:30", label: "Buổi Sáng (Ca 1)" },
-  { id: "slot-2", time: "08:30 - 10:00", label: "Buổi Sáng (Ca 2)" },
-  { id: "slot-3", time: "10:00 - 11:30", label: "Buổi Sáng (Ca 3)" },
-  { id: "slot-4", time: "13:00 - 14:30", label: "Buổi Chiều (Ca 4)" },
-  { id: "slot-5", time: "14:30 - 16:30", label: "Buổi Chiều (Ca 5)" }
-];
+export const TIME_SLOTS = {
+  morning: [
+    "07:00 - 08:30 (Ca 1)",
+    "08:30 - 10:00 (Ca 2)",
+    "10:00 - 11:30 (Ca 3)"
+  ],
+  afternoon: [
+    "13:00 - 14:30 (Ca 4)",
+    "14:30 - 16:30 (Ca 5)"
+  ],
+  evening: [
+    "17:00 - 18:30 (Khám ngoài giờ)",
+    "18:30 - 20:00 (Khám ngoài giờ)"
+  ]
+};

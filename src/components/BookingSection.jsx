@@ -366,7 +366,7 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
 
                     <div className="hosp-slot-title">Buổi sáng (07:30 - 11:30)</div>
                     <div className="hosp-slots-grid">
-                      {TIME_SLOTS.morning.map(slot => (
+                      {(TIME_SLOTS?.morning || []).map(slot => (
                         <div 
                           key={slot}
                           className={`hosp-slot-btn ${formData.timeSlot === slot ? 'active' : ''}`}
@@ -379,7 +379,7 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
 
                     <div className="hosp-slot-title">Buổi chiều (13:30 - 17:15)</div>
                     <div className="hosp-slots-grid">
-                      {TIME_SLOTS.afternoon.map(slot => (
+                      {(TIME_SLOTS?.afternoon || []).map(slot => (
                         <div 
                           key={slot}
                           className={`hosp-slot-btn ${formData.timeSlot === slot ? 'active' : ''}`}
@@ -392,7 +392,7 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
 
                     <div className="hosp-slot-title">Buổi tối (17:30 - 19:45)</div>
                     <div className="hosp-slots-grid">
-                      {TIME_SLOTS.evening.map(slot => (
+                      {(TIME_SLOTS?.evening || []).map(slot => (
                         <div 
                           key={slot}
                           className={`hosp-slot-btn ${formData.timeSlot === slot ? 'active' : ''}`}
