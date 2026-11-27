@@ -10,7 +10,7 @@ export default function TeennieHero({ onOpenBooking }) {
           {/* Left Text */}
           <div>
             <div className="cofounder-badge">
-              <Sparkles size={16} />
+              <Sparkles size={15} />
               <span>Nghệ sĩ Ngô Kiến Huy Đồng Sáng Lập</span>
             </div>
 
@@ -29,36 +29,34 @@ export default function TeennieHero({ onOpenBooking }) {
             {/* 3 Hot Promos */}
             <div className="teennie-promo-chips">
               <div className="promo-chip-item">
-                <Gift size={20} />
+                <Gift size={18} />
                 <span>{PROMOTIONS.studentDiscount} (Người đi làm giảm 3 triệu)</span>
               </div>
               <div className="promo-chip-item">
-                <Percent size={20} />
+                <Percent size={18} />
                 <span>{PROMOTIONS.installment}</span>
               </div>
               <div className="promo-chip-item">
-                <CheckCircle size={20} />
+                <CheckCircle size={18} />
                 <span>{PROMOTIONS.freeExamPackage}</span>
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
               <button 
                 type="button" 
-                className="btn-teennie btn-coral-glow" 
-                style={{ padding: '16px 36px', fontSize: '1.05rem' }}
+                className="btn-teennie btn-lg btn-coral-glow" 
                 onClick={onOpenBooking}
               >
                 <Sparkles size={18} />
-                <span>Đăng ký nhận ưu đãi 5 triệu & Khám 0đ</span>
+                <span>Nhận ưu đãi 5 triệu & Khám 0đ</span>
               </button>
 
               <a 
                 href={`tel:${TEENNIE_INFO.hotline}`} 
-                className="btn-teennie btn-blue-outline"
-                style={{ padding: '16px 26px' }}
+                className="btn-teennie btn-lg btn-blue-outline"
               >
-                <PhoneCall size={18} />
+                <PhoneCall size={17} />
                 <span>Tư vấn: {TEENNIE_INFO.hotline}</span>
               </a>
             </div>
@@ -77,9 +75,9 @@ export default function TeennieHero({ onOpenBooking }) {
 
               <div className="floating-teennie-card">
                 <div style={{
-                  width: '44px',
-                  height: '44px',
-                  borderRadius: '12px',
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '10px',
                   backgroundColor: 'var(--teennie-coral-soft)',
                   color: 'var(--teennie-coral)',
                   display: 'flex',
@@ -87,13 +85,13 @@ export default function TeennieHero({ onOpenBooking }) {
                   justifyContent: 'center',
                   flexShrink: 0
                 }}>
-                  <Smile size={26} />
+                  <Smile size={24} />
                 </div>
                 <div>
-                  <strong style={{ fontSize: '0.95rem', color: 'var(--teennie-blue-dark)', display: 'block' }}>
+                  <strong style={{ fontSize: '0.92rem', color: 'var(--teennie-blue-dark)', display: 'block' }}>
                     10.000+ Ca Niềng Thành Công
                   </strong>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--teennie-muted)' }}>
+                  <span style={{ fontSize: '0.78rem', color: 'var(--teennie-muted)' }}>
                     Được các bạn học sinh - sinh viên tin yêu
                   </span>
                 </div>

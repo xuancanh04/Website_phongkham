@@ -1,53 +1,60 @@
 /* ==========================================================================
-   TEENNIE DENTAL CLINIC - DESIGN SYSTEM
-   Authentic recreation of https://teennie.vn/
+   TEENNIE DENTAL CLINIC - GLOBAL RESET & DESIGN TOKENS
+   Standardized UI/UX Pro Max Typography & Sizing Scale
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap');
 
 :root {
-  /* Teennie Signature Palette */
+  /* Color Tokens */
   --teennie-blue: #009efd;
-  --teennie-blue-dark: #13547a;
-  --teennie-blue-soft: #e0f2fe;
-  --teennie-blue-light: #f0f9ff;
+  --teennie-blue-dark: #0f3d63;
+  --teennie-blue-deep: #082640;
+  --teennie-blue-soft: #f0f7fc;
+  --teennie-blue-tint: #e0f0fe;
   
-  --teennie-coral: #ff5376;
-  --teennie-coral-hover: #ff335e;
-  --teennie-coral-soft: #ffe4e9;
-  
+  --teennie-coral: #ff476e;
+  --teennie-coral-hover: #e03257;
+  --teennie-coral-soft: #fff0f3;
   --teennie-orange: #ff7a59;
-  --teennie-yellow: #fcb900;
-  --teennie-yellow-soft: #fef9c3;
   
-  --teennie-purple: #8f6aae;
-  --teennie-purple-soft: #f3e8ff;
+  --teennie-yellow: #f59e0b;
+  --teennie-yellow-soft: #fefce8;
 
   --teennie-text: #1e293b;
+  --teennie-secondary: #475569;
   --teennie-muted: #64748b;
   --teennie-border: #e2e8f0;
-  --teennie-bg-soft: #fff9f6;
-  --teennie-white: #ffffff;
+  --teennie-bg-soft: #fbfdff;
+  --teennie-card-bg: #ffffff;
 
-  --shadow-teennie-sm: 0 2px 6px rgba(0, 158, 253, 0.08);
-  --shadow-teennie-md: 0 8px 24px rgba(0, 158, 253, 0.12);
-  --shadow-teennie-lg: 0 16px 36px rgba(19, 84, 122, 0.14);
-  --shadow-coral-glow: 0 6px 20px rgba(255, 83, 118, 0.35);
-  
-  --radius-teennie-sm: 8px;
-  --radius-teennie-md: 14px;
-  --radius-teennie-lg: 20px;
-  --radius-teennie-xl: 28px;
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(15, 61, 99, 0.06), 0 1px 2px rgba(15, 61, 99, 0.04);
+  --shadow-md: 0 4px 14px rgba(15, 61, 99, 0.08);
+  --shadow-lg: 0 10px 25px rgba(15, 61, 99, 0.1);
+  --shadow-coral: 0 4px 14px rgba(255, 71, 110, 0.3);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
   --radius-pill: 9999px;
 
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  /* Fonts */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 15px; /* balanced root size */
 }
 
 body {
@@ -62,42 +69,43 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--teennie-blue-dark);
-  font-weight: 800;
-  line-height: 1.25;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 button, input, select, textarea {
   font-family: inherit;
+  font-size: inherit;
 }
 
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1220px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .teennie-section {
-  padding: 85px 0;
+  padding: 72px 0;
   position: relative;
 }
 
 @media (max-width: 768px) {
   .teennie-section {
-    padding: 50px 0;
+    padding: 48px 0;
   }
 }
 
 .section-title-wrap {
   text-align: center;
-  max-width: 740px;
-  margin: 0 auto 50px auto;
+  max-width: 700px;
+  margin: 0 auto 44px auto;
 }
 
 .teennie-tag {
@@ -106,70 +114,102 @@ button, input, select, textarea {
   gap: 6px;
   background-color: var(--teennie-coral-soft);
   color: var(--teennie-coral);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  padding: 6px 16px;
+  padding: 5px 14px;
   border-radius: var(--radius-pill);
   margin-bottom: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
 .teennie-title {
-  font-size: 2.35rem;
+  font-size: 2.15rem;
   font-weight: 800;
   color: var(--teennie-blue-dark);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
+  letter-spacing: -0.015em;
 }
 
 @media (max-width: 768px) {
   .teennie-title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 }
 
 .teennie-desc {
-  font-size: 1.05rem;
+  font-size: 0.96rem;
   color: var(--teennie-muted);
   line-height: 1.6;
 }
 
-/* Button variants */
+/* ==========================================================================
+   STANDARDIZED BUTTON SIZING SYSTEM (TỈ LỆ NÚT CHUẨN)
+   ========================================================================== */
 .btn-teennie {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 13px 26px;
-  font-size: 0.96rem;
+  white-space: nowrap;
   font-weight: 700;
   border-radius: var(--radius-pill);
-  border: none;
+  border: 1.5px solid transparent;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1;
+  transition: all 0.2s ease;
+  user-select: none;
   text-align: center;
 }
 
+/* Size: Small (34px) - for header badges / compact */
+.btn-sm {
+  height: 34px;
+  padding: 0 14px;
+  font-size: 0.82rem;
+}
+
+/* Size: Medium (40px) - for Navbar and standard CTAs */
+.btn-md {
+  height: 40px;
+  padding: 0 18px;
+  font-size: 0.88rem;
+}
+
+/* Size: Large (46px) - for Hero and Main Forms */
+.btn-lg {
+  height: 46px;
+  padding: 0 24px;
+  font-size: 0.94rem;
+}
+
+/* Coral Glow Gradient */
 .btn-coral-glow {
   background: linear-gradient(135deg, var(--teennie-coral) 0%, var(--teennie-orange) 100%);
   color: #ffffff;
-  box-shadow: var(--shadow-coral-glow);
+  box-shadow: var(--shadow-coral);
 }
 
 .btn-coral-glow:hover {
   background: linear-gradient(135deg, var(--teennie-coral-hover) 0%, var(--teennie-coral) 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 83, 118, 0.45);
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 18px rgba(255, 71, 110, 0.4);
 }
 
+.btn-coral-glow:active {
+  transform: translateY(0);
+}
+
+/* Blue Outline */
 .btn-blue-outline {
   background: #ffffff;
   color: var(--teennie-blue-dark);
-  border: 1.5px solid var(--teennie-blue);
+  border-color: #cbd5e1;
 }
 
 .btn-blue-outline:hover {
-  background-color: var(--teennie-blue-light);
+  background-color: var(--teennie-blue-soft);
+  border-color: var(--teennie-blue);
   color: var(--teennie-blue);
-  transform: translateY(-2px);
+  transform: translateY(-1.5px);
 }

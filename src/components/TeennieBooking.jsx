@@ -41,51 +41,51 @@ export default function TeennieBooking({ bookingDraft }) {
                 gap: '8px',
                 backgroundColor: 'var(--teennie-coral-soft)',
                 color: 'var(--teennie-coral)',
-                padding: '6px 14px',
+                padding: '5px 14px',
                 borderRadius: 'var(--radius-pill)',
-                fontSize: '0.85rem',
+                fontSize: '0.82rem',
                 fontWeight: 800,
-                marginBottom: '16px'
+                marginBottom: '14px'
               }}>
                 <Gift size={16} />
                 <span>Ưu Đãi Đặc Biệt Tháng Này</span>
               </div>
 
-              <h2 style={{ fontSize: '2.1rem', fontWeight: 900, color: 'var(--teennie-blue-dark)', lineHeight: 1.25, marginBottom: '14px' }}>
+              <h2 style={{ fontSize: '1.95rem', fontWeight: 900, color: 'var(--teennie-blue-dark)', lineHeight: 1.25, marginBottom: '12px' }}>
                 Đăng Ký Thăm Khám 10 Bước 0đ & Nhận Ngay Voucher Giảm 5 Triệu
               </h2>
 
-              <p style={{ color: 'var(--teennie-muted)', fontSize: '0.95rem', lineHeight: '1.65', marginBottom: '24px' }}>
+              <p style={{ color: 'var(--teennie-muted)', fontSize: '0.92rem', lineHeight: '1.6', marginBottom: '20px' }}>
                 Gói quà tặng trị giá <strong>1.500.000đ</strong> bao gồm: Chụp phim Cone Beam CT 3D toàn hàm, 
                 scan dấu răng iTero Element 5D và tư vấn phác đồ 1:1 trực tiếp cùng Bác sĩ Chuyên khoa chỉnh nha.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.92rem', color: '#334155' }}>
-                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                  <CheckCircle2 size={20} color="#10b981" />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.9rem', color: '#334155' }}>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  <CheckCircle2 size={18} color="#10b981" />
                   <span><strong>Giảm 5.000.000đ</strong> cho Học sinh - Sinh viên</span>
                 </div>
-                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                  <CheckCircle2 size={20} color="#10b981" />
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  <CheckCircle2 size={18} color="#10b981" />
                   <span><strong>Giảm 3.000.000đ</strong> cho Người đi làm</span>
                 </div>
-                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                  <CheckCircle2 size={20} color="#10b981" />
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  <CheckCircle2 size={18} color="#10b981" />
                   <span>Trả góp 0% chỉ từ <strong>1 triệu/tháng</strong></span>
                 </div>
               </div>
             </div>
 
             <div style={{
-              marginTop: '32px',
-              paddingTop: '20px',
+              marginTop: '28px',
+              paddingTop: '16px',
               borderTop: '1px solid var(--teennie-border)',
               display: 'flex',
               alignItems: 'center',
-              gap: '12px'
+              gap: '10px'
             }}>
-              <MapPin size={22} color="var(--teennie-coral)" />
-              <div style={{ fontSize: '0.85rem', color: 'var(--teennie-muted)' }}>
+              <MapPin size={20} color="var(--teennie-coral)" />
+              <div style={{ fontSize: '0.82rem', color: 'var(--teennie-muted)' }}>
                 Địa chỉ: <strong>{TEENNIE_INFO.address}</strong>
               </div>
             </div>
@@ -99,38 +99,38 @@ export default function TeennieBooking({ bookingDraft }) {
                 backgroundColor: 'var(--teennie-bg-soft)',
                 border: '2px dashed var(--teennie-coral)',
                 borderRadius: '16px',
-                padding: '30px 24px'
+                padding: '28px 20px'
               }}>
                 <div style={{
-                  width: '64px',
-                  height: '64px',
+                  width: '56px',
+                  height: '56px',
                   borderRadius: '50%',
                   backgroundColor: '#dcfce7',
                   color: '#16a34a',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  margin: '0 auto 16px auto'
+                  margin: '0 auto 14px auto'
                 }}>
-                  <Sparkles size={32} />
+                  <Sparkles size={28} />
                 </div>
 
-                <h3 style={{ fontSize: '1.5rem', fontWeight: 900, color: 'var(--teennie-blue-dark)', marginBottom: '8px' }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--teennie-blue-dark)', marginBottom: '6px' }}>
                   Đăng Ký Thành Công!
                 </h3>
-                <p style={{ color: 'var(--teennie-muted)', fontSize: '0.9rem', marginBottom: '20px' }}>
+                <p style={{ color: 'var(--teennie-muted)', fontSize: '0.86rem', marginBottom: '18px' }}>
                   Bác sĩ Teennie Clinic sẽ gọi lại xác nhận khung giờ thăm khám qua số <strong>{confirmed.phone}</strong>.
                 </p>
 
                 <div style={{
                   backgroundColor: '#ffffff',
-                  padding: '16px',
-                  borderRadius: '12px',
+                  padding: '14px',
+                  borderRadius: '10px',
                   border: '1px solid #fed7aa',
-                  marginBottom: '20px',
+                  marginBottom: '18px',
                   textAlign: 'left',
-                  fontSize: '0.9rem',
-                  lineHeight: '1.7'
+                  fontSize: '0.86rem',
+                  lineHeight: '1.6'
                 }}>
                   <div><strong>Mã Voucher Ưu Đãi:</strong> <span style={{ color: 'var(--teennie-coral)', fontWeight: 800 }}>{confirmed.voucherCode}</span></div>
                   <div><strong>Khách hàng:</strong> {confirmed.fullName}</div>
@@ -141,7 +141,7 @@ export default function TeennieBooking({ bookingDraft }) {
 
                 <button 
                   type="button" 
-                  className="btn-teennie btn-coral-glow"
+                  className="btn-teennie btn-md btn-coral-glow"
                   onClick={() => setConfirmed(null)}
                 >
                   Đăng ký cho bạn bè / người thân
@@ -175,27 +175,27 @@ export default function TeennieBooking({ bookingDraft }) {
 
                 <div className="input-teennie-group">
                   <label>Đối tượng nhận ưu đãi</label>
-                  <div style={{ display: 'flex', gap: '10px' }}>
+                  <div style={{ display: 'flex', gap: '8px' }}>
                     <button
                       type="button"
                       className={`term-chip ${formData.targetGroup === 'student' ? 'active' : ''}`}
-                      style={{ flex: 1, padding: '10px' }}
+                      style={{ flex: 1 }}
                       onClick={() => setFormData({ ...formData, targetGroup: 'student' })}
                     >
-                      Học sinh - Sinh viên (Giảm 5 triệu)
+                      Học sinh - Sinh viên (Giảm 5tr)
                     </button>
                     <button
                       type="button"
                       className={`term-chip ${formData.targetGroup === 'worker' ? 'active' : ''}`}
-                      style={{ flex: 1, padding: '10px' }}
+                      style={{ flex: 1 }}
                       onClick={() => setFormData({ ...formData, targetGroup: 'worker' })}
                     >
-                      Người đi làm (Giảm 3 triệu)
+                      Người đi làm (Giảm 3tr)
                     </button>
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                   <div className="input-teennie-group">
                     <label>Tình trạng răng hiện tại</label>
                     <select 
@@ -227,11 +227,11 @@ export default function TeennieBooking({ bookingDraft }) {
 
                 <button 
                   type="submit" 
-                  className="btn-teennie btn-coral-glow"
-                  style={{ width: '100%', padding: '15px', fontSize: '1.05rem', marginTop: '10px' }}
+                  className="btn-teennie btn-lg btn-coral-glow"
+                  style={{ width: '100%', marginTop: '6px' }}
                 >
                   <Sparkles size={18} />
-                  <span>Xác Nhận Đặt Hẹn 0đ & Giữ Ưu Đãi Ngay</span>
+                  <span>Xác Nhận Đặt Hẹn 0đ & Nhận Voucher</span>
                 </button>
               </form>
             )}
