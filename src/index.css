@@ -1,270 +1,175 @@
 /* ==========================================================================
-   MEDICARE PLUS - INTERNATIONAL CLINICAL DESIGN SYSTEM
-   Design System Standards: UI/UX Pro Max + Anti-Slop Architectural Rules
+   TEENNIE DENTAL CLINIC - DESIGN SYSTEM
+   Authentic recreation of https://teennie.vn/
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  /* Color Palette - Authoritative Clinical Blue & Calming Emerald */
-  --brand-navy: #091e42;
-  --brand-navy-light: #172b4d;
-  --primary: #0284c7;
-  --primary-hover: #0369a1;
-  --primary-dark: #075985;
-  --primary-soft: #f0f9ff;
-  --primary-tint: #e0f2fe;
+  /* Teennie Signature Palette */
+  --teennie-blue: #009efd;
+  --teennie-blue-dark: #13547a;
+  --teennie-blue-soft: #e0f2fe;
+  --teennie-blue-light: #f0f9ff;
+  
+  --teennie-coral: #ff5376;
+  --teennie-coral-hover: #ff335e;
+  --teennie-coral-soft: #ffe4e9;
+  
+  --teennie-orange: #ff7a59;
+  --teennie-yellow: #fcb900;
+  --teennie-yellow-soft: #fef9c3;
+  
+  --teennie-purple: #8f6aae;
+  --teennie-purple-soft: #f3e8ff;
 
-  --accent-teal: #0d9488;
-  --accent-teal-soft: #f0fdfa;
-  --accent-emerald: #059669;
-  --accent-emerald-soft: #ecfdf5;
+  --teennie-text: #1e293b;
+  --teennie-muted: #64748b;
+  --teennie-border: #e2e8f0;
+  --teennie-bg-soft: #fff9f6;
+  --teennie-white: #ffffff;
 
-  --emergency-red: #dc2626;
-  --emergency-soft: #fef2f2;
-  --emergency-border: #fecaca;
+  --shadow-teennie-sm: 0 2px 6px rgba(0, 158, 253, 0.08);
+  --shadow-teennie-md: 0 8px 24px rgba(0, 158, 253, 0.12);
+  --shadow-teennie-lg: 0 16px 36px rgba(19, 84, 122, 0.14);
+  --shadow-coral-glow: 0 6px 20px rgba(255, 83, 118, 0.35);
+  
+  --radius-teennie-sm: 8px;
+  --radius-teennie-md: 14px;
+  --radius-teennie-lg: 20px;
+  --radius-teennie-xl: 28px;
+  --radius-pill: 9999px;
 
-  --amber: #d97706;
-  --amber-soft: #fffbeb;
-
-  /* Neutrals & Surfaces */
-  --bg-page: #f8fafc;
-  --bg-surface: #ffffff;
-  --bg-surface-alt: #f1f5f9;
-  --bg-glass: rgba(255, 255, 255, 0.85);
-
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  --text-light: #94a3b8;
-
-  --border-subtle: #e2e8f0;
-  --border-strong: #cbd5e1;
-  --border-active: #38bdf8;
-
-  /* Elevation Shadows */
-  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
-  --shadow-sm: 0 2px 4px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
-  --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.04);
-  --shadow-xl: 0 20px 30px -6px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.06);
-  --shadow-glow: 0 0 20px -3px rgba(2, 132, 199, 0.25);
-
-  /* Radii */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-full: 9999px;
-
-  /* Typography */
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-
-  /* Transition curves */
-  --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* Base resets */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-  -webkit-text-size-adjust: 100%;
-}
-
 body {
   font-family: var(--font-body);
-  color: var(--text-primary);
-  background-color: var(--bg-page);
+  color: var(--teennie-text);
+  background-color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: var(--text-primary);
-  font-weight: 700;
+  color: var(--teennie-blue-dark);
+  font-weight: 800;
   line-height: 1.25;
-  letter-spacing: -0.015em;
-}
-
-p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.65;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: var(--transition-smooth);
+  transition: all 0.25s ease;
 }
 
 button, input, select, textarea {
   font-family: inherit;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Layout Utilities */
 .container {
   width: 100%;
-  max-width: 1260px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.section-wrap {
-  padding-top: 96px;
-  padding-bottom: 96px;
+.teennie-section {
+  padding: 85px 0;
   position: relative;
 }
 
 @media (max-width: 768px) {
-  .section-wrap {
-    padding-top: 60px;
-    padding-bottom: 60px;
+  .teennie-section {
+    padding: 50px 0;
   }
 }
 
-/* Section Header Structure */
-.section-header-centered {
+.section-title-wrap {
   text-align: center;
-  max-width: 760px;
-  margin: 0 auto 56px auto;
+  max-width: 740px;
+  margin: 0 auto 50px auto;
 }
 
-.pill-badge {
+.teennie-tag {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  font-size: 0.82rem;
+  gap: 6px;
+  background-color: var(--teennie-coral-soft);
+  color: var(--teennie-coral);
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
   text-transform: uppercase;
-  background-color: var(--primary-soft);
-  color: var(--primary);
-  border: 1px solid var(--primary-tint);
+  letter-spacing: 0.05em;
+}
+
+.teennie-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: var(--teennie-blue-dark);
   margin-bottom: 14px;
 }
 
-.pill-badge .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--primary);
-}
-
-.section-headline {
-  font-size: 2.35rem;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  color: var(--brand-navy);
-  margin-bottom: 16px;
-}
-
 @media (max-width: 768px) {
-  .section-headline {
-    font-size: 1.85rem;
+  .teennie-title {
+    font-size: 1.8rem;
   }
 }
 
-.section-subtitle {
+.teennie-desc {
   font-size: 1.05rem;
-  color: var(--text-muted);
+  color: var(--teennie-muted);
   line-height: 1.6;
 }
 
-/* Interactive Buttons */
-.btn-core {
+/* Button variants */
+.btn-teennie {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 24px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border-radius: var(--radius-md);
-  border: 1px solid transparent;
+  padding: 13px 26px;
+  font-size: 0.96rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  border: none;
   cursor: pointer;
-  transition: var(--transition-smooth);
-  user-select: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
 }
 
-.btn-primary-glow {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+.btn-coral-glow {
+  background: linear-gradient(135deg, var(--teennie-coral) 0%, var(--teennie-orange) 100%);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+  box-shadow: var(--shadow-coral-glow);
 }
 
-.btn-primary-glow:hover {
-  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-dark) 100%);
+.btn-coral-glow:hover {
+  background: linear-gradient(135deg, var(--teennie-coral-hover) 0%, var(--teennie-coral) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.45);
+  box-shadow: 0 8px 25px rgba(255, 83, 118, 0.45);
 }
 
-.btn-secondary-white {
-  background-color: #ffffff;
-  color: var(--brand-navy);
-  border-color: var(--border-subtle);
-  box-shadow: var(--shadow-sm);
+.btn-blue-outline {
+  background: #ffffff;
+  color: var(--teennie-blue-dark);
+  border: 1.5px solid var(--teennie-blue);
 }
 
-.btn-secondary-white:hover {
-  background-color: var(--bg-surface-alt);
-  border-color: var(--border-strong);
-  color: var(--primary);
-}
-
-.btn-ghost {
-  background-color: transparent;
-  color: var(--text-secondary);
-}
-
-.btn-ghost:hover {
-  color: var(--primary);
-  background-color: var(--primary-soft);
-}
-
-.btn-danger-soft {
-  background-color: var(--emergency-soft);
-  color: var(--emergency-red);
-  border-color: var(--emergency-border);
-}
-
-.btn-danger-soft:hover {
-  background-color: var(--emergency-red);
-  color: #ffffff;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+.btn-blue-outline:hover {
+  background-color: var(--teennie-blue-light);
+  color: var(--teennie-blue);
+  transform: translateY(-2px);
 }
