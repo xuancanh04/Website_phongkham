@@ -1,8 +1,21 @@
-import { Link } from 'react-router-dom';
+import { useMemo } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import BookingSection from '../components/BookingSection';
 
 export default function BookingPage({ bookingDraft }) {
+  const [searchParams] = useSearchParams();
+  const paramKhoa = searchParams.get('khoa');
+  const paramBacsi = searchParams.get('bacsi');
+
+  const effectiveDraft = useMemo(() => {
+    return {
+      ...bookingDraft,
+      specialtyId: paramKhoa || (bookingDraft && bookingDraft.specialtyId),
+      doctorId: paramBacsi || (bookingDraft && bookingDraft.doctorId)
+    };
+  }, [bookingDraft, paramKhoa, paramBacsi]);
+
   return (
     <div className="portal-subpage">
       {/* 1. BREADCRUMB & PAGE HEADER */}
@@ -53,7 +66,7 @@ export default function BookingPage({ bookingDraft }) {
 
       {/* 3. BOOKING SECTION CONSOLE */}
       <BookingSection 
-        bookingDraft={bookingDraft}
+        bookingDraft={effectiveDraft}
         onBookingSuccess={() => {}}
       />
     </div>

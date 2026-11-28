@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import FloatingActions from './components/FloatingActions';
 import LookupModal from './components/LookupModal';
+import OmniSearchModal from './components/OmniSearchModal';
 import ScrollToTop from './components/ScrollToTop';
 
 // Multi-page Views
@@ -20,6 +21,7 @@ import './App.css';
 export default function App() {
   const [bookingDraft, setBookingDraft] = useState(null);
   const [lookupOpen, setLookupOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const handleQuickBooking = (criteria) => {
     setBookingDraft({
@@ -57,6 +59,7 @@ export default function App() {
         {/* Persistent Portal Header */}
         <Header 
           onOpenLookup={() => setLookupOpen(true)} 
+          onOpenSearch={() => setSearchOpen(true)}
         />
 
         {/* Dynamic Route View Switching */}
@@ -129,6 +132,12 @@ export default function App() {
         <LookupModal 
           isOpen={lookupOpen} 
           onClose={() => setLookupOpen(false)} 
+        />
+
+        {/* Global Medical Omni-Search Modal */}
+        <OmniSearchModal
+          isOpen={searchOpen}
+          onClose={() => setSearchOpen(false)}
         />
       </div>
     </BrowserRouter>

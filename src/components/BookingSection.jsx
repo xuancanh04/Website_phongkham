@@ -4,7 +4,8 @@ import {
   ShieldCheck, 
   QrCode, 
   Printer, 
-  Check 
+  Check,
+  AlertTriangle 
 } from 'lucide-react';
 import { SPECIALTIES, DOCTORS, TIME_SLOTS, CLINIC_INFO } from '../data/clinicData';
 
@@ -213,6 +214,34 @@ export default function BookingSection({ bookingDraft, onBookingSuccess }) {
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
+                {Object.keys(errors).length > 0 && (
+                  <div 
+                    className="portal-form-error-summary" 
+                    role="alert" 
+                    tabIndex="-1" 
+                    aria-labelledby="error-summary-title"
+                    style={{
+                      backgroundColor: '#fef2f2',
+                      border: '1.5px solid #f87171',
+                      borderRadius: '8px',
+                      padding: '12px 16px',
+                      marginBottom: '20px'
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                      <AlertTriangle size={18} color="#dc2626" />
+                      <strong id="error-summary-title" style={{ color: '#991b1b', fontSize: '0.88rem' }}>
+                        Thông tin đăng ký chưa đầy đủ ({Object.keys(errors).length} mục cần lưu ý)
+                      </strong>
+                    </div>
+                    <ul style={{ paddingLeft: '24px', margin: 0, fontSize: '0.82rem', color: '#b91c1c' }}>
+                      {Object.values(errors).map((err, i) => (
+                        <li key={i}>{err}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                   {/* Full Name */}
                   <div>

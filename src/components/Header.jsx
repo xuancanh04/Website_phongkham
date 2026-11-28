@@ -1,10 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Phone, Clock, Calendar, Search, Menu, X, Bell } from 'lucide-react';
+import { Phone, Clock, Calendar, Search, Menu, X, Bell, FileText, Type } from 'lucide-react';
 import { CLINIC_INFO } from '../data/clinicData';
 
-export default function Header({ onOpenLookup }) {
+export default function Header({ onOpenLookup, onOpenSearch }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [fontScale, setFontScale] = useState('1');
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--font-scale', fontScale);
+  }, [fontScale]);
+
+  const handleFontChange = (scale) => {
+    setFontScale(scale);
+  };
 
   return (
     <header className="hosp-portal-header">
@@ -34,8 +43,43 @@ export default function Header({ onOpenLookup }) {
             </div>
           </Link>
 
-          {/* Right Direct Medical Helplines */}
+          {/* Right Direct Medical Helplines & Accessibility */}
           <div className="portal-helplines">
+            {/* Elderly / Accessibility Font Size Controls */}
+            <div className="portal-accessibility-widget" role="group" aria-label="Hỗ trợ thị lực cho người cao tuổi">
+              <Type size={14} className="access-icon" />
+              <span className="access-label">Chữ:</span>
+              <button 
+                type="button" 
+                className={`btn-access-font ${fontScale === '0.92' ? 'active' : ''}`}
+                onClick={() => handleFontChange('0.92')}
+                title="Cỡ chữ nhỏ"
+                aria-label="Thu nhỏ cỡ chữ"
+              >
+                A-
+              </button>
+              <button 
+                type="button" 
+                className={`btn-access-font ${fontScale === '1' ? 'active' : ''}`}
+                onClick={() => handleFontChange('1')}
+                title="Cỡ chữ tiêu chuẩn"
+                aria-label="Cỡ chữ tiêu chuẩn"
+              >
+                A
+              </button>
+              <button 
+                type="button" 
+                className={`btn-access-font ${fontScale === '1.14' ? 'active' : ''}`}
+                onClick={() => handleFontChange('1.14')}
+                title="Cỡ chữ phóng to cho người lớn tuổi"
+                aria-label="Phóng to cỡ chữ"
+              >
+                A+
+              </button>
+            </div>
+
+            <div className="helpline-divider"></div>
+
             <div className="helpline-card emergency-helpline">
               <div className="helpline-icon pulse-red">
                 <Phone size={18} />
@@ -104,11 +148,23 @@ export default function Header({ onOpenLookup }) {
           <div className="portal-nav-actions">
             <button 
               type="button" 
+              className="btn-portal-lookup-search"
+              onClick={onOpenSearch}
+              title="Tìm kiếm nhanh chuyên khoa, bác sĩ, kỹ thuật (Ctrl + K)"
+              aria-label="Tìm kiếm nhanh toàn cổng thông tin"
+            >
+              <Search size={14} />
+              <span className="search-text-desk">Tìm nhanh</span>
+              <kbd className="nav-kbd">Ctrl K</kbd>
+            </button>
+
+            <button 
+              type="button" 
               className="btn-portal-lookup"
               onClick={onOpenLookup}
               title="Tra cứu thông tin phiếu khám đã đăng ký"
             >
-              <Search size={14} />
+              <FileText size={14} />
               <span>Tra cứu hồ sơ</span>
             </button>
 
@@ -145,8 +201,18 @@ export default function Header({ onOpenLookup }) {
                 type="button" 
                 className="btn-portal-lookup"
                 style={{ flex: 1 }}
+                onClick={() => { setMobileMenuOpen(false); onOpenSearch(); }}
+              >
+                <Search size={14} style={{ marginRight: '4px' }} />
+                Tìm kiếm
+              </button>
+              <button 
+                type="button" 
+                className="btn-portal-lookup"
+                style={{ flex: 1 }}
                 onClick={() => { setMobileMenuOpen(false); onOpenLookup(); }}
               >
+                <FileText size={14} style={{ marginRight: '4px' }} />
                 Tra cứu
               </button>
               <Link 
